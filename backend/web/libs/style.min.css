@@ -1,0 +1,21 @@
+.no-padding {
+    padding: 0px !important;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+.no-padding-top {
+    padding-top: 0px !important;
+}
+
+.logo-box {
+    text-align: center;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

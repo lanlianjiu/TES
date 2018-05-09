@@ -19,7 +19,8 @@ return [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=tes',
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
+            //'password' => '',
             'charset' => 'utf8',
         ],
         'mailer' => [
