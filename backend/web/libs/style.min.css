@@ -19,3 +19,14 @@
     height: 50px;
     border-radius: 50%;
 }
+
+.content {
+    padding-top: 0px;
+}
+
+.left-header {
+    background-color: #1e282c;
+}
+.box{
+    border-top: 1px solid #ddd;;
+}

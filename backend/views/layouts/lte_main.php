@@ -166,7 +166,7 @@ if($otherMenu == false){
 </div>
 
 <div class="wrapper">
-  <header class="main-header">
+  <header class="main-header left-header">
     <!-- 菜单栏显、隐 -->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only"></span>
@@ -174,16 +174,16 @@ if($otherMenu == false){
    <!-- 右边顶部菜单栏 -->
     <nav class="navbar navbar-static-top">
       <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" >
           <!-- 个人信息 -->
-          <li class="dropdown user-menu notifications-menu">
+          <li class="dropdown user-menu notifications-menu" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> 
               <span class="hidden-xs"><?php echo Yii::$app->user->identity->uname;?>&nbsp;&nbsp;</span>
               <span class="fa fa-caret-down"></span>
             </a>
-              <ul class="dropdown-menu">
-              <li class="user-body">
+              <ul class="dropdown-menu" style="width: 150px;height:100px;">
+              <li>
               	<ul class="menu">
             		<li><a href="<?=Url::toRoute('site/psw')?>"><i class="fa fa-cog"></i> 修改密码</a></li>
                 	<li><a href="<?=Url::toRoute('site/logout')?>" data-method="post"><i class="fa fa-sign-out"></i> 退出</a></li>
@@ -263,6 +263,7 @@ if($otherMenu == false){
       </section>
       <?= $content ?>
     </div>
+    <!-- 颜色设置栏 -->
     <aside class="control-sidebar control-sidebar-dark">
       <div class="tab-content">
         <div class="tab-pane" id="control-sidebar-home-tab">
@@ -317,7 +318,6 @@ if($otherMenu == false){
                   Custom Template Design
                   <span class="label label-danger pull-right">70%</span>
                 </h4>
-
                 <div class="progress progress-xxs">
                   <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
                 </div>
@@ -329,7 +329,6 @@ if($otherMenu == false){
                   Update Resume
                   <span class="label label-success pull-right">95%</span>
                 </h4>
-
                 <div class="progress progress-xxs">
                   <div class="progress-bar progress-bar-success" style="width: 95%"></div>
                 </div>
@@ -374,25 +373,21 @@ if($otherMenu == false){
                 Report panel usage
                 <input type="checkbox" class="pull-right" checked>
               </label>
-
               <p>
                 Some information about this general settings option
               </p>
             </div>
             <!-- /.form-group -->
-
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Allow mail redirect
                 <input type="checkbox" class="pull-right" checked>
               </label>
-
               <p>
                 Other sets of options are available
               </p>
             </div>
             <!-- /.form-group -->
-
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Expose author name in posts
@@ -406,7 +401,6 @@ if($otherMenu == false){
             <!-- /.form-group -->
 
             <h3 class="control-sidebar-heading">Chat Settings</h3>
-
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Show me as online
@@ -414,7 +408,6 @@ if($otherMenu == false){
               </label>
             </div>
             <!-- /.form-group -->
-
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Turn off notifications
@@ -422,7 +415,6 @@ if($otherMenu == false){
               </label>
             </div>
             <!-- /.form-group -->
-
             <div class="form-group">
               <label class="control-sidebar-subheading">
                 Delete chat history
@@ -435,7 +427,7 @@ if($otherMenu == false){
         <!-- /.tab-pane -->
       </div>
     </aside>
-    <!-- /.control-sidebar -->
+    <!-- 颜色控制背景 -->
     <div class="control-sidebar-bg"></div>
   </div>
 
