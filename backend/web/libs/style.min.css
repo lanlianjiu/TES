@@ -1,3 +1,4 @@
+
 .no-padding {
     padding: 0px !important;
 }
@@ -27,6 +28,8 @@
 .left-header {
     background-color: #1e282c;
 }
-.box{
-    border-top: 1px solid #ddd;;
+
+.box {
+    border-top: 1px solid #ddd;
+    ;
 }
