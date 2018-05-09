@@ -42,7 +42,7 @@ use yii\helpers\Url;
 </div>
 <!-- /.login-box -->
 
-<script>
+<!-- <script>
 $('#login_btn').click(function (e) {
     e.preventDefault();
 	$('#login-form').submit();
@@ -65,4 +65,5 @@ $('#login-form').bind('submit', function(e) {
     	}
     });
 });
-</script>
+</script> -->
+<?php include '/js/login.php';?>
