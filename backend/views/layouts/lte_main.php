@@ -57,6 +57,7 @@ if($otherMenu == false){
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="<?=Url::base()?>/favicon.ico">
   <title><?=$this->title?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -445,6 +446,8 @@ if($otherMenu == false){
   <script src="<?=Url::base()?>/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
   <!-- jQuery Knob Chart -->
   <script src="<?=Url::base()?>/plugins/knob/jquery.knob.js"></script>
+  <!-- jQueryUI -->
+  <script src="<?=Url::base()?>/plugins/jQueryUI/jquery-ui.min.js"></script>
   
   <!-- daterangepicker -->
   <script src="<?=Url::base()?>/libs/moment.min.js"></script>

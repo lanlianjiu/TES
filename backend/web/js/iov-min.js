@@ -233,21 +233,67 @@
 
 /** b-iov-utils end**/
 +
+/*基本校验函数*/
+(function () {
+    $.extend(String.prototype, {
+        isPositiveInteger: function () {
+            return new RegExp(/^[1-9]\d*$/).test(this)
+        },
+        isInteger: function () {
+            return new RegExp(/^\d+$/).test(this)
+        },
+        isNumber: function () {
+            return new RegExp(/^([-]{0,1}(\d+)[\.]+(\d+))|([-]{0,1}(\d+))$/).test(this)
+        },
+        includeChinese: function () {
+            return new RegExp(/[\u4E00-\u9FA5]/).test(this)
+        },
+        trim: function () {
+            return this.replace(/(^\s*)|(\s*$)|\r|\n/g, "")
+        },
+        startsWith: function (a) {
+            return 0 === this.indexOf(a)
+        },
+        endsWith: function (a) {
+            var b = this.length - a.length;
+            return b >= 0 && this.lastIndexOf(a) === b
+        },
+        replaceAll: function (a, b) {
+            return this.replace(new RegExp(a, "gm"), b)
+        }
+    });
+    $.fn.serializeObject = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+})(jQuery); +
 /**bootstrap-dialog-modal 自定义弹出框居中**/
 function ($) {
-    // $(document).on("show.bs.modal", ".modal", function () {
-
-    //     $(this).draggable({
-    //         handle: ".modal-header"
-    //     });
-    //     $(this).css("overflow-y", "hidden"); // 防止出现滚动条
-    //     //模态框垂直居中
-    //     $(this).css('display', 'block'); // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零  
-    //     var modalHeight = $(window).height() / 2 - $('.modal-dialog').height() / 2;
-    //     $(this).find('.modal-dialog').css({
-    //         'margin-top': modalHeight
-    //     });
-    // });
+    $(document).on("show.bs.modal", ".modal", function () {
+        $(this).draggable({
+            handle: ".modal-header"
+        });
+        $(this).css("overflow-y", "hidden"); // 防止出现滚动条
+        //模态框垂直居中
+        $(this).css('display', 'block'); // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零  
+        var modalHeight = ($(window).height() / 2) - ($('.modal-dialog').height() / 2);
+        console.log($(window).height());
+        console.log($('.modal-dialog').height());
+        $(this).find('.modal-dialog').css({
+            'margin-top': modalHeight
+        });
+    });
 }(jQuery);
 /**bootstrap-dialog-modal**/
 +
@@ -263,6 +309,7 @@ function ($) {
                 val = 0;
             }
             $this.css("overflow-y", "auto");
+            $this.css("overflow-x", "hidden");
             $this.css("height", ($.utils.windowHeight() - $this.offset().top - val) + "px")
         })
     }
