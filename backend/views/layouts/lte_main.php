@@ -86,7 +86,7 @@ if($otherMenu == false){
   <!-- DataTables -->
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/datatables/dataTables.bootstrap.css">
   <!-- style.min -->
-  <link rel="stylesheet" href="<?=Url::base()?>/libs/style.min.css">
+  <link rel="stylesheet" href="<?=Url::base()?>/css/style.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -147,7 +147,7 @@ if($otherMenu == false){
 <?= $this->blocks['header'] ?>
 <?php endif;?>
 </head>
-<body class="hold-transition skin-blue-light sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="modal fade" id="confirm_dialog" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
@@ -209,7 +209,7 @@ if($otherMenu == false){
       <ul class="sidebar-menu">
         <li <?=$route == 'site/index' ?  ' class="active" ' : ''?>>
         	<a href="<?=Url::to(['site/index'])?>">
-        	<i class="fa fa-dashboard"></i> 
+        	<i class="fa fa-home"></i> 
         	<span>首页</span>
         	</a>
         </li>
@@ -220,7 +220,7 @@ if($otherMenu == false){
               $isTreeView = count($funcList) > 0 ? "treeview" : "";
               $menuHtml = '<li class="#isMenuActive#'. $isTreeView .'">'; // active 
               $menuHtml .= '   <a href="#">';
-              $menuHtml .= '   <i class="fa fa-table"></i> <span>'. $menu['label'] .'</span>';
+              $menuHtml .= '   <i class="fa '.$menu['menuicon'].'"></i> <span>'. $menu['label'] .'</span>';
               $menuHtml .= '   <span class="pull-right-container">';
               $menuHtml .= '       <i class="fa fa-angle-left pull-right"></i>';
               $menuHtml .= '   </span>';
@@ -249,9 +249,9 @@ if($otherMenu == false){
     <!-- 右边内容顶部栏 -->
     <div class="content-wrapper">
       <section class="content-header no-padding">
-        <h6 style="margin-top:0px;">  
+        <h6 style="margin-top:0px;border-bottom:  1px solid;">  
           <ol class="breadcrumb breadcrumb-quirk no-margin">
-              <li><a href="<?=Url::toRoute('site/index')?>"><i class="fa fa-dashboard"></i> 首页</a></li>
+              <li><a href="<?=Url::toRoute('site/index')?>"><i class="fa fa-home"></i> 首页</a></li>
             <?php
             if(isset($funInfo['module_name']) == true && isset($funInfo['menu_name']) == true){
                 echo '<li><a href="#">'.$funInfo['module_name'].'</a></li>';
@@ -466,6 +466,9 @@ if($otherMenu == false){
   <script src="<?=Url::base()?>/dist/js/app.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?=Url::base()?>/dist/js/demo.js"></script>
+
+  <!-- iov-min -->
+  <script src="<?=Url::base()?>/js/iov-min.js"></script>
 
 </body>
 

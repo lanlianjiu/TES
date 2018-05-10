@@ -29,7 +29,6 @@ $modelLabel = new \backend\models\AdminModule();
           </div>
         </div>
         <!-- /.box-header -->
-        
         <div class="box-body">
           <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
             <!-- row start search-->
@@ -85,34 +84,30 @@ $modelLabel = new \backend\models\AdminModule();
             
             <?php
             $row = 0;
-            foreach ($models as $model) {
-                echo '<tr id="rowid_' . $model->id . '">';
-                echo '  <td><label><input type="checkbox" value="' . $model->id . '"></label></td>';
-                echo '  <td>' . $model->id . '</td>';
-                echo '  <td>' . $model->code . '</td>';
-                echo '  <td>' . $model->display_label . '</td>';
-                echo '  <td>' . $model->has_lef . '</td>';
-                //echo '  <td>' . $model->des . '</td>';
-                //echo '  <td>' . $model->entry_url . '</td>';
-                echo '  <td>' . $model->display_order . '</td>';
-                //echo '  <td>' . $model->create_user . '</td>';
-                //echo '  <td>' . $model->create_date . '</td>';
-                echo '  <td>' . $model->update_user . '</td>';
-                echo '  <td>' . $model->update_date . '</td>';
-                echo '  <td class="center">';
-                echo '      <a id="view_btn" class="btn btn-primary btn-sm" href="'.Url::toRoute(['admin-menu/index', 'mid'=>$model->id]) .'"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>二级菜单</a>';
-//                 echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>菜单管理</a>';
-                echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>查看</a>';
-                echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
-                echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-sm" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i>删除</a>';
-                echo '  </td>';
-                echo '<tr/>';
-            }
-            
+                foreach ($models as $model) {
+                    echo '<tr id="rowid_' . $model->id . '">';
+                    echo '  <td><label><input type="checkbox" value="' . $model->id . '"></label></td>';
+                    echo '  <td>' . $model->id . '</td>';
+                    echo '  <td>' . $model->code . '</td>';
+                    echo '  <td>' . $model->display_label . '</td>';
+                    echo '  <td>' . $model->has_lef . '</td>';
+                    //echo '  <td>' . $model->des . '</td>';
+                    //echo '  <td>' . $model->entry_url . '</td>';
+                    echo '  <td>' . $model->display_order . '</td>';
+                    //echo '  <td>' . $model->create_user . '</td>';
+                    //echo '  <td>' . $model->create_date . '</td>';
+                    echo '  <td>' . $model->update_user . '</td>';
+                    echo '  <td>' . $model->update_date . '</td>';
+                    echo '  <td class="center">';
+                    echo '      <a id="view_btn" class="btn btn-primary btn-sm" href="'.Url::toRoute(['admin-menu/index', 'mid'=>$model->id]) .'"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>二级菜单</a>';
+                    //                 echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>菜单管理</a>';
+                    echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>查看</a>';
+                    echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
+                    echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-sm" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i>删除</a>';
+                    echo '  </td>';
+                    echo '<tr/>';
+                }
             ?>
-            
-           
-           
             </tbody>
             <!-- <tfoot></tfoot> -->
           </table>

@@ -112,9 +112,6 @@ $modelLabel = new \backend\models\AdminMenu();
             }
             
             ?>
-            
-           
-           
             </tbody>
             <!-- <tfoot></tfoot> -->
           </table>
@@ -127,19 +124,20 @@ $modelLabel = new \backend\models\AdminMenu();
           	<div class="col-sm-5">
             	<div class="dataTables_info" id="data_table_info" role="status" aria-live="polite">
             		<div class="infos">
-            		从<?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            		 共 <?= $pages->totalCount?> 条记录</div>
+                    从 <?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		
+                    到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            	
+                    共 <?= $pages->totalCount?> 条记录</div>
             	</div>
             </div>
           	<div class="col-sm-7">
               	<div class="dataTables_paginate paging_simple_numbers" id="data_table_paginate">
-              	<?= LinkPager::widget([
-              	    'pagination' => $pages,
-              	    'nextPageLabel' => '下一页',
-              	    'prevPageLabel' => '上一页',
-              	    'firstPageLabel' => '首页',
-              	    'lastPageLabel' => '尾页',
-              	]); ?>	
-              	
+                    <?= LinkPager::widget([
+                        'pagination' => $pages,
+                        'nextPageLabel' => '下一页',
+                        'prevPageLabel' => '上一页',
+                        'firstPageLabel' => '首页',
+                        'lastPageLabel' => '尾页',
+                    ]); ?>	
               	</div>
           	</div>
 		  </div>
@@ -185,7 +183,7 @@ $modelLabel = new \backend\models\AdminMenu();
               </div>
               <div class="clearfix"></div>
           </div>
-<!-- 
+            <!-- 
           <div id="module_id_div" class="form-group">
               <label for="module_id" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("module_id")?></label>
               <div class="col-sm-10">
@@ -201,7 +199,7 @@ $modelLabel = new \backend\models\AdminMenu();
               </div>
               <div class="clearfix"></div>
           </div>
- -->
+            -->
           <div id="des_div" class="form-group">
               <label for="des" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("des")?></label>
               <div class="col-sm-10">
@@ -217,7 +215,7 @@ $modelLabel = new \backend\models\AdminMenu();
               </div>
               <div class="clearfix"></div>
           </div>
-<!-- 
+            <!-- 
           <div id="entry_right_name_div" class="form-group">
               <label for="entry_right_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("entry_right_name")?></label>
               <div class="col-sm-10">
@@ -225,7 +223,7 @@ $modelLabel = new \backend\models\AdminMenu();
               </div>
               <div class="clearfix"></div>
           </div>
- -->
+            -->
           <div id="entry_url_div" class="form-group">
               <label for="entry_url" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("entry_url")?></label>
               <div class="col-sm-10">
@@ -252,10 +250,10 @@ $modelLabel = new \backend\models\AdminMenu();
           <div id="action_div" class="form-group">
               <label for="action" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("action")?></label>
               <div class="col-sm-10">
-              <select class="form-control" name="AdminMenu[action]" id="action">
-    			<option>请选择</option>
-              </select>
-<!-- <input type="text" class="form-control" id="action" name="AdminMenu[action]" placeholder="必填" />  -->
+                <select class="form-control" name="AdminMenu[action]" id="action">
+                    <option>请选择</option>
+                </select>
+                <!-- <input type="text" class="form-control" id="action" name="AdminMenu[action]" placeholder="必填" />  -->
               </div>
               <div class="clearfix"></div>
           </div>

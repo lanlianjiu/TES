@@ -2,21 +2,16 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 ?>
-<style>
-  .login-page {
-    background: url('./images/login.jpg');
-}
-</style>
-
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?=Url::toRoute('site/login')?>"><b>登录</b></a>
+    <a href="<?=Url::toRoute('site/login')?>">
+      <b>登录</b>
+    </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 	<?php $form = ActiveForm::begin(['id' => 'login-form', 'action'=>Url::toRoute('site/login')]); ?>
-    <!-- <form action="../../index2.html" method="post">   -->
       <div class="form-group has-feedback">
         <input name="username" id="username" type="text" class="form-control" placeholder="用户名" />
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -39,36 +34,10 @@ use yii\helpers\Url;
         </div>
         <!-- /.col -->
       </div>
-    <!-- </form>  -->
     <?php ActiveForm::end(); ?>
 
   </div>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-
-<!-- <script>
-$('#login_btn').click(function (e) {
-    e.preventDefault();
-	$('#login-form').submit();
-});
-$('#login-form').bind('submit', function(e) {
-	e.preventDefault();
-    $(this).ajaxSubmit({
-    	type: "post",
-    	dataType:"json",
-    	url: "<?=Url::toRoute('site/login')?>",
-    	success: function(value) 
-    	{
-        	if(value.errno == 0){
-        		window.location.reload();
-        	}
-        	else{
-            	$('#username').attr({'data-placement':'top', 'data-content':'<span class="text-danger">用户名或密码错误</span>', 'data-toggle':'popover'}).addClass('popover-show').popover({html : true }).popover('show');
-        	}
-
-    	}
-    });
-});
-</script> -->
 <?php include '/js/login.php';?>

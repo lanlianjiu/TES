@@ -13,7 +13,7 @@ class AdminModuleService extends AdminModule{
      */
     public function getUserModuleList($userId=0)
     {
-        $sql = "select module.id as mid,module.display_label as mlb,
+        $sql = "select module.id as mid,module.display_label as mlb,module.meun_icon AS micon,
 				func.id as fid,func.display_label as flb,func.entry_url as furl,
 				sru1.right_id as rid,sr.display_label as rlb,sru1.url,sru1.para_name,sru1.para_value
 				from admin_right_url sru1

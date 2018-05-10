@@ -117,6 +117,7 @@ class BackendUser extends ActiveRecord implements IdentityInterface
                 if ($key === 0) {
                     $menus[$count]["id"] = $_url["mid"];
                     $menus[$count]["label"] = $_url["mlb"];
+                    $menus[$count]["menuicon"] = $_url["micon"];
                     $menus[$count]["url"] = $_url["furl"];
                     $funcList = array();
                     $count1 = 0;
@@ -133,6 +134,7 @@ class BackendUser extends ActiveRecord implements IdentityInterface
                             $count ++;
                             $menus[$count]["id"] = $_url["mid"];
                             $menus[$count]["label"] = $_url["mlb"];
+                            $menus[$count]["menuicon"] = $_url["micon"];
                             $menus[$count]["url"] = $_url["furl"];
                             $funcList = array();
                             $count1 = 0;
