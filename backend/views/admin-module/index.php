@@ -38,14 +38,14 @@ $modelLabel = new \backend\models\AdminModule();
                             <input type="text" class="form-control" id="query[display_label]" name="query[display_label]"  value="<?=isset($query["display_label"]) ? $query["display_label"] : "" ?>">
                         </div>
                         <div class="form-group">
-                            <a onclick="searchAction()" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i>搜索</a>
+                            <a onclick="searchAction()" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
                         </div>
                     <?php ActiveForm::end(); ?> 
                     </div>
                 </div>
             </div>
              <!-- row end search -->
-            <div class="box" data-adaptionHeight="50">  
+            <div class="box" data-adaptionHeight="40">  
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -58,7 +58,7 @@ $modelLabel = new \backend\models\AdminModule();
                         </div>
                         <!-- row start -->
                         <div class="row">
-                            <div class="col-sm-12 no-padding" data-adaptionHeight="90">
+                            <div class="col-sm-12 no-padding" data-adaptionHeight="100">
                                 <table id="data_table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="data_table_info">
                                     <thead>
                                         <tr role="row">
@@ -115,7 +115,8 @@ $modelLabel = new \backend\models\AdminModule();
                 <div class="col-sm-5">
                     <div class="dataTables_info" id="data_table_info" role="status" aria-live="polite">
                         <div class="infos">
-                        从<?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            		 共 <?= $pages->totalCount?> 条记录</div>
+                        从 <?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		
+                        到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            		 共 <?= $pages->totalCount?> 条记录</div>
                     </div>
                 </div>
                 <div class="col-sm-7">
@@ -145,7 +146,7 @@ $modelLabel = new \backend\models\AdminModule();
 <!-- /.content -->
 
 <!-- 弹窗 -->
-<div class="modal bootstrap-dialog type-primary modal-box fade " id="edit_dialog">
+<div class="modal bootstrap-dialog type-primary modal-box fade" id="edit_dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
