@@ -13,6 +13,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
+use frontend\models\WebNavModel;
+use frontend\models\WebPicModel;
+
 /**
  * Site controller
  */
@@ -72,6 +75,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        //查询flash
+
+        //查询导航
+        $navmodel = new WebNavModel();
+        $mainNav = $navmodel->getMainnav();
+        $severNav = $navmodel->getServernav();
+
+        //轮播图
+        $picmodel = new WebPicModel();
         return $this->render('index');
     }
 
