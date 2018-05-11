@@ -1,5 +1,5 @@
 <?php
-/* @var $this yii\web\View */
+  use yii\helpers\Url;
 ?>
 <h1>web-content/index</h1>
 

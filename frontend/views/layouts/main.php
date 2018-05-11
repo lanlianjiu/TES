@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -52,8 +53,9 @@ $severNav = $navmodel->getServernav();
                     <div class="col-lg-12 no-padding">
                         <ul class="nav nav-tabs">
                             <?php
+                            
                             foreach ($mainNav as $key => $value) {
-                                echo  '<li><a href="#">'.$value['web_nav_name'].'</a></li>';
+                                echo  '<li><a href="'.Url::toRoute($value['url']).'">'.$value['web_nav_name'].'</a></li>';
                             }
                             ?>
                         </ul>
