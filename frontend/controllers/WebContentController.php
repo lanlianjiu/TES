@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 use Yii;
 use frontend\models\WebMessageModel;
+use frontend\models\WebContentModel;
 class WebContentController extends \yii\web\Controller
 {
     //公司首页
@@ -44,8 +45,20 @@ class WebContentController extends \yii\web\Controller
         ]);
     }
 
-    public function feedback(){
-        return "123123";
+    public function actionCreatefeedback()
+    {
+        $model = new WebMessageModel();
+        $a = json_encode(Yii::$app->request->post());
+        // return $a;
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+            $model->savefeedback();
+            return $this->refresh();
+        } else {
+
+            return $this->render('feedback', ['model' => $model]);
+        }
     }
+
 
 }

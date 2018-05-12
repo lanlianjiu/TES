@@ -15,7 +15,7 @@ use yii\filters\AccessControl;
 
 use frontend\models\WebNavModel;
 use frontend\models\WebPicModel;
-
+use frontend\models\WebMessageModel;
 /**
  * Site controller
  */
@@ -75,17 +75,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        //查询flash
-
-        //查询导航
-        $navmodel = new WebNavModel();
-        $mainNav = json_encode($navmodel->getMainnav());
-        $severNav = $navmodel->getServernav();
-
-        //轮播图
-        $picmodel = new WebPicModel();
-        return $this->render('index',["mainNav"=>$mainNav]);
+      $this->redirect(array('web-content/index'));
     }
-
 
 }

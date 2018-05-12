@@ -5,9 +5,8 @@
     use yii\helpers\Html;
 ?>
 
-     <div class="login-box-body">
-    <!-- <p class="login-box-msg">Sign in to start your session</p> -->
-    <?php $form = ActiveForm::begin(['id' => 'feedback-form', 'action'=>Url::toRoute('web-content/feedback')]); ?>
+    <div class="login-box-body">
+    <?php $form = ActiveForm::begin(['id' => 'feedback-form', 'action'=>Url::toRoute('web-content/createfeedback')]); ?>
     <table class="table feedback-table">
         <tr>
             <td>

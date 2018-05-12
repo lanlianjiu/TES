@@ -63,4 +63,15 @@ class WebMessageModel extends \yii\db\ActiveRecord
              'verifyCode' => '验证码',
         ];
     }
+
+    public function savefeedback(){
+
+        $data->connet_name = $this->$connetName;
+        $data->connet_phone = $this->$connetPhone;
+        $data->message_content = $this->$messageContent;
+        $data->email = $this->$email;
+        $data->address = $this->$address;
+        $data->create_data = time();
+        return $data->save();
+    }
 }
