@@ -7,7 +7,7 @@
 
      <div class="login-box-body">
     <!-- <p class="login-box-msg">Sign in to start your session</p> -->
-    <?php $form = ActiveForm::begin(['id' => 'feedback-form', 'action'=>Url::toRoute('site/login')]); ?>
+    <?php $form = ActiveForm::begin(['id' => 'feedback-form', 'action'=>Url::toRoute('web-content/feedback')]); ?>
     <table class="table feedback-table">
         <tr>
             <td>

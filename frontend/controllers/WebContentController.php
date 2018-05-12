@@ -44,4 +44,8 @@ class WebContentController extends \yii\web\Controller
         ]);
     }
 
+    public function feedback(){
+        return "123123";
+    }
+
 }
