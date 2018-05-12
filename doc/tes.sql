@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : 本地连接
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : tes
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-11 18:43:19
+Date: 2018-05-13 07:44:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for admin_log
+-- Table structure for `admin_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_log`;
 CREATE TABLE `admin_log` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin_log` (
   KEY `index_create_date` (`create_date`),
   KEY `index_create_index` (`create_user`),
   KEY `index_url` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=313 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_log
@@ -351,9 +351,28 @@ INSERT INTO `admin_log` VALUES ('309', 'admin-role', 'index', 'admin-role/index'
 INSERT INTO `admin_log` VALUES ('310', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-11 05:17:45');
 INSERT INTO `admin_log` VALUES ('311', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-11 05:19:59');
 INSERT INTO `admin_log` VALUES ('312', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-11 08:00:00');
+INSERT INTO `admin_log` VALUES ('313', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-11 16:56:50');
+INSERT INTO `admin_log` VALUES ('314', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-11 17:16:27');
+INSERT INTO `admin_log` VALUES ('315', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-11 17:16:38');
+INSERT INTO `admin_log` VALUES ('316', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-11 17:16:42');
+INSERT INTO `admin_log` VALUES ('317', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-11 17:52:59');
+INSERT INTO `admin_log` VALUES ('318', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-11 17:53:11');
+INSERT INTO `admin_log` VALUES ('319', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-11 17:53:15');
+INSERT INTO `admin_log` VALUES ('320', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-11 17:58:53');
+INSERT INTO `admin_log` VALUES ('321', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-11 17:58:56');
+INSERT INTO `admin_log` VALUES ('322', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-12 06:50:23');
+INSERT INTO `admin_log` VALUES ('323', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-12 08:04:33');
+INSERT INTO `admin_log` VALUES ('324', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-12 08:04:35');
+INSERT INTO `admin_log` VALUES ('325', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-12 08:04:44');
+INSERT INTO `admin_log` VALUES ('326', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-12 08:04:46');
+INSERT INTO `admin_log` VALUES ('327', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-12 08:04:49');
+INSERT INTO `admin_log` VALUES ('328', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-12 09:52:31');
+INSERT INTO `admin_log` VALUES ('329', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-12 10:40:24');
+INSERT INTO `admin_log` VALUES ('330', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-12 10:48:33');
+INSERT INTO `admin_log` VALUES ('331', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-12 14:23:15');
 
 -- ----------------------------
--- Table structure for admin_menu
+-- Table structure for `admin_menu`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_menu`;
 CREATE TABLE `admin_menu` (
@@ -388,7 +407,7 @@ INSERT INTO `admin_menu` VALUES ('3', 'menu_user', '用户管理', '1', '用户�
 INSERT INTO `admin_menu` VALUES ('4', 'coazaorizhi', '操作日志', '2', '操作日志', '操作日志', '1', '', 'admin-log/index', 'index', 'backend\\controllers\\AdminLogController', 'n', 'test', '2016-08-14 06:54:17', 'test', '2016-08-14 06:54:17');
 
 -- ----------------------------
--- Table structure for admin_message
+-- Table structure for `admin_message`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_message`;
 CREATE TABLE `admin_message` (
@@ -408,7 +427,7 @@ CREATE TABLE `admin_message` (
 INSERT INTO `admin_message` VALUES ('1', '测试文本', '1', 'admin', '2014-11-21 18:47:20', 'admin', '2014-11-21 18:47:27');
 
 -- ----------------------------
--- Table structure for admin_module
+-- Table structure for `admin_module`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_module`;
 CREATE TABLE `admin_module` (
@@ -434,7 +453,7 @@ INSERT INTO `admin_module` VALUES ('1', 'menu_manage', '菜单用户权限', 'n'
 INSERT INTO `admin_module` VALUES ('2', 'rizhimaanage', '日志管理', 'n', '日志管理', '', '2', 'test', '2016-08-14 06:53:13', 'test', '2016-08-14 06:53:13', 'fa-list-alt');
 
 -- ----------------------------
--- Table structure for admin_right
+-- Table structure for `admin_right`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_right`;
 CREATE TABLE `admin_right` (
@@ -474,7 +493,7 @@ INSERT INTO `admin_right` VALUES ('20', '1', '路由添加', '路由添加', '�
 INSERT INTO `admin_right` VALUES ('21', '1', '路由删除', '路由删除', '路由删除', '9', 'n', 'test', '2016-08-16 15:58:05', 'test', '2016-08-16 15:58:05');
 
 -- ----------------------------
--- Table structure for admin_right_url
+-- Table structure for `admin_right_url`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_right_url`;
 CREATE TABLE `admin_right_url` (
@@ -543,7 +562,7 @@ INSERT INTO `admin_right_url` VALUES ('133', '17', 'admin-menu/create', 'admin-m
 INSERT INTO `admin_right_url` VALUES ('134', '17', 'admin-menu/update', 'admin-menu', 'update', 'test', '2016-08-16 15:58:51', 'test', '2016-08-16 15:58:51');
 
 -- ----------------------------
--- Table structure for admin_role
+-- Table structure for `admin_role`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role`;
 CREATE TABLE `admin_role` (
@@ -566,7 +585,7 @@ INSERT INTO `admin_role` VALUES ('1', 'superadmin', '超级管理员', '拥有�
 INSERT INTO `admin_role` VALUES ('2', 'testuser', '测试人员', '测试人员', 'test', '2016-08-12 15:33:45', 'test', '2016-08-12 15:33:45');
 
 -- ----------------------------
--- Table structure for admin_role_right
+-- Table structure for `admin_role_right`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role_right`;
 CREATE TABLE `admin_role_right` (
@@ -617,7 +636,7 @@ INSERT INTO `admin_role_right` VALUES ('182', '1', '7', null, 'test', '2018-05-1
 INSERT INTO `admin_role_right` VALUES ('183', '1', '8', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
 
 -- ----------------------------
--- Table structure for admin_user
+-- Table structure for `admin_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_user`;
 CREATE TABLE `admin_user` (
@@ -643,7 +662,7 @@ INSERT INTO `admin_user` VALUES ('156', 'admin', '$2y$13$9O6bKJieocg//oSax9fZOOu
 INSERT INTO `admin_user` VALUES ('158', 'test', '$2y$13$IECQQTzV687FOk9D1y1x8uWvWrw9g6b9yQjEPm5ZFcFWZW0CJbrQ2', null, 'Unknown', 'n', null, '10', 'admin', '2014-09-03 12:19:52', 'admin', '2014-11-21 19:19:22');
 
 -- ----------------------------
--- Table structure for admin_user_role
+-- Table structure for `admin_user_role`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_user_role`;
 CREATE TABLE `admin_user_role` (
@@ -668,7 +687,7 @@ INSERT INTO `admin_user_role` VALUES ('1', '156', '1', 'admin', '2016-08-12 17:0
 INSERT INTO `admin_user_role` VALUES ('2', '158', '2', 'test', '2016-08-13 16:34:20', 'test', '2016-08-13 16:34:20');
 
 -- ----------------------------
--- Table structure for web_content
+-- Table structure for `web_content`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_content`;
 CREATE TABLE `web_content` (
@@ -687,7 +706,27 @@ CREATE TABLE `web_content` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for web_nav
+-- Table structure for `web_message`
+-- ----------------------------
+DROP TABLE IF EXISTS `web_message`;
+CREATE TABLE `web_message` (
+  `message_id` int(11) NOT NULL,
+  `connet_name` varchar(32) NOT NULL,
+  `connet_phone` varchar(11) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `message_content` varchar(255) NOT NULL,
+  `create_date` datetime(6) NOT NULL,
+  `is_look` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of web_message
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `web_nav`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_nav`;
 CREATE TABLE `web_nav` (
@@ -703,12 +742,12 @@ CREATE TABLE `web_nav` (
 -- ----------------------------
 -- Records of web_nav
 -- ----------------------------
-INSERT INTO `web_nav` VALUES ('1', '1', '公司首页', '');
-INSERT INTO `web_nav` VALUES ('2', '1', '公司简介', '');
-INSERT INTO `web_nav` VALUES ('3', '1', '公司资质', '');
-INSERT INTO `web_nav` VALUES ('4', '1', '工程案列', '');
-INSERT INTO `web_nav` VALUES ('5', '1', '联系我们', '');
-INSERT INTO `web_nav` VALUES ('6', '1', '客户留言', '');
+INSERT INTO `web_nav` VALUES ('1', '1', '公司首页', 'web-content/index');
+INSERT INTO `web_nav` VALUES ('2', '1', '公司简介', 'web-content/profile');
+INSERT INTO `web_nav` VALUES ('3', '1', '公司资质', 'web-content/qualification');
+INSERT INTO `web_nav` VALUES ('4', '1', '工程案列', 'web-content/project');
+INSERT INTO `web_nav` VALUES ('5', '1', '联系我们', 'web-content/contact');
+INSERT INTO `web_nav` VALUES ('6', '1', '客户留言', 'web-content/feedback');
 INSERT INTO `web_nav` VALUES ('7', '2', '清洗服务', '');
 INSERT INTO `web_nav` VALUES ('8', '2', '清洗地毯', '');
 INSERT INTO `web_nav` VALUES ('9', '2', '日常托管式保洁', '');
@@ -724,7 +763,7 @@ INSERT INTO `web_nav` VALUES ('18', '2', '室内装潢', '');
 INSERT INTO `web_nav` VALUES ('19', '2', '耐磨地坪密封固化处理', '');
 
 -- ----------------------------
--- Table structure for web_nav_type
+-- Table structure for `web_nav_type`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_nav_type`;
 CREATE TABLE `web_nav_type` (
@@ -741,7 +780,7 @@ INSERT INTO `web_nav_type` VALUES ('1', '首页导航条');
 INSERT INTO `web_nav_type` VALUES ('2', '服务导航条');
 
 -- ----------------------------
--- Table structure for web_pic
+-- Table structure for `web_pic`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_pic`;
 CREATE TABLE `web_pic` (
@@ -760,7 +799,7 @@ INSERT INTO `web_pic` VALUES ('1', '1', '23423424');
 INSERT INTO `web_pic` VALUES ('2', '1', '3434534');
 
 -- ----------------------------
--- Table structure for web_pic_type
+-- Table structure for `web_pic_type`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_pic_type`;
 CREATE TABLE `web_pic_type` (
