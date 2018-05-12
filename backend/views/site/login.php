@@ -21,18 +21,18 @@ use yii\helpers\Url;
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12" style="margin-bottom:20px;">
           <div class="checkbox icheck">
             <label>
               <input name="remember" id="remember" value="y" type="checkbox" /> &nbsp;记住我的登录
             </label>
           </div>
         </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
+      </div>
+       <div class="row">
+        <div class="col-xs-12">
           <button id="login_btn" type="button" class="btn btn-primary btn-block btn-flat">登录</button>
         </div>
-        <!-- /.col -->
       </div>
     <?php ActiveForm::end(); ?>
 

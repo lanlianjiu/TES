@@ -1,7 +1,8 @@
 <?php
 
 namespace frontend\controllers;
-
+use Yii;
+use frontend\models\WebMessageModel;
 class WebContentController extends \yii\web\Controller
 {
     //公司首页
@@ -37,7 +38,10 @@ class WebContentController extends \yii\web\Controller
     //客户留言
     public function actionFeedback()
     {
-        return $this->render('feedback');
+        $model = new WebMessageModel();
+        return $this->render('feedback', [
+            'model' => $model,
+        ]);
     }
 
 }

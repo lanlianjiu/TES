@@ -13,17 +13,21 @@ class BannerWidget extends Widget{
 
             $this->items = [
                 ['label'=>'demo',
-                'image_url'=>'images/banner/b_0.png',
+                'image_url'=>'img/leftbanner/1.jpg',
                 'url'=>'site/index',
                  'html'=>'',
                  'active'=>'active'
                  ],
                 ['label'=>'demo',
-                'image_url'=>'images/banner/b_1.png',
+                'image_url'=>'img/leftbanner/2.jpg',
                 'url'=>'site/index',
                 'html'=>''],
                 ['label'=>'demo',
-                'image_url'=>'images/banner/b_2.png',
+                'image_url'=>'img/leftbanner/3.jpg',
+                'url'=>'site/index',
+                'html'=>''], 
+                ['label'=>'demo',
+                'image_url'=>'img/leftbanner/4.jpg',
                 'url'=>'site/index',
                 'html'=>''],
             ];
