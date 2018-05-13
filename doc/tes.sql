@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地连接
+Source Server         : localhost
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : tes
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-13 07:44:59
+Date: 2018-05-13 16:47:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `admin_log`
+-- Table structure for admin_log
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_log`;
 CREATE TABLE `admin_log` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin_log` (
   KEY `index_create_date` (`create_date`),
   KEY `index_create_index` (`create_user`),
   KEY `index_url` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=536 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_log
@@ -370,9 +370,213 @@ INSERT INTO `admin_log` VALUES ('328', 'admin-user', 'index', 'admin-user/index'
 INSERT INTO `admin_log` VALUES ('329', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-12 10:40:24');
 INSERT INTO `admin_log` VALUES ('330', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-12 10:48:33');
 INSERT INTO `admin_log` VALUES ('331', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-12 14:23:15');
+INSERT INTO `admin_log` VALUES ('332', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:06:12');
+INSERT INTO `admin_log` VALUES ('333', 'admin-user', 'create', 'admin-user/create', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:06:27');
+INSERT INTO `admin_log` VALUES ('334', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:06:28');
+INSERT INTO `admin_log` VALUES ('335', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:06:31');
+INSERT INTO `admin_log` VALUES ('336', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 06:06:38');
+INSERT INTO `admin_log` VALUES ('337', 'admin-module', 'create', 'admin-module/create', '菜单用户权限', '菜单管理', '一级菜单添加', 'Unknown', 'test', '2018-05-13 06:08:15');
+INSERT INTO `admin_log` VALUES ('338', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 06:08:16');
+INSERT INTO `admin_log` VALUES ('339', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 06:08:23');
+INSERT INTO `admin_log` VALUES ('340', 'admin-menu', 'create', 'admin-menu/create', '菜单用户权限', '菜单管理', '二级菜单添加', 'Unknown', 'test', '2018-05-13 06:09:01');
+INSERT INTO `admin_log` VALUES ('341', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 06:09:02');
+INSERT INTO `admin_log` VALUES ('342', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:09:07');
+INSERT INTO `admin_log` VALUES ('343', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:09:10');
+INSERT INTO `admin_log` VALUES ('344', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:09:17');
+INSERT INTO `admin_log` VALUES ('345', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:09:24');
+INSERT INTO `admin_log` VALUES ('346', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:09:30');
+INSERT INTO `admin_log` VALUES ('347', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:09:37');
+INSERT INTO `admin_log` VALUES ('348', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:09:56');
+INSERT INTO `admin_log` VALUES ('349', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:10:01');
+INSERT INTO `admin_log` VALUES ('350', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:10:08');
+INSERT INTO `admin_log` VALUES ('351', 'admin-user-role', 'create', 'admin-user-role/create', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:10:19');
+INSERT INTO `admin_log` VALUES ('352', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:10:19');
+INSERT INTO `admin_log` VALUES ('353', 'admin-user-role', 'view', 'admin-user-role/view', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:10:23');
+INSERT INTO `admin_log` VALUES ('354', 'admin-user-role', 'view', 'admin-user-role/view', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:10:26');
+INSERT INTO `admin_log` VALUES ('355', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:10:32');
+INSERT INTO `admin_log` VALUES ('356', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:10:38');
+INSERT INTO `admin_log` VALUES ('357', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:10:50');
+INSERT INTO `admin_log` VALUES ('358', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:37:21');
+INSERT INTO `admin_log` VALUES ('359', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:39:12');
+INSERT INTO `admin_log` VALUES ('360', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:39:21');
+INSERT INTO `admin_log` VALUES ('361', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 06:39:35');
+INSERT INTO `admin_log` VALUES ('362', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:39:37');
+INSERT INTO `admin_log` VALUES ('363', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:39:40');
+INSERT INTO `admin_log` VALUES ('364', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 06:40:20');
+INSERT INTO `admin_log` VALUES ('365', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:40:23');
+INSERT INTO `admin_log` VALUES ('366', 'admin-user-role', 'view', 'admin-user-role/view', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 06:40:26');
+INSERT INTO `admin_log` VALUES ('367', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 06:40:52');
+INSERT INTO `admin_log` VALUES ('368', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 06:41:01');
+INSERT INTO `admin_log` VALUES ('369', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 06:41:03');
+INSERT INTO `admin_log` VALUES ('370', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 06:41:17');
+INSERT INTO `admin_log` VALUES ('371', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test001', '2018-05-13 06:43:50');
+INSERT INTO `admin_log` VALUES ('372', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 06:43:59');
+INSERT INTO `admin_log` VALUES ('373', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 06:44:01');
+INSERT INTO `admin_log` VALUES ('374', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 06:51:40');
+INSERT INTO `admin_log` VALUES ('375', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 07:06:36');
+INSERT INTO `admin_log` VALUES ('376', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 07:06:42');
+INSERT INTO `admin_log` VALUES ('377', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 07:06:45');
+INSERT INTO `admin_log` VALUES ('378', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 07:07:03');
+INSERT INTO `admin_log` VALUES ('379', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test001', '2018-05-13 07:07:10');
+INSERT INTO `admin_log` VALUES ('380', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test001', '2018-05-13 07:07:17');
+INSERT INTO `admin_log` VALUES ('381', 'admin-user-role', 'view', 'admin-user-role/view', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test001', '2018-05-13 07:07:24');
+INSERT INTO `admin_log` VALUES ('382', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:09:40');
+INSERT INTO `admin_log` VALUES ('383', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:14:39');
+INSERT INTO `admin_log` VALUES ('384', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 07:14:47');
+INSERT INTO `admin_log` VALUES ('385', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 07:14:52');
+INSERT INTO `admin_log` VALUES ('386', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:15:14');
+INSERT INTO `admin_log` VALUES ('387', 'admin-module', 'create', 'admin-module/create', '菜单用户权限', '菜单管理', '一级菜单添加', 'Unknown', 'test', '2018-05-13 07:15:30');
+INSERT INTO `admin_log` VALUES ('388', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:15:30');
+INSERT INTO `admin_log` VALUES ('389', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:15:34');
+INSERT INTO `admin_log` VALUES ('390', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:15:43');
+INSERT INTO `admin_log` VALUES ('391', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:15:47');
+INSERT INTO `admin_log` VALUES ('392', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:16:16');
+INSERT INTO `admin_log` VALUES ('393', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:16:21');
+INSERT INTO `admin_log` VALUES ('394', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:16:33');
+INSERT INTO `admin_log` VALUES ('395', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:16:38');
+INSERT INTO `admin_log` VALUES ('396', 'admin-menu', 'create', 'admin-menu/create', '菜单用户权限', '菜单管理', '二级菜单添加', 'Unknown', 'test', '2018-05-13 07:16:54');
+INSERT INTO `admin_log` VALUES ('397', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:16:54');
+INSERT INTO `admin_log` VALUES ('398', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 07:16:57');
+INSERT INTO `admin_log` VALUES ('399', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 07:16:59');
+INSERT INTO `admin_log` VALUES ('400', 'admin-right', 'create', 'admin-right/create', '菜单用户权限', '菜单管理', '路由添加', 'Unknown', 'test', '2018-05-13 07:17:09');
+INSERT INTO `admin_log` VALUES ('401', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 07:17:10');
+INSERT INTO `admin_log` VALUES ('402', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:17:18');
+INSERT INTO `admin_log` VALUES ('403', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 07:17:21');
+INSERT INTO `admin_log` VALUES ('404', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:17:26');
+INSERT INTO `admin_log` VALUES ('405', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:17:42');
+INSERT INTO `admin_log` VALUES ('406', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:17:45');
+INSERT INTO `admin_log` VALUES ('407', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:17:52');
+INSERT INTO `admin_log` VALUES ('408', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:17:58');
+INSERT INTO `admin_log` VALUES ('409', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:18:08');
+INSERT INTO `admin_log` VALUES ('410', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:18:10');
+INSERT INTO `admin_log` VALUES ('411', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:18:12');
+INSERT INTO `admin_log` VALUES ('412', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:18:20');
+INSERT INTO `admin_log` VALUES ('413', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:19:09');
+INSERT INTO `admin_log` VALUES ('414', 'admin-module', 'create', 'admin-module/create', '菜单用户权限', '菜单管理', '一级菜单添加', 'Unknown', 'test', '2018-05-13 07:19:21');
+INSERT INTO `admin_log` VALUES ('415', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:19:22');
+INSERT INTO `admin_log` VALUES ('416', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:19:29');
+INSERT INTO `admin_log` VALUES ('417', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:19:32');
+INSERT INTO `admin_log` VALUES ('418', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:19:38');
+INSERT INTO `admin_log` VALUES ('419', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:19:41');
+INSERT INTO `admin_log` VALUES ('420', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:19:45');
+INSERT INTO `admin_log` VALUES ('421', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:25:36');
+INSERT INTO `admin_log` VALUES ('422', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:25:47');
+INSERT INTO `admin_log` VALUES ('423', 'admin-module', 'delete', 'admin-module/delete', '菜单用户权限', '菜单管理', '一级菜单删除', 'Unknown', 'test', '2018-05-13 07:25:53');
+INSERT INTO `admin_log` VALUES ('424', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:25:53');
+INSERT INTO `admin_log` VALUES ('425', 'admin-module', 'delete', 'admin-module/delete', '菜单用户权限', '菜单管理', '一级菜单删除', 'Unknown', 'test', '2018-05-13 07:25:59');
+INSERT INTO `admin_log` VALUES ('426', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:26:00');
+INSERT INTO `admin_log` VALUES ('427', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:26:03');
+INSERT INTO `admin_log` VALUES ('428', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:26:06');
+INSERT INTO `admin_log` VALUES ('429', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:26:11');
+INSERT INTO `admin_log` VALUES ('430', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 07:26:27');
+INSERT INTO `admin_log` VALUES ('431', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 07:26:31');
+INSERT INTO `admin_log` VALUES ('432', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 07:26:35');
+INSERT INTO `admin_log` VALUES ('433', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 07:26:37');
+INSERT INTO `admin_log` VALUES ('434', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-13 07:26:41');
+INSERT INTO `admin_log` VALUES ('435', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:26:44');
+INSERT INTO `admin_log` VALUES ('436', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 07:26:46');
+INSERT INTO `admin_log` VALUES ('437', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:26:50');
+INSERT INTO `admin_log` VALUES ('438', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 07:26:52');
+INSERT INTO `admin_log` VALUES ('439', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:23:39');
+INSERT INTO `admin_log` VALUES ('440', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:23:45');
+INSERT INTO `admin_log` VALUES ('441', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 09:23:53');
+INSERT INTO `admin_log` VALUES ('442', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:23:56');
+INSERT INTO `admin_log` VALUES ('443', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:24:01');
+INSERT INTO `admin_log` VALUES ('444', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:24:41');
+INSERT INTO `admin_log` VALUES ('445', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:24:53');
+INSERT INTO `admin_log` VALUES ('446', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:25:09');
+INSERT INTO `admin_log` VALUES ('447', 'site', 'error', 'site/error', null, null, null, 'Unknown', 'test', '2018-05-13 09:25:09');
+INSERT INTO `admin_log` VALUES ('448', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:25:15');
+INSERT INTO `admin_log` VALUES ('449', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:25:22');
+INSERT INTO `admin_log` VALUES ('450', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 09:25:24');
+INSERT INTO `admin_log` VALUES ('451', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 09:25:27');
+INSERT INTO `admin_log` VALUES ('452', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:25:33');
+INSERT INTO `admin_log` VALUES ('453', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:27:43');
+INSERT INTO `admin_log` VALUES ('454', 'admin-right', 'create', 'admin-right/create', '菜单用户权限', '菜单管理', '路由添加', 'Unknown', 'test', '2018-05-13 09:27:57');
+INSERT INTO `admin_log` VALUES ('455', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:27:58');
+INSERT INTO `admin_log` VALUES ('456', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:28:14');
+INSERT INTO `admin_log` VALUES ('457', 'admin-right', 'delete', 'admin-right/delete', '菜单用户权限', '菜单管理', '路由删除', 'Unknown', 'test', '2018-05-13 09:28:23');
+INSERT INTO `admin_log` VALUES ('458', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:28:24');
+INSERT INTO `admin_log` VALUES ('459', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:28:25');
+INSERT INTO `admin_log` VALUES ('460', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:28:29');
+INSERT INTO `admin_log` VALUES ('461', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:28:37');
+INSERT INTO `admin_log` VALUES ('462', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 09:28:39');
+INSERT INTO `admin_log` VALUES ('463', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 09:28:47');
+INSERT INTO `admin_log` VALUES ('464', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:31:42');
+INSERT INTO `admin_log` VALUES ('465', 'admin-module', 'create', 'admin-module/create', '菜单用户权限', '菜单管理', '一级菜单添加', 'Unknown', 'test', '2018-05-13 09:32:03');
+INSERT INTO `admin_log` VALUES ('466', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:32:03');
+INSERT INTO `admin_log` VALUES ('467', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 09:32:11');
+INSERT INTO `admin_log` VALUES ('468', 'admin-menu', 'create', 'admin-menu/create', '菜单用户权限', '菜单管理', '二级菜单添加', 'Unknown', 'test', '2018-05-13 09:32:37');
+INSERT INTO `admin_log` VALUES ('469', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 09:32:38');
+INSERT INTO `admin_log` VALUES ('470', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:32:43');
+INSERT INTO `admin_log` VALUES ('471', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:32:46');
+INSERT INTO `admin_log` VALUES ('472', 'admin-right', 'create', 'admin-right/create', '菜单用户权限', '菜单管理', '路由添加', 'Unknown', 'test', '2018-05-13 09:33:00');
+INSERT INTO `admin_log` VALUES ('473', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 09:33:01');
+INSERT INTO `admin_log` VALUES ('474', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:33:30');
+INSERT INTO `admin_log` VALUES ('475', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:33:35');
+INSERT INTO `admin_log` VALUES ('476', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:33:41');
+INSERT INTO `admin_log` VALUES ('477', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:33:44');
+INSERT INTO `admin_log` VALUES ('478', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:34:11');
+INSERT INTO `admin_log` VALUES ('479', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 09:34:15');
+INSERT INTO `admin_log` VALUES ('480', 'admin-log', 'index', 'admin-log/index', 'cedf', '35354', '23223', 'Unknown', 'test001', '2018-05-13 09:34:36');
+INSERT INTO `admin_log` VALUES ('481', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:35:00');
+INSERT INTO `admin_log` VALUES ('482', 'admin-module', 'delete', 'admin-module/delete', '菜单用户权限', '菜单管理', '一级菜单删除', 'Unknown', 'test', '2018-05-13 09:35:12');
+INSERT INTO `admin_log` VALUES ('483', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:35:13');
+INSERT INTO `admin_log` VALUES ('484', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 09:35:18');
+INSERT INTO `admin_log` VALUES ('485', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'test', '2018-05-13 09:36:13');
+INSERT INTO `admin_log` VALUES ('486', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'test', '2018-05-13 09:36:24');
+INSERT INTO `admin_log` VALUES ('487', 'site', 'error', 'site/error', null, null, null, 'Unknown', 'test', '2018-05-13 10:03:16');
+INSERT INTO `admin_log` VALUES ('488', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'test', '2018-05-13 10:11:36');
+INSERT INTO `admin_log` VALUES ('489', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 10:11:41');
+INSERT INTO `admin_log` VALUES ('490', 'admin-module', 'create', 'admin-module/create', '菜单用户权限', '菜单管理', '一级菜单添加', 'Unknown', 'test', '2018-05-13 10:12:38');
+INSERT INTO `admin_log` VALUES ('491', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 10:12:38');
+INSERT INTO `admin_log` VALUES ('492', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 10:12:45');
+INSERT INTO `admin_log` VALUES ('493', 'admin-menu', 'create', 'admin-menu/create', '菜单用户权限', '菜单管理', '二级菜单添加', 'Unknown', 'test', '2018-05-13 10:13:38');
+INSERT INTO `admin_log` VALUES ('494', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-13 10:13:38');
+INSERT INTO `admin_log` VALUES ('495', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 10:13:41');
+INSERT INTO `admin_log` VALUES ('496', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 10:13:44');
+INSERT INTO `admin_log` VALUES ('497', 'admin-right', 'create', 'admin-right/create', '菜单用户权限', '菜单管理', '路由添加', 'Unknown', 'test', '2018-05-13 10:14:15');
+INSERT INTO `admin_log` VALUES ('498', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 10:14:15');
+INSERT INTO `admin_log` VALUES ('499', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-13 10:14:18');
+INSERT INTO `admin_log` VALUES ('500', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 10:14:38');
+INSERT INTO `admin_log` VALUES ('501', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 10:14:41');
+INSERT INTO `admin_log` VALUES ('502', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_log` VALUES ('503', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 10:14:54');
+INSERT INTO `admin_log` VALUES ('504', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_log` VALUES ('505', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'test', '2018-05-13 10:15:02');
+INSERT INTO `admin_log` VALUES ('506', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 10:16:17');
+INSERT INTO `admin_log` VALUES ('507', 'admin-module', 'delete', 'admin-module/delete', '菜单用户权限', '菜单管理', '一级菜单删除', 'Unknown', 'test', '2018-05-13 10:16:22');
+INSERT INTO `admin_log` VALUES ('508', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 10:16:23');
+INSERT INTO `admin_log` VALUES ('509', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-13 10:16:28');
+INSERT INTO `admin_log` VALUES ('510', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:19:30');
+INSERT INTO `admin_log` VALUES ('511', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:19:49');
+INSERT INTO `admin_log` VALUES ('512', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:21:00');
+INSERT INTO `admin_log` VALUES ('513', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:21:10');
+INSERT INTO `admin_log` VALUES ('514', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:21:12');
+INSERT INTO `admin_log` VALUES ('515', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:23:11');
+INSERT INTO `admin_log` VALUES ('516', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:23:14');
+INSERT INTO `admin_log` VALUES ('517', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:23:17');
+INSERT INTO `admin_log` VALUES ('518', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:23:20');
+INSERT INTO `admin_log` VALUES ('519', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:23:22');
+INSERT INTO `admin_log` VALUES ('520', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:23:24');
+INSERT INTO `admin_log` VALUES ('521', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:24:04');
+INSERT INTO `admin_log` VALUES ('522', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:24:05');
+INSERT INTO `admin_log` VALUES ('523', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:24:09');
+INSERT INTO `admin_log` VALUES ('524', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:25:08');
+INSERT INTO `admin_log` VALUES ('525', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:26:09');
+INSERT INTO `admin_log` VALUES ('526', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:26:14');
+INSERT INTO `admin_log` VALUES ('527', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:26:18');
+INSERT INTO `admin_log` VALUES ('528', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:26:20');
+INSERT INTO `admin_log` VALUES ('529', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:27:04');
+INSERT INTO `admin_log` VALUES ('530', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:27:08');
+INSERT INTO `admin_log` VALUES ('531', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:29:52');
+INSERT INTO `admin_log` VALUES ('532', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:29:55');
+INSERT INTO `admin_log` VALUES ('533', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-13 10:39:39');
+INSERT INTO `admin_log` VALUES ('534', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:39:43');
+INSERT INTO `admin_log` VALUES ('535', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', 'Unknown', 'admin', '2018-05-13 10:42:14');
 
 -- ----------------------------
--- Table structure for `admin_menu`
+-- Table structure for admin_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_menu`;
 CREATE TABLE `admin_menu` (
@@ -396,7 +600,7 @@ CREATE TABLE `admin_menu` (
   UNIQUE KEY `index_code` (`code`),
   KEY `fk_module_id` (`module_id`),
   CONSTRAINT `fk_module_id` FOREIGN KEY (`module_id`) REFERENCES `admin_module` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -405,9 +609,10 @@ INSERT INTO `admin_menu` VALUES ('1', 'menu_manger', '菜单管理', '1', '菜�
 INSERT INTO `admin_menu` VALUES ('2', 'menu_role', '角色管理', '1', '角色管理', '角色管理', '2', '角色管理', 'admin-role/index', 'index', 'backend\\controllers\\AdminRoleController', 'n', 'admin', '2016-08-11 16:51:56', 'admin', '2016-08-11 16:51:56');
 INSERT INTO `admin_menu` VALUES ('3', 'menu_user', '用户管理', '1', '用户管理', '用户管理', '3', '用户管理', 'admin-user/index', 'index', 'backend\\controllers\\AdminUserController', 'n', 'admin', '2016-08-11 16:58:43', 'admin', '2016-08-11 16:58:43');
 INSERT INTO `admin_menu` VALUES ('4', 'coazaorizhi', '操作日志', '2', '操作日志', '操作日志', '1', '', 'admin-log/index', 'index', 'backend\\controllers\\AdminLogController', 'n', 'test', '2016-08-14 06:54:17', 'test', '2016-08-14 06:54:17');
+INSERT INTO `admin_menu` VALUES ('8', 'web_message_list', '留言列表', '7', '留言列表', '客户留言列表', '1', '留言列表', 'web-message/index', 'index', 'backend\\controllers\\WebMessageController', 'n', 'test', '2018-05-13 10:13:38', 'test', '2018-05-13 10:13:38');
 
 -- ----------------------------
--- Table structure for `admin_message`
+-- Table structure for admin_message
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_message`;
 CREATE TABLE `admin_message` (
@@ -427,7 +632,7 @@ CREATE TABLE `admin_message` (
 INSERT INTO `admin_message` VALUES ('1', '测试文本', '1', 'admin', '2014-11-21 18:47:20', 'admin', '2014-11-21 18:47:27');
 
 -- ----------------------------
--- Table structure for `admin_module`
+-- Table structure for admin_module
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_module`;
 CREATE TABLE `admin_module` (
@@ -444,16 +649,17 @@ CREATE TABLE `admin_module` (
   `update_date` datetime DEFAULT NULL COMMENT '修改时间',
   `meun_icon` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_module
 -- ----------------------------
 INSERT INTO `admin_module` VALUES ('1', 'menu_manage', '菜单用户权限', 'n', '菜单管理', '', '1', 'admin', '2016-08-11 15:26:21', 'admin', '2016-08-11 16:31:08', 'fa-sitemap');
 INSERT INTO `admin_module` VALUES ('2', 'rizhimaanage', '日志管理', 'n', '日志管理', '', '2', 'test', '2016-08-14 06:53:13', 'test', '2016-08-14 06:53:13', 'fa-list-alt');
+INSERT INTO `admin_module` VALUES ('7', 'web_message', '留言管理', 'n', '客户留言', null, '2', 'test', '2018-05-13 10:12:38', 'test', '2018-05-13 10:12:38', 'fa-envelope');
 
 -- ----------------------------
--- Table structure for `admin_right`
+-- Table structure for admin_right
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_right`;
 CREATE TABLE `admin_right` (
@@ -472,7 +678,7 @@ CREATE TABLE `admin_right` (
   KEY `FK_admin_right` (`menu_id`),
   KEY `index_menu_id` (`menu_id`),
   CONSTRAINT `FK_admin_right` FOREIGN KEY (`menu_id`) REFERENCES `admin_menu` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_right
@@ -491,9 +697,10 @@ INSERT INTO `admin_right` VALUES ('18', '1', '二级菜单删除', '二级菜单
 INSERT INTO `admin_right` VALUES ('19', '1', '路由查看', '路由查看', '路由查看', '7', 'n', 'test', '2016-08-16 15:56:32', 'test', '2016-08-16 15:57:14');
 INSERT INTO `admin_right` VALUES ('20', '1', '路由添加', '路由添加', '路由添加', '8', 'n', 'test', '2016-08-16 15:57:46', 'test', '2016-08-16 15:57:46');
 INSERT INTO `admin_right` VALUES ('21', '1', '路由删除', '路由删除', '路由删除', '9', 'n', 'test', '2016-08-16 15:58:05', 'test', '2016-08-16 15:58:05');
+INSERT INTO `admin_right` VALUES ('26', '8', '留言列表', '留言列表', '留言列表URL', '1', 'n', 'test', '2018-05-13 10:14:15', 'test', '2018-05-13 10:14:15');
 
 -- ----------------------------
--- Table structure for `admin_right_url`
+-- Table structure for admin_right_url
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_right_url`;
 CREATE TABLE `admin_right_url` (
@@ -510,7 +717,7 @@ CREATE TABLE `admin_right_url` (
   KEY `FK_admin_right_url` (`right_id`),
   KEY `index_right_id` (`right_id`),
   CONSTRAINT `FK_admin_right_url` FOREIGN KEY (`right_id`) REFERENCES `admin_right` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_right_url
@@ -560,9 +767,10 @@ INSERT INTO `admin_right_url` VALUES ('131', '14', 'admin-module/create', 'admin
 INSERT INTO `admin_right_url` VALUES ('132', '14', 'admin-module/update', 'admin-module', 'update', 'test', '2016-08-16 15:58:30', 'test', '2016-08-16 15:58:30');
 INSERT INTO `admin_right_url` VALUES ('133', '17', 'admin-menu/create', 'admin-menu', 'create', 'test', '2016-08-16 15:58:51', 'test', '2016-08-16 15:58:51');
 INSERT INTO `admin_right_url` VALUES ('134', '17', 'admin-menu/update', 'admin-menu', 'update', 'test', '2016-08-16 15:58:51', 'test', '2016-08-16 15:58:51');
+INSERT INTO `admin_right_url` VALUES ('150', '26', 'web-message/index', 'web-message', 'index', 'test', '2018-05-13 10:14:15', 'test', '2018-05-13 10:14:15');
 
 -- ----------------------------
--- Table structure for `admin_role`
+-- Table structure for admin_role
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role`;
 CREATE TABLE `admin_role` (
@@ -585,7 +793,7 @@ INSERT INTO `admin_role` VALUES ('1', 'superadmin', '超级管理员', '拥有�
 INSERT INTO `admin_role` VALUES ('2', 'testuser', '测试人员', '测试人员', 'test', '2016-08-12 15:33:45', 'test', '2016-08-12 15:33:45');
 
 -- ----------------------------
--- Table structure for `admin_role_right`
+-- Table structure for admin_role_right
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role_right`;
 CREATE TABLE `admin_role_right` (
@@ -601,42 +809,44 @@ CREATE TABLE `admin_role_right` (
   KEY `index_role_id` (`role_id`),
   KEY `index_right_id` (`right_id`),
   CONSTRAINT `admin_role_right_ibfk_1` FOREIGN KEY (`right_id`) REFERENCES `admin_right` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=338 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_role_right
 -- ----------------------------
-INSERT INTO `admin_role_right` VALUES ('141', '2', '13', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('142', '2', '14', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('143', '2', '15', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('144', '2', '16', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('145', '2', '17', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('146', '2', '18', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('147', '2', '19', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('148', '2', '20', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('149', '2', '21', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('150', '2', '4', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('151', '2', '5', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('152', '2', '6', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('153', '2', '7', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('154', '2', '8', null, 'test', '2018-05-10 09:31:20', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_role_right` VALUES ('170', '1', '13', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('171', '1', '14', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('172', '1', '15', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('173', '1', '16', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('174', '1', '17', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('175', '1', '18', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('176', '1', '19', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('177', '1', '20', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('178', '1', '21', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('179', '1', '4', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('180', '1', '5', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('181', '1', '6', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('182', '1', '7', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
-INSERT INTO `admin_role_right` VALUES ('183', '1', '8', null, 'test', '2018-05-10 09:32:19', 'test', '2018-05-10 09:32:19');
+INSERT INTO `admin_role_right` VALUES ('306', '1', '13', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('307', '1', '14', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('308', '1', '15', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('309', '1', '16', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('310', '1', '17', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('311', '1', '18', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('312', '1', '19', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('313', '1', '20', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('314', '1', '21', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('315', '1', '4', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('316', '1', '5', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('317', '1', '6', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('318', '1', '7', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('319', '1', '8', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('321', '1', '26', null, 'test', '2018-05-13 10:14:52', 'test', '2018-05-13 10:14:52');
+INSERT INTO `admin_role_right` VALUES ('322', '2', '13', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('323', '2', '14', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('324', '2', '15', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('325', '2', '16', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('326', '2', '17', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('327', '2', '18', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('328', '2', '19', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('329', '2', '20', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('330', '2', '21', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('331', '2', '4', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('332', '2', '5', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('333', '2', '6', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('334', '2', '7', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('335', '2', '8', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
+INSERT INTO `admin_role_right` VALUES ('337', '2', '26', null, 'test', '2018-05-13 10:14:58', 'test', '2018-05-13 10:14:58');
 
 -- ----------------------------
--- Table structure for `admin_user`
+-- Table structure for admin_user
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_user`;
 CREATE TABLE `admin_user` (
@@ -653,16 +863,17 @@ CREATE TABLE `admin_user` (
   `update_user` varchar(101) NOT NULL COMMENT '更新人',
   `update_date` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_user
 -- ----------------------------
 INSERT INTO `admin_user` VALUES ('156', 'admin', '$2y$13$9O6bKJieocg//oSax9fZOOuljAKarBXknqD8.RyYg60FfNjS7SoqK', null, 'Unknown', 'n', null, '10', 'admin', '2014-07-07 00:05:47', 'admin', '2014-09-03 12:19:12');
 INSERT INTO `admin_user` VALUES ('158', 'test', '$2y$13$IECQQTzV687FOk9D1y1x8uWvWrw9g6b9yQjEPm5ZFcFWZW0CJbrQ2', null, 'Unknown', 'n', null, '10', 'admin', '2014-09-03 12:19:52', 'admin', '2014-11-21 19:19:22');
+INSERT INTO `admin_user` VALUES ('159', 'test001', '$2y$13$G6v7vHPff10aEuiG909C4eVtESvDacEeeYg9Y9WzPS93QV.1nGPk2', null, 'Unknown', 'n', '', '10', 'test', '2018-05-13 06:06:27', 'test', '2018-05-13 06:06:27');
 
 -- ----------------------------
--- Table structure for `admin_user_role`
+-- Table structure for admin_user_role
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_user_role`;
 CREATE TABLE `admin_user_role` (
@@ -678,16 +889,17 @@ CREATE TABLE `admin_user_role` (
   KEY `index_role_id` (`role_id`),
   CONSTRAINT `admin_user_role_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`id`) ON DELETE CASCADE,
   CONSTRAINT `admin_user_role_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `admin_role` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_user_role
 -- ----------------------------
 INSERT INTO `admin_user_role` VALUES ('1', '156', '1', 'admin', '2016-08-12 17:03:13', 'admin', '2016-08-12 17:03:13');
 INSERT INTO `admin_user_role` VALUES ('2', '158', '2', 'test', '2016-08-13 16:34:20', 'test', '2016-08-13 16:34:20');
+INSERT INTO `admin_user_role` VALUES ('3', '159', '2', 'test', '2018-05-13 06:10:19', 'test', '2018-05-13 06:10:19');
 
 -- ----------------------------
--- Table structure for `web_content`
+-- Table structure for web_content
 -- ----------------------------
 DROP TABLE IF EXISTS `web_content`;
 CREATE TABLE `web_content` (
@@ -706,11 +918,11 @@ CREATE TABLE `web_content` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `web_message`
+-- Table structure for web_message
 -- ----------------------------
 DROP TABLE IF EXISTS `web_message`;
 CREATE TABLE `web_message` (
-  `message_id` int(11) NOT NULL,
+  `message_id` int(11) NOT NULL AUTO_INCREMENT,
   `connet_name` varchar(32) NOT NULL,
   `connet_phone` varchar(11) NOT NULL,
   `email` varchar(32) NOT NULL,
@@ -719,25 +931,27 @@ CREATE TABLE `web_message` (
   `create_date` datetime(6) NOT NULL,
   `is_look` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`message_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of web_message
 -- ----------------------------
+INSERT INTO `web_message` VALUES ('1', '', '', '', '', '', '0000-00-00 00:00:00.000000', '0');
+INSERT INTO `web_message` VALUES ('2', '', '', '', '', '', '0000-00-00 00:00:00.000000', '0');
 
 -- ----------------------------
--- Table structure for `web_nav`
+-- Table structure for web_nav
 -- ----------------------------
 DROP TABLE IF EXISTS `web_nav`;
 CREATE TABLE `web_nav` (
-  `web_nav_id` int(11) NOT NULL COMMENT '主键',
+  `web_nav_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `web_navType_id` int(11) NOT NULL COMMENT '导航类型ID',
   `web_nav_name` varchar(32) NOT NULL COMMENT '类型名称',
   `url` varchar(255) NOT NULL COMMENT '地址URL',
   PRIMARY KEY (`web_nav_id`),
   KEY `web_navType_id` (`web_navType_id`),
   CONSTRAINT `web_nav_ibfk_1` FOREIGN KEY (`web_navType_id`) REFERENCES `web_nav_type` (`web_navType_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of web_nav
@@ -763,7 +977,7 @@ INSERT INTO `web_nav` VALUES ('18', '2', '室内装潢', '');
 INSERT INTO `web_nav` VALUES ('19', '2', '耐磨地坪密封固化处理', '');
 
 -- ----------------------------
--- Table structure for `web_nav_type`
+-- Table structure for web_nav_type
 -- ----------------------------
 DROP TABLE IF EXISTS `web_nav_type`;
 CREATE TABLE `web_nav_type` (
@@ -780,7 +994,7 @@ INSERT INTO `web_nav_type` VALUES ('1', '首页导航条');
 INSERT INTO `web_nav_type` VALUES ('2', '服务导航条');
 
 -- ----------------------------
--- Table structure for `web_pic`
+-- Table structure for web_pic
 -- ----------------------------
 DROP TABLE IF EXISTS `web_pic`;
 CREATE TABLE `web_pic` (
@@ -799,7 +1013,7 @@ INSERT INTO `web_pic` VALUES ('1', '1', '23423424');
 INSERT INTO `web_pic` VALUES ('2', '1', '3434534');
 
 -- ----------------------------
--- Table structure for `web_pic_type`
+-- Table structure for web_pic_type
 -- ----------------------------
 DROP TABLE IF EXISTS `web_pic_type`;
 CREATE TABLE `web_pic_type` (
