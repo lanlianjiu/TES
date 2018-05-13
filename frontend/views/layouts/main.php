@@ -28,6 +28,7 @@ $severNav = $navmodel->getServernav();
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link rel="stylesheet" href="<?=Url::base()?>/css/site.css">
 </head>
 <body>
 <?php $this->beginBody() ?>

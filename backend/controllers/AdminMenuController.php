@@ -111,14 +111,14 @@ class AdminMenuController extends BaseController
               $model->create_user = Yii::$app->user->identity->uname;
               $model->create_date = date('Y-m-d H:i:s');
               $model->update_user = Yii::$app->user->identity->uname;
-              $model->update_date = date('Y-m-d H:i:s');            if($model->validate() == true && $model->save()){
+              $model->update_date = date('Y-m-d H:i:s');           
+             if($model->validate() == true && $model->save()){
                 $msg = array('errno'=>0, 'msg'=>'保存成功');
                 echo json_encode($msg);
-            }
-            else{
+             }else{
                 $msg = array('errno'=>2, 'data'=>$model->getErrors());
                 echo json_encode($msg);
-            }
+             }
         } else {
             $msg = array('errno'=>2, 'msg'=>'数据出错');
             echo json_encode($msg);

@@ -47,16 +47,16 @@ class WebContentController extends \yii\web\Controller
 
     public function actionCreatefeedback()
     {
-        $model = new WebMessageModel();
-      
+         $model = new WebMessageModel();
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-
-            $model->savefeedback();
-            return $this->refresh();
+            $model->is_look = 0;
+            $model->create_date = time();
+            $model->save();
+           return $this->render('feedback', ['model' => $model]);
         } else {
-
-              return $this->render('feedback', ['model' => $model]);
-          
+           
+          return $this->render('feedback', ['model' => $model]);
         }
     }
 

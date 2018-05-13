@@ -18,9 +18,9 @@ use Yii;
  */
 class WebMessageModel extends \yii\db\ActiveRecord
 {
-    public $connetName;
-    public $connetPhone;
-    public $messageContent;
+    public $connet_name;
+    public $connet_phone;
+    public $message_content;
     public $verifyCode;
     public $email;
     public $address;
@@ -38,10 +38,10 @@ class WebMessageModel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['connetName', 'connetPhone', 'email', 'address', 'message_content', 'create_date','verifyCode'], 'required'],
-            [['connetName', 'email'], 'string', 'max' => 32],
-            [['connetPhone'], 'string', 'max' => 11],
-            [['address', 'messageContent'], 'string', 'max' => 255],
+            [['connet_name', 'connet_phone', 'email', 'address', 'message_content'], 'required'],
+            [['connet_name', 'email'], 'string', 'max' => 32],
+            [['connet_phone'], 'string', 'max' => 11],
+            [['address', 'message_content'], 'string', 'max' => 255],
              ['verifyCode','captcha']
         ];
     }
@@ -52,26 +52,16 @@ class WebMessageModel extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'message_id' => 'Message ID',
-            'connetName' => '联系人',
-            'connetPhone' => '联系电话',
+            'message_id' => '主键',
+            'connet_name' => '联系人',
+            'connet_phone' => '联系电话',
             'email' => '电子邮件',
             'address' => '地址',
-            'messageContent' => '内容',
-            'create_date' => 'Create Date',
-            'is_look' => 'Is Look',
-             'verifyCode' => '验证码',
+            'message_content' => '内容',
+            'create_date' => '创建时间',
+            'is_look' => '是否查看',
+            'verifyCode' => '验证码',
         ];
     }
-
-    public function savefeedback(){
-
-        $data->connet_name = $this->$connetName;
-        $data->connet_phone = $this->$connetPhone;
-        $data->message_content = $this->$messageContent;
-        $data->email = $this->$email;
-        $data->address = $this->$address;
-        $data->create_data = time();
-        return $data->save();
-    }
+    
 }

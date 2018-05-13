@@ -6,46 +6,48 @@
 ?>
 
     <div class="login-box-body">
-    <?php $form = ActiveForm::begin(['id' => 'feedback-form', 'action'=>Url::toRoute('web-content/createfeedback')]); ?>
+    <?php $form = ActiveForm::begin(['id' => 'feedback-form', 'action'=>'index.php?r=web-content/createfeedback']); ?>
     <table class="table feedback-table">
         <tr>
             <td>
-                <div class="form-group feedback">
-                    <?= $form->field($model, 'connetName')->textinput(['name'=>'connetName']) ?>
+                <div class="form-inline feedback">
+                    <?= $form->field($model, 'connet_name')->textinput(['name'=>'connet_name']) ?>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="form-group feedback">
-                     <?= $form->field($model, 'connetPhone')->textinput(['name'=>'connetPhone']) ?>
+                <div class="form-inline feedback">
+                     <?= $form->field($model, 'connet_phone')->textinput(['name'=>'connet_phone']) ?>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="form-group feedback">
+                <div class="form-inline feedback">
                      <?= $form->field($model, 'email')->textinput(['name'=>'email']) ?>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="form-group feedback">
+                <div class="form-inline feedback">
                      <?= $form->field($model, 'address')->textinput(['name'=>'address']) ?>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="form-group has-feedback">
-                     <?= $form->field($model, 'messageContent')->textarea(['name'=>'messageContent']) ?>
+                <div class="form-inline has-feedback">
+                     <?= $form->field($model, 'message_content')->textarea(['name'=>'message_content']) ?>
                 </div>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className())?>
+                <div class="form-inline has-feedback">
+                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(),['options'=>['name'=>'verifyCode','class'=>'form-control']])?>
+                </div>
             </td>
         </tr>
     </table>
