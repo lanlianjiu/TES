@@ -44,10 +44,10 @@ class WebNavModel extends \backend\models\BaseModel
     public function attributeLabels()
     {
         return [
-            'web_nav_id' => 'Web Nav ID',
-            'web_navType_id' => 'Web Nav Type ID',
-            'web_nav_name' => 'Web Nav Name',
-            'url' => 'Url',
+            'web_nav_id' => '主键',
+            'web_navType_id' => '类型',
+            'web_nav_name' => '名称',
+            'url' => 'URL',
         ];
     }
 
