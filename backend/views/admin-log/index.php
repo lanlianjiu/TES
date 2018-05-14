@@ -36,92 +36,92 @@ $modelLabel = new \backend\models\AdminLog();
           	<!-- row end search -->
         </div>
         <!-- /.box-header -->
-      <div class="box" data-adaptionHeight="40">
-        <div class="box-body">
-            <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                <label>数据列表</label>
-                <!-- row start -->
-                <div class="row">
-                <div class="col-sm-12 no-padding"  data-adaptionHeight="100">
-                <table id="data_table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="data_table_info">
-                    <thead>
-                    <tr role="row">
-                    <?php 
-                    $orderby = isset($_GET['orderby']) ? $_GET['orderby'] : '';
-                    echo '<th><input id="data_table_check" type="checkbox"></th>';
-                    echo '<th onclick="orderby(\'id\', \'desc\')" '.CommonFun::sortClass($orderby, 'id').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('id').'</th>';
-                    echo '<th onclick="orderby(\'controller_id\', \'desc\')" '.CommonFun::sortClass($orderby, 'controller_id').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('controller_id').'</th>';
-                    echo '<th onclick="orderby(\'action_id\', \'desc\')" '.CommonFun::sortClass($orderby, 'action_id').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('action_id').'</th>';
-                    echo '<th onclick="orderby(\'url\', \'desc\')" '.CommonFun::sortClass($orderby, 'url').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('url').'</th>';
-                    echo '<th onclick="orderby(\'module_name\', \'desc\')" '.CommonFun::sortClass($orderby, 'module_name').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('module_name').'</th>';
-                    echo '<th onclick="orderby(\'func_name\', \'desc\')" '.CommonFun::sortClass($orderby, 'func_name').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('func_name').'</th>';
-                    echo '<th onclick="orderby(\'right_name\', \'desc\')" '.CommonFun::sortClass($orderby, 'right_name').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('right_name').'</th>';
-                    echo '<th onclick="orderby(\'client_ip\', \'desc\')" '.CommonFun::sortClass($orderby, 'client_ip').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('client_ip').'</th>';
-                    echo '<th onclick="orderby(\'create_user\', \'desc\')" '.CommonFun::sortClass($orderby, 'create_user').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('create_user').'</th>';
-                    echo '<th onclick="orderby(\'create_date\', \'desc\')" '.CommonFun::sortClass($orderby, 'create_date').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('create_date').'</th>';
-                
-                    ?>
-                    <th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <?php
-                    foreach ($models as $model) {
-                        echo '<tr id="rowid_' . $model->id . '">';
-                        echo '  <td><label><input type="checkbox" value="' . $model->id . '"></label></td>';
-                        echo '  <td>' . $model->id . '</td>';
-                        echo '  <td>' . $model->controller_id . '</td>';
-                        echo '  <td>' . $model->action_id . '</td>';
-                        echo '  <td>' . $model->url . '</td>';
-                        echo '  <td>' . $model->module_name . '</td>';
-                        echo '  <td>' . $model->func_name . '</td>';
-                        echo '  <td>' . $model->right_name . '</td>';
-                        echo '  <td>' . $model->client_ip . '</td>';
-                        echo '  <td>' . $model->create_user . '</td>';
-                        echo '  <td>' . $model->create_date . '</td>';
-                        echo '  <td class="center">';
-                        echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i> 查看</a>';
-                        //echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
-                        // echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-sm" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i>删除</a>';
-                        echo '  </td>';
-                        echo '</tr>';
-                    }
-                    ?>
-                    </tbody>
-                    <!-- <tfoot></tfoot> -->
-                </table>
+        <div class="box" data-adaptionHeight="40">
+            <div class="box-body">
+                <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                    <label>数据列表</label>
+                    <!-- row start -->
+                    <div class="row" >
+                        <div class="col-sm-12 no-padding" data-table-th-scroll="true"   data-adaptionHeight="100">
+                            <table id="data_table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="data_table_info">
+                                <thead>
+                                <tr role="row">
+                                <?php 
+                                $orderby = isset($_GET['orderby']) ? $_GET['orderby'] : '';
+                                echo '<th><input id="data_table_check" type="checkbox"></th>';
+                                echo '<th onclick="orderby(\'id\', \'desc\')" '.CommonFun::sortClass($orderby, 'id').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('id').'</th>';
+                                echo '<th onclick="orderby(\'controller_id\', \'desc\')" '.CommonFun::sortClass($orderby, 'controller_id').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('controller_id').'</th>';
+                                echo '<th onclick="orderby(\'action_id\', \'desc\')" '.CommonFun::sortClass($orderby, 'action_id').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('action_id').'</th>';
+                                echo '<th onclick="orderby(\'url\', \'desc\')" '.CommonFun::sortClass($orderby, 'url').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('url').'</th>';
+                                echo '<th onclick="orderby(\'module_name\', \'desc\')" '.CommonFun::sortClass($orderby, 'module_name').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('module_name').'</th>';
+                                echo '<th onclick="orderby(\'func_name\', \'desc\')" '.CommonFun::sortClass($orderby, 'func_name').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('func_name').'</th>';
+                                echo '<th onclick="orderby(\'right_name\', \'desc\')" '.CommonFun::sortClass($orderby, 'right_name').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('right_name').'</th>';
+                                echo '<th onclick="orderby(\'client_ip\', \'desc\')" '.CommonFun::sortClass($orderby, 'client_ip').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('client_ip').'</th>';
+                                echo '<th onclick="orderby(\'create_user\', \'desc\')" '.CommonFun::sortClass($orderby, 'create_user').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('create_user').'</th>';
+                                echo '<th onclick="orderby(\'create_date\', \'desc\')" '.CommonFun::sortClass($orderby, 'create_date').' tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('create_date').'</th>';
+                            
+                                ?>
+                                <th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                <?php
+                                foreach ($models as $model) {
+                                    echo '<tr id="rowid_' . $model->id . '">';
+                                    echo '  <td><label><input type="checkbox" value="' . $model->id . '"></label></td>';
+                                    echo '  <td>' . $model->id . '</td>';
+                                    echo '  <td>' . $model->controller_id . '</td>';
+                                    echo '  <td>' . $model->action_id . '</td>';
+                                    echo '  <td>' . $model->url . '</td>';
+                                    echo '  <td>' . $model->module_name . '</td>';
+                                    echo '  <td>' . $model->func_name . '</td>';
+                                    echo '  <td>' . $model->right_name . '</td>';
+                                    echo '  <td>' . $model->client_ip . '</td>';
+                                    echo '  <td>' . $model->create_user . '</td>';
+                                    echo '  <td>' . $model->create_date . '</td>';
+                                    echo '  <td class="center">';
+                                    echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i> 查看</a>';
+                                    //echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
+                                    // echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-sm" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i>删除</a>';
+                                    echo '  </td>';
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                                <!-- <tfoot></tfoot> -->
+                            </table>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <!-- row start -->
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="dataTables_info" id="data_table_info" role="status" aria-live="polite">
+                                <div class="infos">
+                                从<?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		
+                                到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            		 共 <?= $pages->totalCount?> 条记录</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="dataTables_paginate paging_simple_numbers" id="data_table_paginate">
+                                <?= LinkPager::widget([
+                                    'pagination' => $pages,
+                                    'nextPageLabel' => '»',
+                                    'prevPageLabel' => '«',
+                                    'firstPageLabel' => '首页',
+                                    'lastPageLabel' => '尾页',
+                                ]); ?>	
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    </div>
+                </div>
+            <!-- /.box-body -->
             </div>
-          </div>
-          <!-- row end -->
-          <!-- row start -->
-          <div class="row">
-          	<div class="col-sm-5">
-            	<div class="dataTables_info" id="data_table_info" role="status" aria-live="polite">
-            		<div class="infos">
-            		从<?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		
-                    到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            		 共 <?= $pages->totalCount?> 条记录</div>
-            	</div>
-            </div>
-          	<div class="col-sm-7">
-              	<div class="dataTables_paginate paging_simple_numbers" id="data_table_paginate">
-                    <?= LinkPager::widget([
-                        'pagination' => $pages,
-                        'nextPageLabel' => '»',
-                        'prevPageLabel' => '«',
-                        'firstPageLabel' => '首页',
-                        'lastPageLabel' => '尾页',
-                    ]); ?>	
-              	</div>
-          	</div>
-		  </div>
-		  <!-- row end -->
+            <!-- /.box -->
         </div>
-        </div>
-        <!-- /.box-body -->
-      </div>
-      <!-- /.box -->
-    </div>
     <!-- /.col -->
   </div>
   <!-- /.row -->

@@ -2,6 +2,10 @@
     padding: 0px !important;
 }
 
+thead {
+    background-color: #FFF;
+}
+
 .no-margin {
     margin: 0px !important;
 }
@@ -14,8 +18,7 @@
     text-align: center !important;
 }
 
-.dataTable>thead>tr>th:first-child,
-.dataTable>tbody>tr>td:first-child {
+.dataTable>thead>tr>th:first-child, .dataTable>tbody>tr>td:first-child {
     text-align: center;
 }
 
@@ -23,8 +26,7 @@
     padding-right: 10px;
 }
 
-.dataTable>thead>tr>th:last-child,
-.dataTable>tbody>tr>td:last-child {
+.dataTable>thead>tr>th:last-child, .dataTable>tbody>tr>td:last-child {
     text-align: center;
 }
 

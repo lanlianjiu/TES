@@ -3,7 +3,8 @@
 namespace backend\models;
 
 use Yii;
-
+use backend\models\WebContentModel;
+use backend\models\WebNavTypeModel;
 /**
  * This is the model class for table "web_nav".
  *
@@ -56,7 +57,7 @@ class WebNavModel extends \backend\models\BaseModel
      */
     public function getWebContent()
     {
-        return $this->hasOne(WebContent::className(), ['web_nav_id' => 'web_nav_id']);
+        return $this->hasOne(WebContentModel::className(), ['web_nav_id' => 'web_nav_id']);
     }
 
     /**
@@ -64,6 +65,6 @@ class WebNavModel extends \backend\models\BaseModel
      */
     public function getWebNavType()
     {
-        return $this->hasOne(WebNavType::className(), ['web_navType_id' => 'web_navType_id']);
+        return $this->hasOne(WebNavTypeModel::className(), ['web_navType_id' => 'web_navType_id']);
     }
 }

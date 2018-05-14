@@ -13,7 +13,7 @@ class WebNavController extends BaseController
     public function actionIndex()
     {
         $query = WebNavModel::find();
-         $querys = Yii::$app->request->get('query');
+        $querys = Yii::$app->request->get('query');
         if(count($querys) > 0){
             $condition = "";
             $parame = array();

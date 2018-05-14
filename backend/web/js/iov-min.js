@@ -321,3 +321,30 @@ function ($) {
 /**
  * adaptionHeight end
  */
++
+    /**
+     * table-th-scroll 表格表头固定
+     */
+    (function ($) {
+        function initLoad() {
+
+            $('[data-table-th-scroll="true"]').each(function () {
+
+                $this = this;
+                var tablescrollId = document.querySelector('[data-table-th-scroll="true"]');
+                function scrollHandle(e) {
+
+                    var scrollTop = this.scrollTop;
+                    this.querySelector('thead').style.transform = 'translateY(' + scrollTop + 'px)';
+                };
+                tablescrollId.addEventListener('scroll', scrollHandle);
+            })
+        };
+
+        $(document).ready(function () {
+            initLoad();
+        });
+    })(jQuery);
+/**
+ * adaptionHeight end
+ */

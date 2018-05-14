@@ -211,5 +211,4 @@ $('#admin-log-form').bind('submit', function(e) {
     });
 });
 
- 
 </script>

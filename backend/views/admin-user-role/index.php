@@ -51,7 +51,7 @@ $modelLabel = new \backend\models\AdminUserRole();
             </div>
           	<!-- row start -->
           	<div class="row">
-          	<div class="col-sm-12 no-padding"  data-adaptionHeight="100">
+          	<div class="col-sm-12 no-padding" data-table-th-scroll="true"  data-adaptionHeight="100">
                 <table id="data_table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="data_table_info">
                     <thead>
                     <tr role="row">
