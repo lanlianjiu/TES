@@ -171,6 +171,13 @@ $modelLabel = new \backend\models\AdminModule();
                     </div>
                     <div class="clearfix"></div>
                 </div>
+                <div id="meun_icon_div" class="form-group">
+                    <label for="meun_icon" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("meun_icon")?></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="meun_icon" name="AdminModule[meun_icon]" placeholder="必填" />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
 		        <!-- 
                 <div id="has_lef_div" class="form-group">
                     <label for="has_lef" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("has_lef")?></label>

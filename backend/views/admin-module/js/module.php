@@ -15,6 +15,7 @@ function viewAction(id){
 		$("#id").val('');
 		$("#code").val('');
 		$("#display_label").val('');
+		$("#meun_icon").val('');
 		$("#has_lef").val('');
 		$("#des").val('');
 		$("#entry_url").val('');
@@ -29,6 +30,7 @@ function viewAction(id){
 		$("#id").val(data.id);
     	$("#code").val(data.code);
     	$("#display_label").val(data.display_label);
+		$("#meun_icon").val(data.meun_icon);
     	$("#has_lef").val(data.has_lef);
     	$("#des").val(data.des);
     	$("#entry_url").val(data.entry_url);
@@ -42,6 +44,7 @@ function viewAction(id){
       $("#id").attr({readonly:true,disabled:true});
       $("#code").attr({readonly:true,disabled:true});
       $("#display_label").attr({readonly:true,disabled:true});
+	  $("#meun_icon").attr({readonly:true,disabled:true});
       $("#has_lef").attr({readonly:true,disabled:true});
       $("#des").attr({readonly:true,disabled:true});
       $("#entry_url").attr({readonly:true,disabled:true});
@@ -60,6 +63,7 @@ function viewAction(id){
       $("#id").attr({readonly:false,disabled:false});
       $("#code").attr({readonly:false,disabled:false});
       $("#display_label").attr({readonly:false,disabled:false});
+	  $("#meun_icon").attr({readonly:false,disabled:false});
       $("#has_lef").attr({readonly:false,disabled:false});
       $("#des").attr({readonly:false,disabled:false});
       $("#entry_url").attr({readonly:false,disabled:false});
