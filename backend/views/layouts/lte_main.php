@@ -204,7 +204,7 @@ if($otherMenu == false){
     <section class="sidebar">
       <div class="user-panel">
         <div class="image logo-box">
-          <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+          <img src="images/logo.jpg" class="user-image" alt="User Image">
         </div>
       </div>
       <ul class="sidebar-menu">

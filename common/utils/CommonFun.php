@@ -73,7 +73,7 @@ class CommonFun extends Object{
             $onlineip = $_SERVER['REMOTE_ADDR'];
             $c_agentip = 0;
         }
-        return $onlineip;
+        return ($onlineip == 'Unknown')?'无法获取ip':$onlineip;
     }
     
     /**

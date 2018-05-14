@@ -25,7 +25,7 @@ $this->title = '首页';
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="icon" href="<?=Url::base()?>/favicon.ico">
+     <link rel="icon" href="<?=Url::base()?>/favicon2.ico">
      <title><?=$this->title?></title>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
@@ -95,8 +95,6 @@ $this->title = '首页';
         </footer>
     </div>
 </div>
-
-
 
 <?php $this->endBody() ?>
 </body>
