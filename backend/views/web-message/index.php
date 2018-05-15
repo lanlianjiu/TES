@@ -76,9 +76,9 @@ $modelLabel = new \backend\models\WebMessageModel();
                         echo '  <td>' . $model->create_date . '</td>';
                         echo '  <td>' . $model->is_look . '</td>';
                         echo '  <td class="center">';
-                        echo '      <a id="view_btn" onclick="viewAction(' . $model->message_id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+                        echo '      <a id="view_btn" onclick="viewAction('.$model->message_id.')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
                         //echo '      <a id="edit_btn" onclick="editAction(' . $model->message_id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
-                        echo '      <a id="delete_btn" onclick="deleteAction(' . $model->message_id . ')" class="btn btn-danger btn-xs" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i></a>';
+                        echo '      <a id="delete_btn" onclick="deleteAction('.$model->message_id.')" class="btn btn-danger btn-xs" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i></a>';
                         echo '  </td>';
                         echo '</tr>';
                     }
@@ -128,73 +128,57 @@ $modelLabel = new \backend\models\WebMessageModel();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h3>设置</h3>
+				<h3>留言信息</h3>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "admin-log-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>                      
                         
-                <input type="hidden" class="form-control" id="id" name="AdminLog[id]" />
+                <input type="hidden" class="form-control" id="id" name="WebMessage[id]" />
 
-                <div id="controller_id_div" class="form-group">
-                    <label for="controller_id" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("controller_id")?></label>
+                <div id="message_id_div" class="form-group">
+                    <label for="message_id" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("message_id")?></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="controller_id" name="AdminLog[controller_id]" placeholder="" />
+                        <input type="text" class="form-control" id="message_id" name="WebMessage[message_id]" placeholder="" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
 
-                <div id="action_id_div" class="form-group">
-                    <label for="action_id" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("action_id")?></label>
+                <div id="connet_name_div" class="form-group">
+                    <label for="connet_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("connet_name")?></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="action_id" name="AdminLog[action_id]" placeholder="" />
+                        <input type="text" class="form-control" id="connet_name" name="WebMessage[connet_name]" placeholder="" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
 
-                <div id="url_div" class="form-group">
-                    <label for="url" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("url")?></label>
+                <div id="connet_phone_div" class="form-group">
+                    <label for="connet_phone" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("connet_phone")?></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="url" name="AdminLog[url]" placeholder="" />
+                        <input type="text" class="form-control" id="connet_phone" name="WebMessage[connet_phone]" placeholder="" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
 
-                <div id="module_name_div" class="form-group">
-                    <label for="module_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("module_name")?></label>
+                <div id="email_div" class="form-group">
+                    <label for="email" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("email")?></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="module_name" name="AdminLog[module_name]" placeholder="" />
+                        <input type="text" class="form-control" id="email" name="WebMessage[email]" placeholder="" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
 
-                <div id="func_name_div" class="form-group">
-                    <label for="func_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("func_name")?></label>
+                <div id="address_div" class="form-group">
+                    <label for="address" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("address")?></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="func_name" name="AdminLog[func_name]" placeholder="" />
+                        <input type="text" class="form-control" id="address" name="WebMessage[address]" placeholder="" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
 
-                <div id="right_name_div" class="form-group">
-                    <label for="right_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("right_name")?></label>
+                <div id="message_content_div" class="form-group">
+                    <label for="message_content" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("message_content")?></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="right_name" name="AdminLog[right_name]" placeholder="" />
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-
-                <div id="client_ip_div" class="form-group">
-                    <label for="client_ip" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("client_ip")?></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="client_ip" name="AdminLog[client_ip]" placeholder="" />
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-
-                <div id="create_user_div" class="form-group">
-                    <label for="create_user" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("create_user")?></label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="create_user" name="AdminLog[create_user]" placeholder="" />
+                        <input type="text" class="form-control" id="message_content" name="WebMessage[message_content]" placeholder="" />
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -202,7 +186,15 @@ $modelLabel = new \backend\models\WebMessageModel();
                 <div id="create_date_div" class="form-group">
                     <label for="create_date" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("create_date")?></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="create_date" name="AdminLog[create_date]" placeholder="" />
+                        <input type="text" class="form-control" id="create_date" name="WebMessage[create_date]" placeholder="" />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div id="is_look_div" class="form-group">
+                    <label for="is_look" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("is_look")?></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="is_look" name="WebMessage[is_look]" placeholder="" />
                     </div>
                     <div class="clearfix"></div>
                 </div> 
@@ -210,9 +202,7 @@ $modelLabel = new \backend\models\WebMessageModel();
                 <?php ActiveForm::end(); ?>          
             </div>
             <div class="modal-footer text-c">
-                <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a> <a
-                    id="edit_dialog_ok" href="#" class="btn btn-primary">确定</a>
-            </div>
+                <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a>
 		</div>
 	</div>
 </div>
