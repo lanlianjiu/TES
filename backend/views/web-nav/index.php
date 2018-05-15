@@ -84,9 +84,9 @@ $modelLabel = new \backend\models\WebNavModel();
                                             echo '  <td>' . $model->web_nav_name . '</td>';
                                             echo '  <td>' . $model->url . '</td>';
                                             echo '  <td class="center">';
-                                            echo '      <a id="view_btn" onclick="viewAction(' . $model->web_nav_id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>&nbsp;查看</a>';
-                                            echo '      <a id="edit_btn" onclick="editAction(' . $model->web_nav_id . ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i>&nbsp;修改</a>';
-                                            echo '      <a id="delete_btn" onclick="deleteAction(' . $model->web_nav_id . ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i>&nbsp;删除</a>';
+                                            echo '      <a id="view_btn" onclick="viewAction(' . $model->web_nav_id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+                                            echo '      <a id="edit_btn" onclick="editAction(' . $model->web_nav_id . ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+                                            echo '      <a id="delete_btn" onclick="deleteAction(' . $model->web_nav_id . ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
                                             echo '  </td>';
                                             echo '<tr/>';
                                         }

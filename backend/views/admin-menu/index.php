@@ -93,10 +93,10 @@ $modelLabel = new \backend\models\AdminMenu();
                     echo '  <td>' . $model->update_user . '</td>';
                     echo '  <td>' . $model->update_date . '</td>';
                     echo '  <td class="center">';
-                    echo '      <a id="view_btn" class="btn btn-primary btn-xs" href="'.Url::toRoute(['admin-right/index','id'=>$model->id]).'"> <i class="glyphicon glyphicon-zoom-in icon-white"></i> 路由管理</a>';
-                    echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i> 查看</a>';
-                    echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i> 修改</a>';
-                    echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i> 删除</a>';
+                    echo '      <a id="view_btn" class="btn btn-primary btn-xs" href="'.Url::toRoute(['admin-right/index','id'=>$model->id]).'">路由管理</a>';
+                    echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+                    echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+                    echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
                     echo '  </td>';
                     echo '<tr/>';
                 }

@@ -76,9 +76,9 @@ $modelLabel = new \backend\models\WebMessageModel();
                         echo '  <td>' . $model->create_date . '</td>';
                         echo '  <td>' . $model->is_look . '</td>';
                         echo '  <td class="center">';
-                        echo '      <a id="view_btn" onclick="viewAction(' . $model->message_id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i> 查看</a>';
-                        //echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
-                        // echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-sm" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i>删除</a>';
+                        echo '      <a id="view_btn" onclick="viewAction(' . $model->message_id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+                        //echo '      <a id="edit_btn" onclick="editAction(' . $model->message_id . ')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
+                        echo '      <a id="delete_btn" onclick="deleteAction(' . $model->message_id . ')" class="btn btn-danger btn-xs" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i></a>';
                         echo '  </td>';
                         echo '</tr>';
                     }
