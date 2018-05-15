@@ -32,10 +32,10 @@ class WebNavModel extends \backend\models\BaseModel
     public function rules()
     {
         return [
-            [['web_navType_id', 'web_nav_name', 'url'], 'required'],
+            [['web_navType_id', 'web_nav_name', 'url','controller'], 'required'],
             [['web_navType_id'], 'integer'],
             [['web_nav_name'], 'string', 'max' => 32],
-            [['url'], 'string', 'max' => 255],
+            [['url','controller'], 'string', 'max' => 255],
         ];
     }
 
@@ -48,6 +48,7 @@ class WebNavModel extends \backend\models\BaseModel
             'web_nav_id' => '主键',
             'web_navType_id' => '类型',
             'web_nav_name' => '名称',
+            'controller' => '控制器',
             'url' => 'URL',
         ];
     }

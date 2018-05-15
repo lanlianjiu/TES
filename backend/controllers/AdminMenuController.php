@@ -34,7 +34,7 @@ class AdminMenuController extends BaseController
         }
         
         $query = AdminMenu::find()->andWhere(['module_id'=>$mid]);
-         $querys = Yii::$app->request->get('query');
+        $querys = Yii::$app->request->get('query');
         if(count($querys) > 0){
             $condition = "";
             $parame = array();

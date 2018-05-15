@@ -27,7 +27,7 @@ use yii\helpers\Url;
         window.location.href=url; 
     }
     function searchAction(){
-        $('#admin-log-search-form').submit();
+        $('#web-message-search-form').submit();
     }
 
     function viewAction(id){

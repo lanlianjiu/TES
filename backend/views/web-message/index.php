@@ -21,7 +21,7 @@ $modelLabel = new \backend\models\WebMessageModel();
           <!-- row start search-->
           	<div class="row">
           	<div class="col-sm-12">
-                <?php ActiveForm::begin(['id' => 'admin-log-search-form', 'method'=>'get', 'options' => ['class' => 'form-inline'], 'action'=>Url::toRoute('web-message/index')]); ?>    
+                <?php ActiveForm::begin(['id' => 'web-message-search-form', 'method'=>'get', 'options' => ['class' => 'form-inline'], 'action'=>Url::toRoute('web-message/index')]); ?>    
                   <div class="form-group" style="margin: 5px;">
                       <label><?=$modelLabel->getAttributeLabel('message_id')?>:</label>
                       <input type="text" class="form-control" id="query[message_id]" name="query[message_id]"  value="<?=isset($query["message_id"]) ? $query["message_id"] : "" ?>">

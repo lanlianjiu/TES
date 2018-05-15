@@ -12,7 +12,14 @@ class WebNavController extends BaseController
     
     public function actionIndex()
     {
-        $query = WebNavModel::find();
+        $controllers = $this->getWebController();
+        $controllerData = array();
+        foreach($controllers as $c){
+            $controllerData[$c['text']] = $c;
+        
+        };
+
+        $query = WebNavModel::find()->with("webContent");
         $querys = Yii::$app->request->get('query');
         if(count($querys) > 0){
             $condition = "";
@@ -52,7 +59,112 @@ class WebNavController extends BaseController
             'models'=>$models,
             'pages'=>$pagination,
             'query'=>$querys,
+            'controllerData'=>$controllerData,
         ]);
+    }
+
+    /**
+     * Displays a single WebNavModel model.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {
+        //$id = Yii::$app->request->post('id');
+        $model = $this->findModel($id);
+        echo json_encode($model->getAttributes());
+
+    }
+
+    /**
+     * Creates a new WebNavModel model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $model = new WebNavModel();
+        if ($model->load(Yii::$app->request->post())) {
+        
+              $model->create_user = Yii::$app->user->identity->uname;
+              $model->create_date = date('Y-m-d H:i:s');
+        
+            if($model->validate() == true && $model->save()){
+                $msg = array('errno'=>0, 'msg'=>'保存成功');
+                echo json_encode($msg);
+            }
+            else{
+                $msg = array('errno'=>2, 'data'=>$model->getErrors());
+                echo json_encode($msg);
+            }
+        } else {
+            $msg = array('errno'=>2, 'msg'=>'数据出错');
+            echo json_encode($msg);
+        }
+    }
+
+    /**
+     * Updates an existing WebNavModel model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionUpdate()
+    {
+        $id = Yii::$app->request->post('id');
+        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+        
+        
+        
+            if($model->validate() == true && $model->save()){
+                $msg = array('errno'=>0, 'msg'=>'保存成功');
+                echo json_encode($msg);
+            }
+            else{
+                $msg = array('errno'=>2, 'data'=>$model->getErrors());
+                echo json_encode($msg);
+            }
+        } else {
+            $msg = array('errno'=>2, 'msg'=>'数据出错');
+            echo json_encode($msg);
+        }
+    
+    }
+
+    /**
+     * Deletes an existing WebNavModel model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionDelete(array $ids)
+    {
+        if(count($ids) > 0){
+            $c = WebNavModel::deleteAll(['in', 'id', $ids]);
+            echo json_encode(array('errno'=>0, 'data'=>$c, 'msg'=>json_encode($ids)));
+        }
+        else{
+            echo json_encode(array('errno'=>2, 'msg'=>''));
+        }
+    
+  
+    }
+
+    /**
+     * Finds the WebNavModel model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return WebNavModel the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = WebNavModel::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 
 }

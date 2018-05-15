@@ -231,7 +231,7 @@ $("#controller").change(function(){
 	var controller = $(this).val();
      $("#action").empty();
      var option = $("<option>").html("请选择");
-     $("#action").append(option);
+	 $("#action").append(option);
      var actions = window.controllerData[controller];
      var nodes = actions.nodes;
      for(i = 0; i < nodes.length; i++){

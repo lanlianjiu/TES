@@ -202,11 +202,11 @@ if($otherMenu == false){
   <!--菜单栏 -->
   <aside class="main-sidebar">
     <section class="sidebar">
-      <div class="user-panel">
+      <!-- <div class="user-panel">
         <div class="image logo-box">
           <img src="images/logo.jpg" class="user-image" alt="User Image">
         </div>
-      </div>
+      </div> -->
       <ul class="sidebar-menu">
         <li <?=$route == 'site/index' ?  ' class="active" ' : ''?>>
         	<a href="<?=Url::to(['site/index'])?>">
