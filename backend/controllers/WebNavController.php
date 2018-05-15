@@ -5,19 +5,19 @@ namespace backend\controllers;
 use Yii;
 use yii\data\Pagination;
 use backend\models\WebNavModel;
-
 class WebNavController extends BaseController
 {
     public $layout = "lte_main";
     
     public function actionIndex()
     {
-        $controllers = $this->getWebController();
+        $controllers = $this->getAllController();
+       
         $controllerData = array();
         foreach($controllers as $c){
             $controllerData[$c['text']] = $c;
         };
-
+       
         $query = WebNavModel::find()->with("webContent");
         $querys = Yii::$app->request->get('query');
         if(count($querys) > 0){
