@@ -16,7 +16,6 @@ class WebNavController extends BaseController
         $controllerData = array();
         foreach($controllers as $c){
             $controllerData[$c['text']] = $c;
-        
         };
 
         $query = WebNavModel::find()->with("webContent");
