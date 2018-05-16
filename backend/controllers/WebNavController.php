@@ -76,10 +76,11 @@ class WebNavController extends BaseController
     {
         //$id = Yii::$app->request->post('id');
        
-        $model = $this->findModel($id);
-         //$wmodel = WebContentModel::getAttributes();
-        //$model = array_merge(json_decode($this->findModel($id),true),json_decode($this->findCModel($id),true));
-        echo json_encode($model->getAttributes());
+        $model = $this->findModel($id)->getAttributes();
+        $wmodel = $this->findCModel($id)->getAttributes();
+        $result = (object) array_merge((array) $model, (array) $wmodel);
+       
+        echo json_encode($result);
     }
 
     /**
