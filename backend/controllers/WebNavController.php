@@ -5,13 +5,18 @@ namespace backend\controllers;
 use Yii;
 use yii\data\Pagination;
 use backend\models\WebNavModel;
+use backend\models\WebContentModel;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\helpers\StringHelper;
+use yii\helpers\Inflector;
 class WebNavController extends BaseController
 {
     public $layout = "lte_main";
     
     public function actionIndex()
     {
-        $controllers = $this->getAllController();
+        $controllers = $this->getWebController();
        
         $controllerData = array();
         foreach($controllers as $c){
@@ -83,23 +88,44 @@ class WebNavController extends BaseController
     public function actionCreate()
     {
         $model = new WebNavModel();
-        if ($model->load(Yii::$app->request->post())) {
-        
-              $model->create_user = Yii::$app->user->identity->uname;
-              $model->create_date = date('Y-m-d H:i:s');
-        
-            if($model->validate() == true && $model->save()){
-                $msg = array('errno'=>0, 'msg'=>'保存成功');
-                echo json_encode($msg);
-            }
-            else{
-                $msg = array('errno'=>2, 'data'=>$model->getErrors());
-                echo json_encode($msg);
-            }
-        } else {
+        $wmodel = new WebContentModel();
+        $transaction = Yii::$app->db->beginTransaction();
+
+        try{ 
+            
+            if ($model->load(Yii::$app->request->post())) {
+                
+                $wmodel->create_user = Yii::$app->user->identity->uname;
+                $wmodel->create_date = date('Y-m-d H:i:s');
+
+                $controllerName = substr($model->controller, 0, strlen($model->controller) - 10);
+                $model->url = Inflector::camel2id(StringHelper::basename($controllerName)) . '/' .$model->url;
+
+                
+                $pkid = 20;
+                $wmodel->web_nav_id = $pkid;
+                //return $model->url.'----'.json_encode($wmodel->create_date);
+                $nsaveResult =(($model->save())&&($wmodel->save())&&($model->validate())&&($wmodel->validate()));
+
+                if($nsaveResult){
+                
+                    $msg = array('errno'=>0, 'msg'=>'保存成功');
+                    echo json_encode($msg);
+                }else{
+                    $msg = array('errno'=>2, 'data'=>$model->getErrors());
+                    echo json_encode($msg);
+                }
+               
+            };
+             $transaction->commit();
+         }catch(\Exception $e){
+
+            $transaction->rollBack();
             $msg = array('errno'=>2, 'msg'=>'数据出错');
             echo json_encode($msg);
-        }
+            return false;
+        };
+ 
     }
 
     /**
@@ -142,12 +168,9 @@ class WebNavController extends BaseController
         if(count($ids) > 0){
             $c = WebNavModel::deleteAll(['in', 'id', $ids]);
             echo json_encode(array('errno'=>0, 'data'=>$c, 'msg'=>json_encode($ids)));
-        }
-        else{
+        }else{
             echo json_encode(array('errno'=>2, 'msg'=>''));
         }
-    
-  
     }
 
     /**

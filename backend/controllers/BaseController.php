@@ -61,6 +61,7 @@ class BaseController extends Controller
         return true;
     }
     
+    //获取后台控制器
     protected function getAllController(){
         $className = get_class($this);
         $mn = explode('\\', $className);
@@ -78,6 +79,47 @@ class BaseController extends Controller
         $rightActionData = [];
         foreach($controllerDatas as $c){
             if(StringHelper::startsWith($c, 'backend\controllers') == true && $c != 'backend\controllers\BaseController'){
+                $controllerName = substr($c, 0, strlen($c) - 10);
+                $cUrl = Inflector::camel2id(StringHelper::basename($controllerName));
+                $methods = get_class_methods($c);
+                $rightTree = ['text'=>$c, 'selectable'=>false, 'state'=>['checked'=>false], 'type'=>'r'];
+                foreach($methods as $m){
+                    if($m != 'actions' && StringHelper::startsWith($m, 'action') !== false){
+                        $actionName = substr($m, 6, strlen($m));
+                        $aUrl = Inflector::camel2id($actionName);
+                        $actionTree = ['text'=>$aUrl . "&nbsp;&nbsp;($cUrl/$aUrl)", 'c'=>$cUrl, 'a'=>$aUrl, 'selectable'=>true, 'state'=>['checked'=>false], 'type'=>'a'];
+                        if(isset($rightUrls[$cUrl.'/'.$aUrl]) == true){
+                            $actionTree['state']['checked'] = true;
+                            $rightTree['state']['checked'] = true;
+                        }
+                        $rightTree['nodes'][] = $actionTree;
+                    }
+                }
+                $rightActionData[] = $rightTree;
+            }
+        }
+        return $rightActionData;
+    }
+    
+    //获取前台台控制器
+    protected function getWebController(){
+        $className = "frontend\\controllers\\WebNavController";
+        $mn = explode('\\', $className);
+        array_pop($mn);
+        $classNameSpace = implode('\\', $mn);
+        $dir = dirname(dirname(dirname(__FILE__))).'\\frontend\\controllers';
+        
+        $classfiles = glob ( $dir . "/*Controller.php" );
+        $controllerDatas = [];
+        foreach($classfiles as $file){
+            $info = pathinfo($file);
+            $controllerClass = $classNameSpace . '\\' . $info[ 'filename' ];
+            $controllerDatas[$info[ 'filename' ]] = $controllerClass;
+        }
+        
+        $rightActionData = [];
+        foreach($controllerDatas as $c){
+            if(StringHelper::startsWith($c, 'frontend\controllers') == true && $c != 'frontend\controllers\BaseController'){
                 $controllerName = substr($c, 0, strlen($c) - 10);
                 $cUrl = Inflector::camel2id(StringHelper::basename($controllerName));
                 $methods = get_class_methods($c);

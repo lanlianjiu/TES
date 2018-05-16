@@ -17,14 +17,16 @@ function viewAction(id){
 		$("#web_nav_id").val('');
 		$("#web_navType_id").val('');
 		$("#web_nav_name").val('');
-		$("#url").val('');
+		$("#controller_id").val('');
+		$("#actionUrl").val('');
 		
 	}else{
 
 		$("#web_nav_id").val(data.web_nav_id);
     	$("#web_navType_id").val(data.web_navType_id);
     	$("#web_nav_name").val(data.web_nav_name);
-		$("#url").val(data.url);
+		$("#controller_id").val(data.controller);
+		$("#actionUrl").val(data.url);
     }
 
 	if(type == "view"){
@@ -32,7 +34,8 @@ function viewAction(id){
       $("#web_nav_id").attr({readonly:true,disabled:true});
       $("#web_navType_id").attr({readonly:true,disabled:true});
       $("#web_nav_name").attr({readonly:true,disabled:true});
-	  $("#url").attr({readonly:true,disabled:true});
+	  $("#controller_id").attr({readonly:true,disabled:true});
+	  $("#actionUrl").attr({readonly:true,disabled:true});
 	  $('#edit_dialog_ok').addClass('hidden');
 	}
 	else{
@@ -40,7 +43,8 @@ function viewAction(id){
       $("#web_nav_id").attr({readonly:false,disabled:false});
       $("#web_navType_id").attr({readonly:false,disabled:false});
       $("#web_nav_name").attr({readonly:false,disabled:false});
-	  $("#url").attr({readonly:false,disabled:false});
+	  $("#controller_id").attr({readonly:false,disabled:false});
+	  $("#actionUrl").attr({readonly:false,disabled:false});
 	  $('#edit_dialog_ok').removeClass('hidden');
 	}
 		$('#edit_dialog').modal('show');
