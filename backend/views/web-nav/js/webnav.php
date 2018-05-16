@@ -37,8 +37,7 @@ function viewAction(id){
 	  $("#controller_id").attr({readonly:true,disabled:true});
 	  $("#actionUrl").attr({readonly:true,disabled:true});
 	  $('#edit_dialog_ok').addClass('hidden');
-	}
-	else{
+	}else{
 
       $("#web_nav_id").attr({readonly:false,disabled:false});
       $("#web_navType_id").attr({readonly:false,disabled:false});
@@ -51,16 +50,18 @@ function viewAction(id){
 }
 
 function initModel(id, type, fun){
+	
 	$.ajax({
 		   type: "GET",
 		   url: "<?=Url::toRoute('web-nav/view')?>",
-		   data: {"web_nav_id":id},
+		   data: {"id":id},
 		   cache: false,
 		   dataType:"json",
 		   error: function (xmlHttpRequest, textStatus, errorThrown) {
 			    alert("出错了，" + textStatus);
 			},
 		   success: function(data){
+			   console.log(data);
 			   initEditSystemModule(data, type);
 		   }
 		});

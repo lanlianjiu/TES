@@ -75,9 +75,11 @@ class WebNavController extends BaseController
     public function actionView($id)
     {
         //$id = Yii::$app->request->post('id');
+       
         $model = $this->findModel($id);
+         //$wmodel = WebContentModel::getAttributes();
+        //$model = array_merge(json_decode($this->findModel($id),true),json_decode($this->findCModel($id),true));
         echo json_encode($model->getAttributes());
-
     }
 
     /**
@@ -100,30 +102,26 @@ class WebNavController extends BaseController
 
                 $controllerName = substr($model->controller, 0, strlen($model->controller) - 10);
                 $model->url = Inflector::camel2id(StringHelper::basename($controllerName)) . '/' .$model->url;
-
+                $nsaveResult =(($model->save())&&($model->validate()));
                 
-                $pkid = 20;
+                $pkid = $model->attributes['web_nav_id'];
                 $wmodel->web_nav_id = $pkid;
-                //return $model->url.'----'.json_encode($wmodel->create_date);
-                $nsaveResult =(($model->save())&&($wmodel->save())&&($model->validate())&&($wmodel->validate()));
-
-                if($nsaveResult){
                 
+                $csaveResult = (($wmodel->validate())&&($wmodel->save()));
+               
+                if($nsaveResult&&$csaveResult){
+                    
+                    $transaction->commit();
                     $msg = array('errno'=>0, 'msg'=>'保存成功');
                     echo json_encode($msg);
-                }else{
-                    $msg = array('errno'=>2, 'data'=>$model->getErrors());
-                    echo json_encode($msg);
-                }
-               
+                };
             };
-             $transaction->commit();
+
          }catch(\Exception $e){
 
             $transaction->rollBack();
             $msg = array('errno'=>2, 'msg'=>'数据出错');
-            echo json_encode($msg);
-            return false;
+            return json_encode($msg);
         };
  
     }
@@ -136,24 +134,44 @@ class WebNavController extends BaseController
      */
     public function actionUpdate()
     {
-        $id = Yii::$app->request->post('id');
+       
+        $id = Yii::$app->request->post('web_nav_id');
         $model = $this->findModel($id);
-        if ($model->load(Yii::$app->request->post())) {
-        
-        
-        
-            if($model->validate() == true && $model->save()){
-                $msg = array('errno'=>0, 'msg'=>'保存成功');
-                echo json_encode($msg);
-            }
-            else{
-                $msg = array('errno'=>2, 'data'=>$model->getErrors());
-                echo json_encode($msg);
-            }
-        } else {
+        $wmodel = $this->findCModel($id);
+
+        $transaction = Yii::$app->db->beginTransaction();
+
+        try{ 
+            
+            if ($model->load(Yii::$app->request->post())) {
+                
+                $wmodel->update_user = Yii::$app->user->identity->uname;
+                $wmodel->update_date = date('Y-m-d H:i:s');
+
+                $controllerName = substr($model->controller, 0, strlen($model->controller) - 10);
+                $model->url = Inflector::camel2id(StringHelper::basename($controllerName)) . '/' .$model->url;
+
+                $nsaveResult =(($model->save())&&($model->validate()));
+                
+                $pkid = $model->attributes['web_nav_id'];
+                $wmodel->web_nav_id = $pkid;
+                
+                $csaveResult = (($wmodel->validate())&&($wmodel->save()));
+               
+                if($nsaveResult&&$csaveResult){
+                    
+                    $transaction->commit();
+                    $msg = array('errno'=>0, 'msg'=>'保存成功');
+                    echo json_encode($msg);
+                };
+            };
+
+         }catch(\Exception $e){
+
+            $transaction->rollBack();
             $msg = array('errno'=>2, 'msg'=>'数据出错');
-            echo json_encode($msg);
-        }
+            return json_encode($msg);
+        };
     
     }
 
@@ -183,6 +201,22 @@ class WebNavController extends BaseController
     protected function findModel($id)
     {
         if (($model = WebNavModel::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+     /**
+     * Finds the WebContentModel model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return WebContentModel the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findCModel($id)
+    {
+        if (($model = WebContentModel::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
