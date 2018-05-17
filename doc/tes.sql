@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : 本地连接
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : tes
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-17 20:30:16
+Date: 2018-05-18 00:50:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for admin_log
+-- Table structure for `admin_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_log`;
 CREATE TABLE `admin_log` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin_log` (
   KEY `index_create_date` (`create_date`),
   KEY `index_create_index` (`create_user`),
   KEY `index_url` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=1430 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1596 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_log
@@ -1468,9 +1468,175 @@ INSERT INTO `admin_log` VALUES ('1426', 'web-nav', 'table', 'web-nav/table', '�
 INSERT INTO `admin_log` VALUES ('1427', 'web-nav', 'delete', 'web-nav/delete', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:27:06');
 INSERT INTO `admin_log` VALUES ('1428', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:27:07');
 INSERT INTO `admin_log` VALUES ('1429', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-05-17 14:29:09');
+INSERT INTO `admin_log` VALUES ('1430', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'test', '2018-05-17 16:17:42');
+INSERT INTO `admin_log` VALUES ('1431', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'test', '2018-05-17 16:17:59');
+INSERT INTO `admin_log` VALUES ('1432', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'test', '2018-05-17 16:18:00');
+INSERT INTO `admin_log` VALUES ('1433', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:18:28');
+INSERT INTO `admin_log` VALUES ('1434', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 16:21:40');
+INSERT INTO `admin_log` VALUES ('1435', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'test', '2018-05-17 16:21:44');
+INSERT INTO `admin_log` VALUES ('1436', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 16:21:47');
+INSERT INTO `admin_log` VALUES ('1437', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 16:21:52');
+INSERT INTO `admin_log` VALUES ('1438', 'admin-right', 'update', 'admin-right/update', '菜单用户权限', '菜单管理', '路由添加', '无法获取ip', 'test', '2018-05-17 16:21:57');
+INSERT INTO `admin_log` VALUES ('1439', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 16:21:58');
+INSERT INTO `admin_log` VALUES ('1440', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:22:09');
+INSERT INTO `admin_log` VALUES ('1441', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:33:39');
+INSERT INTO `admin_log` VALUES ('1442', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'test', '2018-05-17 16:33:40');
+INSERT INTO `admin_log` VALUES ('1443', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:34:06');
+INSERT INTO `admin_log` VALUES ('1444', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'test', '2018-05-17 16:34:06');
+INSERT INTO `admin_log` VALUES ('1445', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:37:21');
+INSERT INTO `admin_log` VALUES ('1446', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'test', '2018-05-17 16:37:21');
+INSERT INTO `admin_log` VALUES ('1447', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:37:46');
+INSERT INTO `admin_log` VALUES ('1448', 'web-message', 'table', 'web-message/table', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:37:47');
+INSERT INTO `admin_log` VALUES ('1449', 'web-message', 'view', 'web-message/view', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:39:44');
+INSERT INTO `admin_log` VALUES ('1450', 'web-message', 'table', 'web-message/table', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:40:29');
+INSERT INTO `admin_log` VALUES ('1451', 'web-message', 'delete', 'web-message/delete', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:40:33');
+INSERT INTO `admin_log` VALUES ('1452', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:40:34');
+INSERT INTO `admin_log` VALUES ('1453', 'web-message', 'table', 'web-message/table', '留言管理', '留言列表', '留言列表', '无法获取ip', 'test', '2018-05-17 16:40:34');
+INSERT INTO `admin_log` VALUES ('1454', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 16:45:44');
+INSERT INTO `admin_log` VALUES ('1455', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 16:45:52');
+INSERT INTO `admin_log` VALUES ('1456', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 16:45:57');
+INSERT INTO `admin_log` VALUES ('1457', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 16:46:01');
+INSERT INTO `admin_log` VALUES ('1458', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 16:47:58');
+INSERT INTO `admin_log` VALUES ('1459', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'test', '2018-05-17 16:48:04');
+INSERT INTO `admin_log` VALUES ('1460', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 16:48:06');
+INSERT INTO `admin_log` VALUES ('1461', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 16:48:08');
+INSERT INTO `admin_log` VALUES ('1462', 'admin-right', 'update', 'admin-right/update', '菜单用户权限', '菜单管理', '路由添加', '无法获取ip', 'test', '2018-05-17 16:48:15');
+INSERT INTO `admin_log` VALUES ('1463', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 16:48:16');
+INSERT INTO `admin_log` VALUES ('1464', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 16:48:28');
+INSERT INTO `admin_log` VALUES ('1465', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 16:55:52');
+INSERT INTO `admin_log` VALUES ('1466', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:04:17');
+INSERT INTO `admin_log` VALUES ('1467', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'test', '2018-05-17 17:04:18');
+INSERT INTO `admin_log` VALUES ('1468', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:05:37');
+INSERT INTO `admin_log` VALUES ('1469', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:05:38');
+INSERT INTO `admin_log` VALUES ('1470', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:06:11');
+INSERT INTO `admin_log` VALUES ('1471', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:06:12');
+INSERT INTO `admin_log` VALUES ('1472', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:07:27');
+INSERT INTO `admin_log` VALUES ('1473', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:07:28');
+INSERT INTO `admin_log` VALUES ('1474', 'admin-user', 'create', 'admin-user/create', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:07:48');
+INSERT INTO `admin_log` VALUES ('1475', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:07:49');
+INSERT INTO `admin_log` VALUES ('1476', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:07:58');
+INSERT INTO `admin_log` VALUES ('1477', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:02');
+INSERT INTO `admin_log` VALUES ('1478', 'admin-user', 'delete', 'admin-user/delete', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:07');
+INSERT INTO `admin_log` VALUES ('1479', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:08');
+INSERT INTO `admin_log` VALUES ('1480', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:23');
+INSERT INTO `admin_log` VALUES ('1481', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:23');
+INSERT INTO `admin_log` VALUES ('1482', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:34');
+INSERT INTO `admin_log` VALUES ('1483', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:35');
+INSERT INTO `admin_log` VALUES ('1484', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:38');
+INSERT INTO `admin_log` VALUES ('1485', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:08:40');
+INSERT INTO `admin_log` VALUES ('1486', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:08:43');
+INSERT INTO `admin_log` VALUES ('1487', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:08:46');
+INSERT INTO `admin_log` VALUES ('1488', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 17:09:06');
+INSERT INTO `admin_log` VALUES ('1489', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:09:12');
+INSERT INTO `admin_log` VALUES ('1490', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 17:09:17');
+INSERT INTO `admin_log` VALUES ('1491', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:09:23');
+INSERT INTO `admin_log` VALUES ('1492', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:09:24');
+INSERT INTO `admin_log` VALUES ('1493', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:09:49');
+INSERT INTO `admin_log` VALUES ('1494', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 17:12:12');
+INSERT INTO `admin_log` VALUES ('1495', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'test', '2018-05-17 17:12:19');
+INSERT INTO `admin_log` VALUES ('1496', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 17:12:21');
+INSERT INTO `admin_log` VALUES ('1497', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 17:12:30');
+INSERT INTO `admin_log` VALUES ('1498', 'admin-right', 'update', 'admin-right/update', '菜单用户权限', '菜单管理', '路由添加', '无法获取ip', 'test', '2018-05-17 17:12:34');
+INSERT INTO `admin_log` VALUES ('1499', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_log` VALUES ('1500', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 17:12:44');
+INSERT INTO `admin_log` VALUES ('1501', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:12:45');
+INSERT INTO `admin_log` VALUES ('1502', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:24:34');
+INSERT INTO `admin_log` VALUES ('1503', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 17:24:35');
+INSERT INTO `admin_log` VALUES ('1504', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:24:46');
+INSERT INTO `admin_log` VALUES ('1505', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:24:47');
+INSERT INTO `admin_log` VALUES ('1506', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:25:09');
+INSERT INTO `admin_log` VALUES ('1507', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:25:10');
+INSERT INTO `admin_log` VALUES ('1508', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:25:11');
+INSERT INTO `admin_log` VALUES ('1509', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:25:11');
+INSERT INTO `admin_log` VALUES ('1510', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:27:42');
+INSERT INTO `admin_log` VALUES ('1511', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:27:44');
+INSERT INTO `admin_log` VALUES ('1512', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:27:48');
+INSERT INTO `admin_log` VALUES ('1513', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:27:49');
+INSERT INTO `admin_log` VALUES ('1514', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:27:56');
+INSERT INTO `admin_log` VALUES ('1515', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:27:57');
+INSERT INTO `admin_log` VALUES ('1516', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:30:57');
+INSERT INTO `admin_log` VALUES ('1517', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:30:59');
+INSERT INTO `admin_log` VALUES ('1518', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:31:04');
+INSERT INTO `admin_log` VALUES ('1519', 'admin-role', 'view', 'admin-role/view', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:31:08');
+INSERT INTO `admin_log` VALUES ('1520', 'admin-role', 'view', 'admin-role/view', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:31:11');
+INSERT INTO `admin_log` VALUES ('1521', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:43:28');
+INSERT INTO `admin_log` VALUES ('1522', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:43:30');
+INSERT INTO `admin_log` VALUES ('1523', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:43:54');
+INSERT INTO `admin_log` VALUES ('1524', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:43:55');
+INSERT INTO `admin_log` VALUES ('1525', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:44:17');
+INSERT INTO `admin_log` VALUES ('1526', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:44:18');
+INSERT INTO `admin_log` VALUES ('1527', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:46:12');
+INSERT INTO `admin_log` VALUES ('1528', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:46:13');
+INSERT INTO `admin_log` VALUES ('1529', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 17:46:15');
+INSERT INTO `admin_log` VALUES ('1530', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 17:46:29');
+INSERT INTO `admin_log` VALUES ('1531', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:50:42');
+INSERT INTO `admin_log` VALUES ('1532', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:50:43');
+INSERT INTO `admin_log` VALUES ('1533', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:50:53');
+INSERT INTO `admin_log` VALUES ('1534', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:50:54');
+INSERT INTO `admin_log` VALUES ('1535', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:51:18');
+INSERT INTO `admin_log` VALUES ('1536', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:51:20');
+INSERT INTO `admin_log` VALUES ('1537', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:51:44');
+INSERT INTO `admin_log` VALUES ('1538', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:51:46');
+INSERT INTO `admin_log` VALUES ('1539', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:52:40');
+INSERT INTO `admin_log` VALUES ('1540', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:52:42');
+INSERT INTO `admin_log` VALUES ('1541', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:55:10');
+INSERT INTO `admin_log` VALUES ('1542', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:55:11');
+INSERT INTO `admin_log` VALUES ('1543', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:55:25');
+INSERT INTO `admin_log` VALUES ('1544', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:55:27');
+INSERT INTO `admin_log` VALUES ('1545', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:55:50');
+INSERT INTO `admin_log` VALUES ('1546', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:55:52');
+INSERT INTO `admin_log` VALUES ('1547', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:56:10');
+INSERT INTO `admin_log` VALUES ('1548', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:56:11');
+INSERT INTO `admin_log` VALUES ('1549', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:57:56');
+INSERT INTO `admin_log` VALUES ('1550', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:57:58');
+INSERT INTO `admin_log` VALUES ('1551', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 17:58:24');
+INSERT INTO `admin_log` VALUES ('1552', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 17:58:26');
+INSERT INTO `admin_log` VALUES ('1553', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:01:38');
+INSERT INTO `admin_log` VALUES ('1554', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:01:40');
+INSERT INTO `admin_log` VALUES ('1555', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:02:23');
+INSERT INTO `admin_log` VALUES ('1556', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:02:25');
+INSERT INTO `admin_log` VALUES ('1557', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 18:02:49');
+INSERT INTO `admin_log` VALUES ('1558', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 18:03:55');
+INSERT INTO `admin_log` VALUES ('1559', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:03:58');
+INSERT INTO `admin_log` VALUES ('1560', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:04:00');
+INSERT INTO `admin_log` VALUES ('1561', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:05:52');
+INSERT INTO `admin_log` VALUES ('1562', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:05:53');
+INSERT INTO `admin_log` VALUES ('1563', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:06:05');
+INSERT INTO `admin_log` VALUES ('1564', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:06:06');
+INSERT INTO `admin_log` VALUES ('1565', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:06:07');
+INSERT INTO `admin_log` VALUES ('1566', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:06:39');
+INSERT INTO `admin_log` VALUES ('1567', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:06:42');
+INSERT INTO `admin_log` VALUES ('1568', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:06:43');
+INSERT INTO `admin_log` VALUES ('1569', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:06:46');
+INSERT INTO `admin_log` VALUES ('1570', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:06:49');
+INSERT INTO `admin_log` VALUES ('1571', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:06:50');
+INSERT INTO `admin_log` VALUES ('1572', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:06:51');
+INSERT INTO `admin_log` VALUES ('1573', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 18:07:05');
+INSERT INTO `admin_log` VALUES ('1574', 'admin-user', 'table', 'admin-user/table', '菜单用户权限', '用户管理', '用户操作', '无法获取ip', 'test', '2018-05-17 18:07:05');
+INSERT INTO `admin_log` VALUES ('1575', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:07:06');
+INSERT INTO `admin_log` VALUES ('1576', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:07:07');
+INSERT INTO `admin_log` VALUES ('1577', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 18:27:23');
+INSERT INTO `admin_log` VALUES ('1578', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'test', '2018-05-17 18:27:28');
+INSERT INTO `admin_log` VALUES ('1579', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 18:27:34');
+INSERT INTO `admin_log` VALUES ('1580', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 18:27:39');
+INSERT INTO `admin_log` VALUES ('1581', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 18:27:50');
+INSERT INTO `admin_log` VALUES ('1582', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:28:45');
+INSERT INTO `admin_log` VALUES ('1583', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:28:46');
+INSERT INTO `admin_log` VALUES ('1584', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:28:48');
+INSERT INTO `admin_log` VALUES ('1585', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'test', '2018-05-17 18:35:09');
+INSERT INTO `admin_log` VALUES ('1586', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'test', '2018-05-17 18:35:14');
+INSERT INTO `admin_log` VALUES ('1587', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'test', '2018-05-17 18:35:18');
+INSERT INTO `admin_log` VALUES ('1588', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:43:43');
+INSERT INTO `admin_log` VALUES ('1589', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:43:44');
+INSERT INTO `admin_log` VALUES ('1590', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:43:45');
+INSERT INTO `admin_log` VALUES ('1591', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:44:05');
+INSERT INTO `admin_log` VALUES ('1592', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:50:35');
+INSERT INTO `admin_log` VALUES ('1593', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-17 18:50:39');
+INSERT INTO `admin_log` VALUES ('1594', 'admin-role', 'table', 'admin-role/table', '菜单用户权限', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-17 18:50:40');
+INSERT INTO `admin_log` VALUES ('1595', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', '无法获取ip', 'test', '2018-05-17 18:50:41');
 
 -- ----------------------------
--- Table structure for admin_menu
+-- Table structure for `admin_menu`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_menu`;
 CREATE TABLE `admin_menu` (
@@ -1507,7 +1673,7 @@ INSERT INTO `admin_menu` VALUES ('8', 'web_message_list', '留言列表', '7', '
 INSERT INTO `admin_menu` VALUES ('9', 'web_nav_list', '导航列表', '8', '导航列表', '前台导航列表', '1', '导航列表', 'web-nav/index', 'index', 'backend\\controllers\\WebNavController', 'n', 'admin', '2018-05-14 03:48:36', 'admin', '2018-05-14 13:11:04');
 
 -- ----------------------------
--- Table structure for admin_message
+-- Table structure for `admin_message`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_message`;
 CREATE TABLE `admin_message` (
@@ -1527,7 +1693,7 @@ CREATE TABLE `admin_message` (
 INSERT INTO `admin_message` VALUES ('1', '测试文本', '1', 'admin', '2014-11-21 18:47:20', 'admin', '2014-11-21 18:47:27');
 
 -- ----------------------------
--- Table structure for admin_module
+-- Table structure for `admin_module`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_module`;
 CREATE TABLE `admin_module` (
@@ -1555,7 +1721,7 @@ INSERT INTO `admin_module` VALUES ('7', 'web_message', '留言管理', 'n', '客
 INSERT INTO `admin_module` VALUES ('8', 'web_nav', '服务管理', 'n', '前台导航服务管理', null, '4', 'admin', '2018-05-14 03:47:37', 'admin', '2018-05-14 04:50:19', 'fa-tasks');
 
 -- ----------------------------
--- Table structure for admin_right
+-- Table structure for `admin_right`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_right`;
 CREATE TABLE `admin_right` (
@@ -1579,10 +1745,10 @@ CREATE TABLE `admin_right` (
 -- ----------------------------
 -- Records of admin_right
 -- ----------------------------
-INSERT INTO `admin_right` VALUES ('4', '2', '角色操作', '角色操作', '角色操作', '1', 'n', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
+INSERT INTO `admin_right` VALUES ('4', '2', '角色操作', '角色操作', '角色操作', '1', 'n', 'admin', '2016-08-13 17:04:40', 'test', '2018-05-17 17:12:35');
 INSERT INTO `admin_right` VALUES ('5', '2', '分配用户', '分配用户', '分配用户', '2', 'n', 'admin', '2016-08-13 17:05:04', 'test', '2016-08-14 08:22:13');
 INSERT INTO `admin_right` VALUES ('6', '2', '分配权限', '分配权限', '分配权限', '3', 'n', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
-INSERT INTO `admin_right` VALUES ('7', '3', '用户操作', '用户操作', '用户操作', '1', 'n', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
+INSERT INTO `admin_right` VALUES ('7', '3', '用户操作', '用户操作', '用户操作', '1', 'n', 'admin', '2016-08-13 17:05:57', 'test', '2018-05-17 16:48:15');
 INSERT INTO `admin_right` VALUES ('8', '4', '操作', '操作', '操作', '1', 'n', 'test', '2016-08-14 06:54:38', 'admin', '2018-05-17 05:45:11');
 INSERT INTO `admin_right` VALUES ('13', '1', '一级菜单查看', '一级菜单查看', '一级菜单查看', '1', 'n', 'test', '2016-08-16 15:52:45', 'test', '2016-08-16 15:52:45');
 INSERT INTO `admin_right` VALUES ('14', '1', '一级菜单添加', '一级菜单添加', '一级菜单添加', '2', 'n', 'test', '2016-08-16 15:53:10', 'test', '2016-08-16 15:58:30');
@@ -1593,11 +1759,11 @@ INSERT INTO `admin_right` VALUES ('18', '1', '二级菜单删除', '二级菜单
 INSERT INTO `admin_right` VALUES ('19', '1', '路由查看', '路由查看', '路由查看', '7', 'n', 'test', '2016-08-16 15:56:32', 'test', '2016-08-16 15:57:14');
 INSERT INTO `admin_right` VALUES ('20', '1', '路由添加', '路由添加', '路由添加', '8', 'n', 'test', '2016-08-16 15:57:46', 'test', '2016-08-16 15:57:46');
 INSERT INTO `admin_right` VALUES ('21', '1', '路由删除', '路由删除', '路由删除', '9', 'n', 'test', '2016-08-16 15:58:05', 'test', '2016-08-16 15:58:05');
-INSERT INTO `admin_right` VALUES ('26', '8', '留言列表', '留言列表', '留言列表URL', '1', 'n', 'test', '2018-05-13 10:14:15', 'admin', '2018-05-15 09:54:37');
+INSERT INTO `admin_right` VALUES ('26', '8', '留言列表', '留言列表', '留言列表URL', '1', 'n', 'test', '2018-05-13 10:14:15', 'test', '2018-05-17 16:21:57');
 INSERT INTO `admin_right` VALUES ('27', '9', '导航列表路由', '导航列表路由', '导航列表路由', '1', 'n', 'admin', '2018-05-14 03:50:10', 'admin', '2018-05-17 13:27:25');
 
 -- ----------------------------
--- Table structure for admin_right_url
+-- Table structure for `admin_right_url`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_right_url`;
 CREATE TABLE `admin_right_url` (
@@ -1614,18 +1780,11 @@ CREATE TABLE `admin_right_url` (
   KEY `FK_admin_right_url` (`right_id`),
   KEY `index_right_id` (`right_id`),
   CONSTRAINT `FK_admin_right_url` FOREIGN KEY (`right_id`) REFERENCES `admin_right` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=190 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_right_url
 -- ----------------------------
-INSERT INTO `admin_right_url` VALUES ('16', '4', 'admin-role/index', 'admin-role', 'index', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
-INSERT INTO `admin_right_url` VALUES ('17', '4', 'admin-role/view', 'admin-role', 'view', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
-INSERT INTO `admin_right_url` VALUES ('18', '4', 'admin-role/create', 'admin-role', 'create', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
-INSERT INTO `admin_right_url` VALUES ('19', '4', 'admin-role/update', 'admin-role', 'update', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
-INSERT INTO `admin_right_url` VALUES ('20', '4', 'admin-role/delete', 'admin-role', 'delete', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
-INSERT INTO `admin_right_url` VALUES ('21', '4', 'admin-role/get-all-rights', 'admin-role', 'get-all-rights', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
-INSERT INTO `admin_right_url` VALUES ('22', '4', 'admin-role/save-rights', 'admin-role', 'save-rights', 'admin', '2016-08-13 17:04:40', 'admin', '2016-08-13 17:04:40');
 INSERT INTO `admin_right_url` VALUES ('30', '6', 'admin-role/index', 'admin-role', 'index', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
 INSERT INTO `admin_right_url` VALUES ('31', '6', 'admin-role/view', 'admin-role', 'view', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
 INSERT INTO `admin_right_url` VALUES ('32', '6', 'admin-role/create', 'admin-role', 'create', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
@@ -1633,11 +1792,6 @@ INSERT INTO `admin_right_url` VALUES ('33', '6', 'admin-role/update', 'admin-rol
 INSERT INTO `admin_right_url` VALUES ('34', '6', 'admin-role/delete', 'admin-role', 'delete', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
 INSERT INTO `admin_right_url` VALUES ('35', '6', 'admin-role/get-all-rights', 'admin-role', 'get-all-rights', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
 INSERT INTO `admin_right_url` VALUES ('36', '6', 'admin-role/save-rights', 'admin-role', 'save-rights', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
-INSERT INTO `admin_right_url` VALUES ('37', '7', 'admin-user/index', 'admin-user', 'index', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
-INSERT INTO `admin_right_url` VALUES ('38', '7', 'admin-user/view', 'admin-user', 'view', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
-INSERT INTO `admin_right_url` VALUES ('39', '7', 'admin-user/create', 'admin-user', 'create', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
-INSERT INTO `admin_right_url` VALUES ('40', '7', 'admin-user/update', 'admin-user', 'update', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
-INSERT INTO `admin_right_url` VALUES ('41', '7', 'admin-user/delete', 'admin-user', 'delete', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
 INSERT INTO `admin_right_url` VALUES ('81', '5', 'admin-user-role/index', 'admin-user-role', 'index', 'test', '2016-08-14 08:22:13', 'test', '2016-08-14 08:22:13');
 INSERT INTO `admin_right_url` VALUES ('82', '5', 'admin-user-role/view', 'admin-user-role', 'view', 'test', '2016-08-14 08:22:13', 'test', '2016-08-14 08:22:13');
 INSERT INTO `admin_right_url` VALUES ('83', '5', 'admin-user-role/create', 'admin-user-role', 'create', 'test', '2016-08-14 08:22:13', 'test', '2016-08-14 08:22:13');
@@ -1659,9 +1813,6 @@ INSERT INTO `admin_right_url` VALUES ('131', '14', 'admin-module/create', 'admin
 INSERT INTO `admin_right_url` VALUES ('132', '14', 'admin-module/update', 'admin-module', 'update', 'test', '2016-08-16 15:58:30', 'test', '2016-08-16 15:58:30');
 INSERT INTO `admin_right_url` VALUES ('133', '17', 'admin-menu/create', 'admin-menu', 'create', 'test', '2016-08-16 15:58:51', 'test', '2016-08-16 15:58:51');
 INSERT INTO `admin_right_url` VALUES ('134', '17', 'admin-menu/update', 'admin-menu', 'update', 'test', '2016-08-16 15:58:51', 'test', '2016-08-16 15:58:51');
-INSERT INTO `admin_right_url` VALUES ('152', '26', 'web-message/index', 'web-message', 'index', 'admin', '2018-05-15 09:54:37', 'admin', '2018-05-15 09:54:37');
-INSERT INTO `admin_right_url` VALUES ('153', '26', 'web-message/view', 'web-message', 'view', 'admin', '2018-05-15 09:54:37', 'admin', '2018-05-15 09:54:37');
-INSERT INTO `admin_right_url` VALUES ('154', '26', 'web-message/delete', 'web-message', 'delete', 'admin', '2018-05-15 09:54:37', 'admin', '2018-05-15 09:54:37');
 INSERT INTO `admin_right_url` VALUES ('160', '8', 'admin-log/index', 'admin-log', 'index', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
 INSERT INTO `admin_right_url` VALUES ('161', '8', 'admin-log/table', 'admin-log', 'table', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
 INSERT INTO `admin_right_url` VALUES ('162', '8', 'admin-log/view', 'admin-log', 'view', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
@@ -1674,9 +1825,27 @@ INSERT INTO `admin_right_url` VALUES ('168', '27', 'web-nav/view', 'web-nav', 'v
 INSERT INTO `admin_right_url` VALUES ('169', '27', 'web-nav/create', 'web-nav', 'create', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
 INSERT INTO `admin_right_url` VALUES ('170', '27', 'web-nav/update', 'web-nav', 'update', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
 INSERT INTO `admin_right_url` VALUES ('171', '27', 'web-nav/delete', 'web-nav', 'delete', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
+INSERT INTO `admin_right_url` VALUES ('172', '26', 'web-message/index', 'web-message', 'index', 'test', '2018-05-17 16:21:58', 'test', '2018-05-17 16:21:58');
+INSERT INTO `admin_right_url` VALUES ('173', '26', 'web-message/table', 'web-message', 'table', 'test', '2018-05-17 16:21:58', 'test', '2018-05-17 16:21:58');
+INSERT INTO `admin_right_url` VALUES ('174', '26', 'web-message/view', 'web-message', 'view', 'test', '2018-05-17 16:21:58', 'test', '2018-05-17 16:21:58');
+INSERT INTO `admin_right_url` VALUES ('175', '26', 'web-message/delete', 'web-message', 'delete', 'test', '2018-05-17 16:21:58', 'test', '2018-05-17 16:21:58');
+INSERT INTO `admin_right_url` VALUES ('176', '7', 'admin-user/index', 'admin-user', 'index', 'test', '2018-05-17 16:48:15', 'test', '2018-05-17 16:48:15');
+INSERT INTO `admin_right_url` VALUES ('177', '7', 'admin-user/table', 'admin-user', 'table', 'test', '2018-05-17 16:48:15', 'test', '2018-05-17 16:48:15');
+INSERT INTO `admin_right_url` VALUES ('178', '7', 'admin-user/view', 'admin-user', 'view', 'test', '2018-05-17 16:48:15', 'test', '2018-05-17 16:48:15');
+INSERT INTO `admin_right_url` VALUES ('179', '7', 'admin-user/create', 'admin-user', 'create', 'test', '2018-05-17 16:48:15', 'test', '2018-05-17 16:48:15');
+INSERT INTO `admin_right_url` VALUES ('180', '7', 'admin-user/update', 'admin-user', 'update', 'test', '2018-05-17 16:48:15', 'test', '2018-05-17 16:48:15');
+INSERT INTO `admin_right_url` VALUES ('181', '7', 'admin-user/delete', 'admin-user', 'delete', 'test', '2018-05-17 16:48:15', 'test', '2018-05-17 16:48:15');
+INSERT INTO `admin_right_url` VALUES ('182', '4', 'admin-role/index', 'admin-role', 'index', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_right_url` VALUES ('183', '4', 'admin-role/table', 'admin-role', 'table', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_right_url` VALUES ('184', '4', 'admin-role/view', 'admin-role', 'view', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_right_url` VALUES ('185', '4', 'admin-role/create', 'admin-role', 'create', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_right_url` VALUES ('186', '4', 'admin-role/update', 'admin-role', 'update', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_right_url` VALUES ('187', '4', 'admin-role/delete', 'admin-role', 'delete', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_right_url` VALUES ('188', '4', 'admin-role/get-all-rights', 'admin-role', 'get-all-rights', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
+INSERT INTO `admin_right_url` VALUES ('189', '4', 'admin-role/save-rights', 'admin-role', 'save-rights', 'test', '2018-05-17 17:12:35', 'test', '2018-05-17 17:12:35');
 
 -- ----------------------------
--- Table structure for admin_role
+-- Table structure for `admin_role`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role`;
 CREATE TABLE `admin_role` (
@@ -1699,7 +1868,7 @@ INSERT INTO `admin_role` VALUES ('1', 'superadmin', '超级管理员', '拥有�
 INSERT INTO `admin_role` VALUES ('2', 'testuser', '测试人员', '测试人员', 'test', '2016-08-12 15:33:45', 'test', '2016-08-12 15:33:45');
 
 -- ----------------------------
--- Table structure for admin_role_right
+-- Table structure for `admin_role_right`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_role_right`;
 CREATE TABLE `admin_role_right` (
@@ -1754,7 +1923,7 @@ INSERT INTO `admin_role_right` VALUES ('368', '2', '26', null, 'admin', '2018-05
 INSERT INTO `admin_role_right` VALUES ('369', '2', '27', null, 'admin', '2018-05-14 03:50:35', 'admin', '2018-05-14 03:50:35');
 
 -- ----------------------------
--- Table structure for admin_user
+-- Table structure for `admin_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_user`;
 CREATE TABLE `admin_user` (
@@ -1771,7 +1940,7 @@ CREATE TABLE `admin_user` (
   `update_user` varchar(101) NOT NULL COMMENT '更新人',
   `update_date` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_user
@@ -1781,7 +1950,7 @@ INSERT INTO `admin_user` VALUES ('158', 'test', '$2y$13$IECQQTzV687FOk9D1y1x8uWv
 INSERT INTO `admin_user` VALUES ('159', 'test001', '$2y$13$G6v7vHPff10aEuiG909C4eVtESvDacEeeYg9Y9WzPS93QV.1nGPk2', null, 'Unknown', 'n', '', '10', 'test', '2018-05-13 06:06:27', 'test', '2018-05-13 06:06:27');
 
 -- ----------------------------
--- Table structure for admin_user_role
+-- Table structure for `admin_user_role`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_user_role`;
 CREATE TABLE `admin_user_role` (
@@ -1807,7 +1976,7 @@ INSERT INTO `admin_user_role` VALUES ('2', '158', '2', 'test', '2016-08-13 16:34
 INSERT INTO `admin_user_role` VALUES ('3', '159', '2', 'test', '2018-05-13 06:10:19', 'test', '2018-05-13 06:10:19');
 
 -- ----------------------------
--- Table structure for web_content
+-- Table structure for `web_content`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_content`;
 CREATE TABLE `web_content` (
@@ -1846,7 +2015,7 @@ INSERT INTO `web_content` VALUES ('19', null, 'admin', '2018-05-14 20:42:09', nu
 INSERT INTO `web_content` VALUES ('37', null, 'admin', '2018-05-17 13:37:47', null, null);
 
 -- ----------------------------
--- Table structure for web_message
+-- Table structure for `web_message`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_message`;
 CREATE TABLE `web_message` (
@@ -1859,7 +2028,7 @@ CREATE TABLE `web_message` (
   `create_date` datetime(6) NOT NULL,
   `is_look` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`message_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of web_message
@@ -1867,7 +2036,7 @@ CREATE TABLE `web_message` (
 INSERT INTO `web_message` VALUES ('1', '13123213', '5555', '345345@是我说的', '方式发顺丰', '34543554565646464', '2018-05-15 16:04:07.000000', '0');
 
 -- ----------------------------
--- Table structure for web_nav
+-- Table structure for `web_nav`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_nav`;
 CREATE TABLE `web_nav` (
@@ -1906,7 +2075,7 @@ INSERT INTO `web_nav` VALUES ('19', '2', '耐磨地坪密封固化处理', '', '
 INSERT INTO `web_nav` VALUES ('37', '1', '234234324', 'web-content/contact', 'frontend\\controllers\\WebContentController');
 
 -- ----------------------------
--- Table structure for web_nav_type
+-- Table structure for `web_nav_type`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_nav_type`;
 CREATE TABLE `web_nav_type` (
@@ -1923,7 +2092,7 @@ INSERT INTO `web_nav_type` VALUES ('1', '首页导航条');
 INSERT INTO `web_nav_type` VALUES ('2', '服务导航条');
 
 -- ----------------------------
--- Table structure for web_pic
+-- Table structure for `web_pic`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_pic`;
 CREATE TABLE `web_pic` (
@@ -1942,7 +2111,7 @@ INSERT INTO `web_pic` VALUES ('1', '1', '23423424');
 INSERT INTO `web_pic` VALUES ('2', '1', '3434534');
 
 -- ----------------------------
--- Table structure for web_pic_type
+-- Table structure for `web_pic_type`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_pic_type`;
 CREATE TABLE `web_pic_type` (
@@ -1959,7 +2128,7 @@ INSERT INTO `web_pic_type` VALUES ('2', '内容轮播图');
 INSERT INTO `web_pic_type` VALUES ('4', 'flash图');
 
 -- ----------------------------
--- Table structure for web_user
+-- Table structure for `web_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `web_user`;
 CREATE TABLE `web_user` (

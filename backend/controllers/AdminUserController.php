@@ -20,43 +20,8 @@ class AdminUserController extends BaseController
      */
     public function actionIndex()
     {
-        $query = AdminUser::find();
-         $querys = Yii::$app->request->get('query');
-        if(count($querys) > 0){
-            $condition = "";
-            $parame = array();
-            foreach($querys as $key=>$value){
-                $value = trim($value);
-                if(empty($value) == false){
-                    $parame[":{$key}"]=$value;
-                    if(empty($condition) == true){
-                        $condition = " {$key}=:{$key} ";
-                    }
-                    else{
-                        $condition = $condition . " AND {$key}=:{$key} ";
-                    }
-                }
-            }
-            if(count($parame) > 0){
-                $query = $query->where($condition, $parame);
-            }
-        }
-        //$models = $query->orderBy('display_order')
-        $pagination = new Pagination([
-            'totalCount' =>$query->count(), 
-            'pageSize' => '10', 
-            'pageParam'=>'page', 
-            'pageSizeParam'=>'per-page']
-        );
-        $models = $query
-        ->offset($pagination->offset)
-        ->limit($pagination->limit)
-        ->all();
-        return $this->render('index', [
-            'models'=>$models,
-            'pages'=>$pagination,
-            'query'=>$querys,
-        ]);
+       
+        return $this->render('index');
     }
 
     /**
@@ -64,6 +29,14 @@ class AdminUserController extends BaseController
      * @param string $id
      * @return mixed
      */
+    public function actionTable()
+    {
+        $query = Yii::$app->db->createCommand('
+         SELECT *
+           FROM admin_user')->queryAll();
+        return json_encode($query);
+    }
+
     public function actionView($id)
     {
         //$id = Yii::$app->request->post('id');

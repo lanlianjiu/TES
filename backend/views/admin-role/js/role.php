@@ -1,6 +1,8 @@
 
 <?php
 use yii\helpers\Url;
+define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
+ include ROOT_PATH.'/web/js/iov-min-public.php';
 ?>
 
 <script>
@@ -180,22 +182,23 @@ function editAction(id){
 	initModel(id, 'edit');
 }
 
+//获取选中id
+function getCheckId(data) {
+
+	var arrayId = [];
+	for (var i in data) {
+		arrayId.push(data[i].web_nav_id);
+	}
+	return arrayId;
+};
+
 function deleteAction(id){
 	var ids = [];
 	if(!!id == true){
 		ids[0] = id;
 	}
 	else{
-		var checkboxs = $('#data_table :checked');
-	    if(checkboxs.size() > 0){
-	        var c = 0;
-	        for(i = 0; i < checkboxs.size(); i++){
-	            var id = checkboxs.eq(i).val();
-	            if(id != ""){
-	            	ids[c++] = id;
-	            }
-	        }
-	    }
+		ids = getCheckId($('#adminRole-table').bootstrapTable('getSelections'));
 	}
 	if(ids.length > 0){
 		admin_tool.confirm('请确认是否删除', function(){
@@ -213,7 +216,7 @@ function deleteAction(id){
 						   $('#rowid_' + ids[i]).remove();
 					   }
 					   admin_tool.alert('msg_info', '删除成功', 'success');
-					   window.location.reload();
+					   $('#adminRole-table').bootstrapTable('refresh');
 				   }
 				});
 		});
@@ -222,24 +225,6 @@ function deleteAction(id){
 		admin_tool.alert('msg_info', '请先选择要删除的数据', 'warning');
 	}
     
-}
-
-function getSelectedIdValues(formId)
-{
-	var value="";
-	$( formId + " :checked").each(function(i)
-	{
-		if(!this.checked)
-		{
-			return true;
-		}
-		value += this.value;
-		if(i != $("input[name='id']").size()-1)
-		{
-			value += ",";
-		}
-	 });
-	return value;
 }
 
 
@@ -261,7 +246,7 @@ $('#delete_btn').click(function (e) {
 $('#admin-role-form').bind('submit', function(e) {
 	e.preventDefault();
 	var id = $("#id").val();
-	var action = id == "" ? "<?=Url::toRoute('admin-role/create')?>" : "<?=Url::toRoute('admin-role/update')?>";
+	var action = (id == "") ? "<?=Url::toRoute('admin-role/create')?>" : "<?=Url::toRoute('admin-role/update')?>";
     $(this).ajaxSubmit({
     	type: "post",
     	dataType:"json",
@@ -272,7 +257,7 @@ $('#admin-role-form').bind('submit', function(e) {
         	if(value.errno == 0){
         		$('#edit_dialog').modal('hide');
         		admin_tool.alert('msg_info', '添加成功', 'success');
-        		window.location.reload();
+        		 $('#adminRole-table').bootstrapTable('refresh');
         	}
         	else{
             	var json = value.data;
@@ -285,6 +270,17 @@ $('#admin-role-form').bind('submit', function(e) {
     	}
     });
 });
+
+function  operateFormatter(value, row, index) {
+	  var h = "";
+	  var action = "<?=Url::toRoute('admin-user-role/index')?>"+'&roleId='+row.id;
+	  h +='<a id="view_btn" class="btn btn-primary btn-xs" href="'+action+'">分配用户</a>';
+      h +='<a id="view_btn" onclick="rightAction('+row.id+')" class="btn btn-primary btn-xs" href="#">分配权限</a>';
+      h +='<a id="view_btn" onclick="viewAction(' + row.id + ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	  h +='<a id="edit_btn" onclick="editAction(' + row.id + ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+      h +='<a id="delete_btn" onclick="deleteAction(' + row.id + ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+	 return h;
+}
 
  
 </script>

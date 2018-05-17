@@ -61,6 +61,12 @@ class AdminUserRoleController extends BaseController
         ]);
     }
 
+    public function actionTable($roleId)
+    {
+        $query = AdminUserRole::find()->with('user')->with('role')->andWhere(['role_id'=>$roleId]);
+        return json_encode($query);
+    }
+
     /**
      * Displays a single AdminUserRole model.
      * @param integer $id

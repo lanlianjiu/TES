@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Url;
+define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
+include ROOT_PATH.'/web/js/iov-min-public.php';
 ?>
 
 <script>
@@ -97,6 +99,16 @@ use yii\helpers\Url;
             }
         });
     }
+
+    //获取选中id
+    function getCheckId(data) {
+
+        var arrayId = [];
+        for (var i in data) {
+            arrayId.push(data[i].web_nav_id);
+        }
+        return arrayId;
+    };
         
     function deleteAction(id){
         var ids = [];
@@ -104,16 +116,7 @@ use yii\helpers\Url;
             ids[0] = id;
         }
         else{
-            var checkboxs = $('#data_table tbody :checked');
-            if(checkboxs.size() > 0){
-                var c = 0;
-                for(i = 0; i < checkboxs.size(); i++){
-                    var id = checkboxs.eq(i).val();
-                    if(id != ""){
-                        ids[c++] = id;
-                    }
-                }
-            }
+           ids = getCheckId($('#webmessage-table').bootstrapTable('getSelections'));
         }
         if(ids.length > 0){
             admin_tool.confirm('请确认是否删除', function(){
@@ -131,7 +134,7 @@ use yii\helpers\Url;
                             $('#rowid_' + ids[i]).remove();
                         }
                         admin_tool.alert('msg_info', '删除成功', 'success');
-                        window.location.reload();
+                         $('#webmessage-table').bootstrapTable('refresh');
                     }
                     });
             });
@@ -142,26 +145,17 @@ use yii\helpers\Url;
         
     }
 
-    function getSelectedIdValues(formId){
-        var value="";
-        $( formId + " :checked").each(function(i)
-        {
-            if(!this.checked)
-            {
-                return true;
-            }
-            value += this.value;
-            if(i != $("input[name='id']").size()-1)
-            {
-                value += ",";
-            }
-        });
-        return value;
-    }
-
     $('#delete_btn').click(function (e) {
         e.preventDefault();
         deleteAction('');
     });
+
+    function  operateFormatter(value, row, index) {
+	 var h = "";
+	 h +='<a id="view_btn" onclick="viewAction('+row.message_id+')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+      //h +='<a id="edit_btn" onclick="editAction('+row.message_id+')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
+       h +='<a id="delete_btn" onclick="deleteAction('+row.message_id+')" class="btn btn-danger btn-xs" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i></a>';
+	 return h;
+    }
 
 </script>

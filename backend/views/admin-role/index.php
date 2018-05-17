@@ -19,102 +19,47 @@ $modelLabel = new \backend\models\AdminRole();
          <!-- row start search-->
           	<div class="row">
                 <div class="col-sm-12">
-                    <?php ActiveForm::begin(['id' => 'admin-role-search-form', 'method'=>'get', 'options' => ['class' => 'form-inline'], 'action'=>Url::toRoute('admin-role/index')]); ?>     
-                    
-                    <div class="form-group" style="margin: 5px;">
-                        <label><?=$modelLabel->getAttributeLabel('id')?>:</label>
-                        <input type="text" class="form-control" id="query[id]" name="query[id]"  value="<?=isset($query["id"]) ? $query["id"] : "" ?>">
-                    </div>
+                    <form bootstrap-table-form="adminRole-table" class="form-inline">
+                        <div class="form-group" style="margin: 5px;">
+                            <label>ID</label>
+                            <input type="text" class="form-control"  name="id"  />
+                        </div>
 
-                    <div class="form-group" style="margin: 5px;">
-                        <label><?=$modelLabel->getAttributeLabel('name')?>:</label>
-                        <input type="text" class="form-control" id="query[name]" name="query[name]"  value="<?=isset($query["name"]) ? $query["name"] : "" ?>">
-                    </div>
-                <div class="form-group">
-                    <a onclick="searchAction()" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
-                </div>
-                <?php ActiveForm::end(); ?> 
+                        <div class="form-group" style="margin: 5px;">
+                            <label>角色名称</label>
+                            <input type="text" class="form-control"  name="name"  />
+                        </div>
+                        <div class="form-group">
+                            <a bootstrap-table-search="adminRole-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
+                        </div>
+                    </form>
                 </div>
           	</div>
           	<!-- row end search -->
         </div>
         <div class="box" data-adaptionHeight="40">
             <div class="box-body">
-                <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                    <div class="input-group input-group-sm">
-                     <label>数据列表&nbsp;</label>
-                        <button id="create_btn" type="button" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
-                        <button id="delete_btn" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
-                    </div>
-                <div class="row">
-                    <div class="col-sm-12 no-padding" data-table-th-scroll="true" data-adaptionHeight="100">
-                        <table id="data_table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="data_table_info">
-                            <thead>
-                            <tr role="row">
-                            <?php 
-                            echo '<th><input id="data_table_check" type="checkbox"></th>';
-                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('id').'</th>';
-                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('code').'</th>';
-                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('name').'</th>';
-                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('update_user').'</th>';
-                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('update_date').'</th>';
-                            ?>
-                            <th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            
-                            <?php
-                            foreach ($models as $model) {
-                                echo '<tr id="rowid_' . $model->id . '">';
-                                echo '  <td><label><input type="checkbox" value="' . $model->id . '"></label></td>';
-                                echo '  <td>' . $model->id . '</td>';
-                                echo '  <td>' . $model->code . '</td>';
-                                echo '  <td>' . $model->name . '</td>';
-                                //echo '  <td>' . $model->des . '</td>';
-                                //echo '  <td>' . $model->create_user . '</td>';
-                                //echo '  <td>' . $model->create_date . '</td>';
-                                echo '  <td>' . $model->update_user . '</td>';
-                                echo '  <td>' . $model->update_date . '</td>';
-                                echo '  <td class="center">';
-                                echo '      <a id="view_btn" class="btn btn-primary btn-xs" href="'.Url::toRoute(['admin-user-role/index', 'roleId'=>$model->id]).'">分配用户</a>';
-                                echo '      <a id="view_btn" onclick="rightAction('.$model->id.')" class="btn btn-primary btn-xs" href="#">分配权限</a>';
-                                echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-                                echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-                                echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
-                                echo '  </td>';
-                                echo '</tr>';
-                            }
-                            ?>
-                            </tbody>
-                            <!-- <tfoot></tfoot> -->
-                        </table>
-                    </div>
+                <div class="input-group input-group-sm action-toolbar">
+                    <label>用户管理&nbsp;</label>
+                    <button id="create_btn" type="button" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
+                    <button id="delete_btn" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
                 </div>
-                <!-- row end -->
-                <!-- row start -->
-                <div class="row">
-                    <div class="col-sm-5">
-                        <div class="dataTables_info" id="data_table_info" role="status" aria-live="polite">
-                            <div class="infos">
-                            从 <?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		
-                            到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            		 共 <?= $pages->totalCount?> 条记录</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="dataTables_paginate paging_simple_numbers" id="data_table_paginate">
-                        <?= LinkPager::widget([
-                            'pagination' => $pages,
-                            'nextPageLabel' => '下一页',
-                            'prevPageLabel' => '上一页',
-                            'firstPageLabel' => '首页',
-                            'lastPageLabel' => '尾页',
-                        ]); ?>	
-                        
-                        </div>
-                    </div>
-                </div>
-                <!-- row end -->
+                <table id="adminRole-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="60" data-show-export="true"
+                    data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
+                    data-id-field="orderId" data-unique-id="orderId" data-custom-url="index.php?r=admin-role/table" class="table table-border table-bordered table-bg table-hover table-sort table-responsive th-table">
+                    <thead>
+                        <tr>
+                            <th data-checkbox="true" width="80"></th>
+                            <th data-sortable="true" data-field="id" width="80">ID</th>
+                            <th data-sortable="true" data-field="code" width="80">角色编号</th>
+                            <th data-sortable="true" data-field="name" width="80">角色名称</th>
+                            <th data-sortable="true" data-field="des" width="80">角色描述</th>
+                            <th data-sortable="true" data-field="update_user" width="120">更新人</th>
+                            <th data-sortable="true" data-field="update_date" width="120">更新时间</th>
+                            <th data-formatter="operateFormatter" width="120">操作</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
         <!-- /.box-body -->

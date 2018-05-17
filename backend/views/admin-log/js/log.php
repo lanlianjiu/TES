@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
  define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
-  include ROOT_PATH.'/web/js/iov-min-public.php';
+ include ROOT_PATH.'/web/js/iov-min-public.php';
 ?>
 
 <script>
@@ -110,22 +110,23 @@ function editAction(id){
 	initModel(id, 'edit');
 }
 
+//获取选中id
+function getCheckId(data) {
+
+	var arrayId = [];
+	for (var i in data) {
+		arrayId.push(data[i].web_nav_id);
+	}
+	return arrayId;
+};
+
 function deleteAction(id){
 	var ids = [];
 	if(!!id == true){
 		ids[0] = id;
 	}
 	else{
-		var checkboxs = $('#data_table tbody :checked');
-	    if(checkboxs.size() > 0){
-	        var c = 0;
-	        for(i = 0; i < checkboxs.size(); i++){
-	            var id = checkboxs.eq(i).val();
-	            if(id != ""){
-	            	ids[c++] = id;
-	            }
-	        }
-	    }
+		ids = getCheckId($('#adminLog-table').bootstrapTable('getSelections'));
 	}
 	if(ids.length > 0){
 		admin_tool.confirm('请确认是否删除', function(){
@@ -154,23 +155,6 @@ function deleteAction(id){
     
 }
 
-function getSelectedIdValues(formId)
-{
-	var value="";
-	$( formId + " :checked").each(function(i)
-	{
-		if(!this.checked)
-		{
-			return true;
-		}
-		value += this.value;
-		if(i != $("input[name='id']").size()-1)
-		{
-			value += ",";
-		}
-	 });
-	return value;
-}
 
 $('#edit_dialog_ok').click(function (e) {
     e.preventDefault();
