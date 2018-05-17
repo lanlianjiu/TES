@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Url;
+  define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
+  include ROOT_PATH.'/web/js/iov-min-public.php';
 ?>
 
 <script>
@@ -11,7 +13,7 @@ function viewAction(id){
 		initModel(id, 'view', 'fun');
 }
 
- function initEditSystemModule(data, type){
+function initEditSystemModule(data, type){
 	if(type == 'create'){
 
 		$("#web_nav_id").val('');
@@ -52,42 +54,43 @@ function viewAction(id){
 function initModel(id, type, fun){
 	
 	$.ajax({
-		   type: "GET",
-		   url: "<?=Url::toRoute('web-nav/view')?>",
-		   data: {"id":id},
-		   cache: false,
-		   dataType:"json",
-		   error: function (xmlHttpRequest, textStatus, errorThrown) {
-			    alert("出错了，" + textStatus);
-			},
-		   success: function(data){
-			   console.log(data);
-			   initEditSystemModule(data, type);
-		   }
-		});
+		type: "GET",
+		url: "<?=Url::toRoute('web-nav/view')?>",
+		data: {"id":id},
+		cache: false,
+		dataType:"json",
+		error: function (xmlHttpRequest, textStatus, errorThrown) {
+			alert("出错了，" + textStatus);
+		},
+		success: function(data){
+			console.log(data);
+			initEditSystemModule(data, type);
+		}
+	});
 }
 	
 function editAction(id){
 	initModel(id, 'edit');
 }
 
+//获取选中id
+function getCheckId(data) {
+
+	var arrayId = [];
+	for (var i in data) {
+		arrayId.push(data[i].web_nav_id);
+	}
+	return arrayId;
+};
+
 function deleteAction(id){
 	var ids = [];
 	if(!!id == true){
 		ids[0] = id;
+	}else{
+		ids = getCheckId($('#webnav-table').bootstrapTable('getSelections'));
 	}
-	else{
-		var checkboxs = $('#data_table tbody :checked');
-	    if(checkboxs.size() > 0){
-	        var c = 0;
-	        for(i = 0; i < checkboxs.size(); i++){
-	            var id = checkboxs.eq(i).val();
-	            if(id != ""){
-	            	ids[c++] = id;
-	            }
-	        }
-	    }
-	}
+	
 	if(ids.length > 0){
 		admin_tool.confirm('请确认是否删除', function(){
 		    $.ajax({
@@ -104,7 +107,7 @@ function deleteAction(id){
 						   $('#rowid_' + ids[i]).remove();
 					   }
 					   admin_tool.alert('msg_info', '删除成功', 'success');
-					   window.location.reload();
+					  $('#webnav-table').bootstrapTable('refresh');
 				   }
 				});
 		});
@@ -113,24 +116,6 @@ function deleteAction(id){
 		admin_tool.alert('msg_info', '请先选择要删除的数据', 'warning');
 	}
     
-}
-
-function getSelectedIdValues(formId)
-{
-	var value="";
-	$( formId + " :checked").each(function(i)
-	{
-		if(!this.checked)
-		{
-			return true;
-		}
-		value += this.value;
-		if(i != $("input[name='id']").size()-1)
-		{
-			value += ",";
-		}
-	 });
-	return value;
 }
 
 $('#edit_dialog_ok').click(function (e) {
@@ -162,7 +147,7 @@ $('#admin-module-form').bind('submit', function(e) {
         	if(value.errno == 0){
         		$('#edit_dialog').modal('hide');
         		admin_tool.alert('msg_info', '添加成功', 'success');
-        		window.location.reload();
+        		 $('#webnav-table').bootstrapTable('refresh');
         	}else{
             	var json = value.data;
         		for(var key in json){
@@ -182,12 +167,26 @@ $("#controller_id").change(function(){
     var option = $("<option>").html("请选择");
     $("#actionUrl").append(option);
     var actions = window.controllerData[controller];
-    var nodes = actions.nodes;
-    for(i = 0; i < nodes.length; i++){
-        var action = nodes[i];
-        var option = $("<option>").val(action.a).html(action.text);
-        $("#actionUrl").append(option);
-     }
+	var nodes = actions.nodes;
+	
+	if(nodes !== undefined){
+		for(i = 0; i < nodes.length; i++){
+			var action = nodes[i];
+			var option = $("<option>").val(action.a).html(action.text);
+			$("#actionUrl").append(option);
+     	}
+	}else{
+		$("#actionUrl").append(option);
+	};
+    
 });
+
+function  operateFormatter(value, row, index) {
+	 var h = "";
+	    h +='<a id="view_btn" onclick="viewAction(' + row.web_nav_id + ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	    h +='<a id="edit_btn" onclick="editAction(' +row.web_nav_id +')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+	    h +='<a id="delete_btn" onclick="deleteAction('+row.web_nav_id +')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+	 return h;
+}
  
 </script>

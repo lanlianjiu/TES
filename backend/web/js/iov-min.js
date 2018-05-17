@@ -1,4 +1,35 @@
-/** b-iov-utils start 基本函数**/ +
++ function ($) {
+    var cfg = {
+        //server_: "http://localhost/TES/backend/web/",
+        //server_: "http://192.168.184.128/TES/backend/web/",
+        user: 'TES_USERINFO',
+        auth: 'auth',
+    }
+    $.cfg = cfg;
+    $.ajaxSetup({
+        data: {
+
+        },
+        success: function (data) {},
+        error: function (xhr, status, e) {
+            var pathName = window.top.location.pathname.substring(0, window.top.location.pathname.substr(1).indexOf('/') + 1);
+            var localPath = window.top.location.origin;
+            var rootPath = localPath + localPath;
+
+            if (xhr.status == 401) {
+                if (window.top == window.self) { //不存在父页面
+                    window.location.replace("/login.php");
+                } else {
+                    window.top.location.replace($.cfg.server_ + "/login.php");
+                }
+            } else if (xhr.status == 405) {
+                alert(xhr.responseText)
+            }
+        }
+    })
+}(jQuery);
+/** b-iov-utils start 基本函数**/
++
 (function ($) {
     function md5(str) {
         if (null === str) {
@@ -284,7 +315,7 @@ function ($) {
         $(this).draggable({
             handle: ".modal-header"
         });
-       // $(this).css("overflow-y", "hidden"); // 防止出现滚动条
+        // $(this).css("overflow-y", "hidden"); // 防止出现滚动条
         //模态框垂直居中
         $(this).css('display', 'block'); // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零  
         var modalHeight = ($(window).height() / 2) - ($('.modal-dialog').height() / 2);
@@ -322,29 +353,29 @@ function ($) {
  * adaptionHeight end
  */
 +
-    /**
-     * table-th-scroll 表格表头固定
-     */
-    (function ($) {
-        function initLoad() {
+/**
+ * table-th-scroll 表格表头固定
+ */
+(function ($) {
+    function initLoad() {
+        $('[data-table-th-scroll="true"]').each(function () {
 
-            $('[data-table-th-scroll="true"]').each(function () {
+            $this = this;
+            var tablescrollId = document.querySelector('[data-table-th-scroll="true"]');
 
-                $this = this;
-                var tablescrollId = document.querySelector('[data-table-th-scroll="true"]');
-                function scrollHandle(e) {
+            function scrollHandle(e) {
 
-                    var scrollTop = this.scrollTop;
-                    this.querySelector('thead').style.transform = 'translateY(' + scrollTop + 'px)';
-                };
-                tablescrollId.addEventListener('scroll', scrollHandle);
-            })
-        };
+                var scrollTop = this.scrollTop;
+                this.querySelector('thead').style.transform = 'translateY(' + scrollTop + 'px)';
+            };
+            tablescrollId.addEventListener('scroll', scrollHandle);
+        })
+    };
 
-        $(document).ready(function () {
-            initLoad();
-        });
-    })(jQuery);
+    $(document).ready(function () {
+        initLoad();
+    });
+})(jQuery);
 /**
  * adaptionHeight end
  */

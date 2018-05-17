@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Url;
+ define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
+  include ROOT_PATH.'/web/js/iov-min-public.php';
 ?>
 
 <script>
@@ -30,8 +32,10 @@ function orderby(field, op){
 		initModel(id, 'view', 'fun');
 	}
 
- function initEditSystemModule(data, type){
+function initEditSystemModule(data, type){
+
 	if(type == 'create'){
+
 		$("#id").val('');
 		$("#controller_id").val('');
 		$("#action_id").val('');
@@ -42,9 +46,8 @@ function orderby(field, op){
 		$("#client_ip").val('');
 		$("#create_user").val('');
 		$("#create_date").val('');
-		
-	}
-	else{
+	}else{
+
 		$("#id").val(data.id);
     	$("#controller_id").val(data.controller_id);
     	$("#action_id").val(data.action_id);
@@ -55,8 +58,9 @@ function orderby(field, op){
     	$("#client_ip").val(data.client_ip);
     	$("#create_user").val(data.create_user);
     	$("#create_date").val(data.create_date);
-    	}
+    }
 	if(type == "view"){
+
       $("#id").attr({readonly:true,disabled:true});
       $("#controller_id").attr({readonly:true,disabled:true});
       $("#action_id").attr({readonly:true,disabled:true});
@@ -68,8 +72,8 @@ function orderby(field, op){
       $("#create_user").attr({readonly:true,disabled:true});
       $("#create_date").attr({readonly:true,disabled:true});
 	$('#edit_dialog_ok').addClass('hidden');
-	}
-	else{
+
+	}else{
       $("#id").attr({readonly:false,disabled:false});
       $("#controller_id").attr({readonly:false,disabled:false});
       $("#action_id").attr({readonly:false,disabled:false});
@@ -80,8 +84,8 @@ function orderby(field, op){
       $("#client_ip").attr({readonly:false,disabled:false});
       $("#create_user").attr({readonly:false,disabled:false});
       $("#create_date").attr({readonly:false,disabled:false});
-		$('#edit_dialog_ok').removeClass('hidden');
-		}
+	  $('#edit_dialog_ok').removeClass('hidden');
+	}
 		$('#edit_dialog').modal('show');
 }
 
@@ -139,7 +143,7 @@ function deleteAction(id){
 						   $('#rowid_' + ids[i]).remove();
 					   }
 					   admin_tool.alert('msg_info', '删除成功', 'success');
-					   window.location.reload();
+					   $('#adminLog-table').bootstrapTable('refresh');
 				   }
 				});
 		});
@@ -197,18 +201,22 @@ $('#admin-log-form').bind('submit', function(e) {
         	if(value.errno == 0){
         		$('#edit_dialog').modal('hide');
         		admin_tool.alert('msg_info', '添加成功', 'success');
-        		window.location.reload();
-        	}
-        	else{
+        		$('#adminLog-table').bootstrapTable('refresh');
+        	}else{
             	var json = value.data;
         		for(var key in json){
         			$('#' + key).attr({'data-placement':'bottom', 'data-content':json[key], 'data-toggle':'popover'}).addClass('popover-show').popover('show');
-        			
         		}
         	}
 
     	}
     });
 });
+  
+function  operateFormatter(value, row, index) {
+	 var h = "";
+	 h +='<a id="view_btn" onclick="viewAction(' +row.id+ ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	 return h;
+}
 
 </script>

@@ -16,55 +16,23 @@ class WebNavController extends BaseController
     
     public function actionIndex()
     {
-        $controllers = $this->getWebController();
+         $controllers = $this->getWebController();
        
         $controllerData = array();
         foreach($controllers as $c){
             $controllerData[$c['text']] = $c;
         };
-       
-        $query = WebNavModel::find()->with("webContent");
-        $querys = Yii::$app->request->get('query');
-        if(count($querys) > 0){
-            $condition = "";
-            $parame = array();
-            foreach($querys as $key=>$value){
-                $value = trim($value);
-                if(empty($value) == false){
-                    $parame[":{$key}"]=$value;
-                    if(empty($condition) == true){
-                        $condition = " {$key}=:{$key} ";
-                    }
-                    else{
-                        $condition = $condition . " AND {$key}=:{$key} ";
-                    }
-                }
-            }
-            if(count($parame) > 0){
-                $query = $query->where($condition, $parame);
-            }
-        }
-        //$models = $query->orderBy('display_order')
-        $pagination = new Pagination([
-            'totalCount' =>$query->count(), 
-            'pageSize' => '10', 
-            'pageParam'=>'page', 
-            'pageSizeParam'=>'per-page']
-        );
-        
-        $orderby = ['web_nav_id'=>SORT_ASC];
-        $query = $query->orderBy($orderby);
-        
-        $models = $query
-        ->offset($pagination->offset)
-        ->limit($pagination->limit)
-        ->all();
-        return $this->render('index', [
-            'models'=>$models,
-            'pages'=>$pagination,
-            'query'=>$querys,
-            'controllerData'=>$controllerData,
-        ]);
+        return $this->render('index',['controllerData'=>$controllerData]);
+    }
+
+     public function actionTable()
+    {
+        $query = Yii::$app->db->createCommand('
+         SELECT *
+           FROM web_nav w,
+                web_content c 
+          WHERE w.web_nav_id = c.web_nav_id')->queryAll();
+        return json_encode($query);
     }
 
     /**
@@ -184,12 +152,31 @@ class WebNavController extends BaseController
      */
     public function actionDelete(array $ids)
     {
-        if(count($ids) > 0){
-            $c = WebNavModel::deleteAll(['in', 'id', $ids]);
-            echo json_encode(array('errno'=>0, 'data'=>$c, 'msg'=>json_encode($ids)));
-        }else{
+       
+        $transaction = Yii::$app->db->beginTransaction();
+        try{ 
+
+            if(count($ids) > 0){
+
+                $b = WebContentModel::deleteAll(['in', 'web_nav_id', $ids]);
+                $c = WebNavModel::deleteAll(['in', 'web_nav_id', $ids]);
+                if($c&&$b){
+                    echo json_encode(array('errno'=>0, 'data'=>$c, 'msg'=>json_encode($ids)));
+                    $transaction->commit();
+                }
+                
+            }else{
+                
+                echo json_encode(array('errno'=>2, 'msg'=>''));
+            }
+           
+
+         }catch(\Exception $e){
+
+            $transaction->rollBack();
             echo json_encode(array('errno'=>2, 'msg'=>''));
-        }
+        };
+ 
     }
 
     /**

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-17 09:00:37
+Date: 2018-05-17 20:30:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `admin_log` (
   KEY `index_create_date` (`create_date`),
   KEY `index_create_index` (`create_user`),
   KEY `index_url` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=1044 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1430 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_log
@@ -1082,6 +1082,392 @@ INSERT INTO `admin_log` VALUES ('1040', 'web-nav', 'index', 'web-nav/index', '�
 INSERT INTO `admin_log` VALUES ('1041', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-16 14:47:17');
 INSERT INTO `admin_log` VALUES ('1042', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-16 14:54:20');
 INSERT INTO `admin_log` VALUES ('1043', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-16 14:54:58');
+INSERT INTO `admin_log` VALUES ('1044', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 03:16:13');
+INSERT INTO `admin_log` VALUES ('1045', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 03:21:18');
+INSERT INTO `admin_log` VALUES ('1046', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 03:22:35');
+INSERT INTO `admin_log` VALUES ('1047', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 03:33:06');
+INSERT INTO `admin_log` VALUES ('1048', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 03:33:08');
+INSERT INTO `admin_log` VALUES ('1049', 'web-nav', 'delete', 'web-nav/delete', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 03:33:14');
+INSERT INTO `admin_log` VALUES ('1050', 'web-nav', 'delete', 'web-nav/delete', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 03:33:51');
+INSERT INTO `admin_log` VALUES ('1051', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 03:52:06');
+INSERT INTO `admin_log` VALUES ('1052', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 03:52:20');
+INSERT INTO `admin_log` VALUES ('1053', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:00:15');
+INSERT INTO `admin_log` VALUES ('1054', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:00:25');
+INSERT INTO `admin_log` VALUES ('1055', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:02:05');
+INSERT INTO `admin_log` VALUES ('1056', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:02:23');
+INSERT INTO `admin_log` VALUES ('1057', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:02:26');
+INSERT INTO `admin_log` VALUES ('1058', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:02:30');
+INSERT INTO `admin_log` VALUES ('1059', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-05-17 04:02:42');
+INSERT INTO `admin_log` VALUES ('1060', 'web-message', 'view', 'web-message/view', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-05-17 04:02:45');
+INSERT INTO `admin_log` VALUES ('1061', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:02:56');
+INSERT INTO `admin_log` VALUES ('1062', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:03:07');
+INSERT INTO `admin_log` VALUES ('1063', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:08:20');
+INSERT INTO `admin_log` VALUES ('1064', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:12:15');
+INSERT INTO `admin_log` VALUES ('1065', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:14:36');
+INSERT INTO `admin_log` VALUES ('1066', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:19:41');
+INSERT INTO `admin_log` VALUES ('1067', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 04:19:43');
+INSERT INTO `admin_log` VALUES ('1068', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:21:06');
+INSERT INTO `admin_log` VALUES ('1069', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:21:08');
+INSERT INTO `admin_log` VALUES ('1070', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:25:51');
+INSERT INTO `admin_log` VALUES ('1071', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:28:43');
+INSERT INTO `admin_log` VALUES ('1072', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:29:36');
+INSERT INTO `admin_log` VALUES ('1073', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:29:38');
+INSERT INTO `admin_log` VALUES ('1074', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:31:32');
+INSERT INTO `admin_log` VALUES ('1075', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:32:30');
+INSERT INTO `admin_log` VALUES ('1076', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:34:15');
+INSERT INTO `admin_log` VALUES ('1077', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:35:20');
+INSERT INTO `admin_log` VALUES ('1078', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:37:14');
+INSERT INTO `admin_log` VALUES ('1079', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:38:17');
+INSERT INTO `admin_log` VALUES ('1080', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:40:13');
+INSERT INTO `admin_log` VALUES ('1081', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:40:14');
+INSERT INTO `admin_log` VALUES ('1082', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 04:40:14');
+INSERT INTO `admin_log` VALUES ('1083', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:40:48');
+INSERT INTO `admin_log` VALUES ('1084', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:40:50');
+INSERT INTO `admin_log` VALUES ('1085', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:41:54');
+INSERT INTO `admin_log` VALUES ('1086', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:41:56');
+INSERT INTO `admin_log` VALUES ('1087', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:43:47');
+INSERT INTO `admin_log` VALUES ('1088', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:47:53');
+INSERT INTO `admin_log` VALUES ('1089', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 04:47:55');
+INSERT INTO `admin_log` VALUES ('1090', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:48:30');
+INSERT INTO `admin_log` VALUES ('1091', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:49:20');
+INSERT INTO `admin_log` VALUES ('1092', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:50:28');
+INSERT INTO `admin_log` VALUES ('1093', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:51:33');
+INSERT INTO `admin_log` VALUES ('1094', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:51:47');
+INSERT INTO `admin_log` VALUES ('1095', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:52:31');
+INSERT INTO `admin_log` VALUES ('1096', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:52:32');
+INSERT INTO `admin_log` VALUES ('1097', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 04:52:32');
+INSERT INTO `admin_log` VALUES ('1098', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:53:17');
+INSERT INTO `admin_log` VALUES ('1099', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:53:19');
+INSERT INTO `admin_log` VALUES ('1100', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:53:47');
+INSERT INTO `admin_log` VALUES ('1101', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:54:36');
+INSERT INTO `admin_log` VALUES ('1102', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:55:00');
+INSERT INTO `admin_log` VALUES ('1103', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:55:52');
+INSERT INTO `admin_log` VALUES ('1104', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:56:18');
+INSERT INTO `admin_log` VALUES ('1105', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:56:33');
+INSERT INTO `admin_log` VALUES ('1106', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:57:33');
+INSERT INTO `admin_log` VALUES ('1107', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 04:57:35');
+INSERT INTO `admin_log` VALUES ('1108', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:04:06');
+INSERT INTO `admin_log` VALUES ('1109', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:04:46');
+INSERT INTO `admin_log` VALUES ('1110', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:04:50');
+INSERT INTO `admin_log` VALUES ('1111', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:05:08');
+INSERT INTO `admin_log` VALUES ('1112', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-05-17 05:05:29');
+INSERT INTO `admin_log` VALUES ('1113', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-05-17 05:05:33');
+INSERT INTO `admin_log` VALUES ('1114', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-05-17 05:06:01');
+INSERT INTO `admin_log` VALUES ('1115', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-05-17 05:06:25');
+INSERT INTO `admin_log` VALUES ('1116', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:06:30');
+INSERT INTO `admin_log` VALUES ('1117', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:07:02');
+INSERT INTO `admin_log` VALUES ('1118', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:07:08');
+INSERT INTO `admin_log` VALUES ('1119', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:08:20');
+INSERT INTO `admin_log` VALUES ('1120', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:08:32');
+INSERT INTO `admin_log` VALUES ('1121', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:09:05');
+INSERT INTO `admin_log` VALUES ('1122', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:09:17');
+INSERT INTO `admin_log` VALUES ('1123', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:13:32');
+INSERT INTO `admin_log` VALUES ('1124', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:13:54');
+INSERT INTO `admin_log` VALUES ('1125', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:14:34');
+INSERT INTO `admin_log` VALUES ('1126', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:14:40');
+INSERT INTO `admin_log` VALUES ('1127', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:14:45');
+INSERT INTO `admin_log` VALUES ('1128', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:15:57');
+INSERT INTO `admin_log` VALUES ('1129', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:16:59');
+INSERT INTO `admin_log` VALUES ('1130', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:18:04');
+INSERT INTO `admin_log` VALUES ('1131', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:18:05');
+INSERT INTO `admin_log` VALUES ('1132', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:21:37');
+INSERT INTO `admin_log` VALUES ('1133', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:24:29');
+INSERT INTO `admin_log` VALUES ('1134', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:24:56');
+INSERT INTO `admin_log` VALUES ('1135', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:24:57');
+INSERT INTO `admin_log` VALUES ('1136', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:27:27');
+INSERT INTO `admin_log` VALUES ('1137', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:27:59');
+INSERT INTO `admin_log` VALUES ('1138', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:28:01');
+INSERT INTO `admin_log` VALUES ('1139', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:31:27');
+INSERT INTO `admin_log` VALUES ('1140', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:31:49');
+INSERT INTO `admin_log` VALUES ('1141', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:32:32');
+INSERT INTO `admin_log` VALUES ('1142', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:34:18');
+INSERT INTO `admin_log` VALUES ('1143', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:35:14');
+INSERT INTO `admin_log` VALUES ('1144', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:35:18');
+INSERT INTO `admin_log` VALUES ('1145', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:41:16');
+INSERT INTO `admin_log` VALUES ('1146', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:41:18');
+INSERT INTO `admin_log` VALUES ('1147', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:41:43');
+INSERT INTO `admin_log` VALUES ('1148', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:41:45');
+INSERT INTO `admin_log` VALUES ('1149', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:41:47');
+INSERT INTO `admin_log` VALUES ('1150', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:42:20');
+INSERT INTO `admin_log` VALUES ('1151', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:42:40');
+INSERT INTO `admin_log` VALUES ('1152', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:44:16');
+INSERT INTO `admin_log` VALUES ('1153', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:44:31');
+INSERT INTO `admin_log` VALUES ('1154', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:44:35');
+INSERT INTO `admin_log` VALUES ('1155', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 05:44:39');
+INSERT INTO `admin_log` VALUES ('1156', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 05:44:42');
+INSERT INTO `admin_log` VALUES ('1157', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 05:44:51');
+INSERT INTO `admin_log` VALUES ('1158', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 05:44:57');
+INSERT INTO `admin_log` VALUES ('1159', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 05:45:02');
+INSERT INTO `admin_log` VALUES ('1160', 'admin-right', 'update', 'admin-right/update', '菜单用户权限', '菜单管理', '路由添加', '无法获取ip', 'admin', '2018-05-17 05:45:11');
+INSERT INTO `admin_log` VALUES ('1161', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 05:45:12');
+INSERT INTO `admin_log` VALUES ('1162', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:45:21');
+INSERT INTO `admin_log` VALUES ('1163', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:45:34');
+INSERT INTO `admin_log` VALUES ('1164', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:45:54');
+INSERT INTO `admin_log` VALUES ('1165', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:45:55');
+INSERT INTO `admin_log` VALUES ('1166', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:46:04');
+INSERT INTO `admin_log` VALUES ('1167', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:48:17');
+INSERT INTO `admin_log` VALUES ('1168', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:48:18');
+INSERT INTO `admin_log` VALUES ('1169', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:48:28');
+INSERT INTO `admin_log` VALUES ('1170', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:48:29');
+INSERT INTO `admin_log` VALUES ('1171', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:50:42');
+INSERT INTO `admin_log` VALUES ('1172', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 05:51:38');
+INSERT INTO `admin_log` VALUES ('1173', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:51:42');
+INSERT INTO `admin_log` VALUES ('1174', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-05-17 05:51:46');
+INSERT INTO `admin_log` VALUES ('1175', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:51:48');
+INSERT INTO `admin_log` VALUES ('1176', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:51:52');
+INSERT INTO `admin_log` VALUES ('1177', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 05:51:56');
+INSERT INTO `admin_log` VALUES ('1178', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:52:05');
+INSERT INTO `admin_log` VALUES ('1179', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-05-17 05:52:12');
+INSERT INTO `admin_log` VALUES ('1180', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:52:38');
+INSERT INTO `admin_log` VALUES ('1181', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:52:39');
+INSERT INTO `admin_log` VALUES ('1182', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:52:44');
+INSERT INTO `admin_log` VALUES ('1183', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:52:45');
+INSERT INTO `admin_log` VALUES ('1184', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:56:47');
+INSERT INTO `admin_log` VALUES ('1185', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:56:48');
+INSERT INTO `admin_log` VALUES ('1186', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:57:30');
+INSERT INTO `admin_log` VALUES ('1187', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:57:31');
+INSERT INTO `admin_log` VALUES ('1188', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:57:33');
+INSERT INTO `admin_log` VALUES ('1189', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:57:34');
+INSERT INTO `admin_log` VALUES ('1190', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:57:35');
+INSERT INTO `admin_log` VALUES ('1191', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:59:43');
+INSERT INTO `admin_log` VALUES ('1192', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 05:59:44');
+INSERT INTO `admin_log` VALUES ('1193', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:00:32');
+INSERT INTO `admin_log` VALUES ('1194', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:00:34');
+INSERT INTO `admin_log` VALUES ('1195', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:00:37');
+INSERT INTO `admin_log` VALUES ('1196', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:00:55');
+INSERT INTO `admin_log` VALUES ('1197', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:00:57');
+INSERT INTO `admin_log` VALUES ('1198', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:00:59');
+INSERT INTO `admin_log` VALUES ('1199', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:01:51');
+INSERT INTO `admin_log` VALUES ('1200', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:03:16');
+INSERT INTO `admin_log` VALUES ('1201', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:03:19');
+INSERT INTO `admin_log` VALUES ('1202', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-05-17 06:03:36');
+INSERT INTO `admin_log` VALUES ('1203', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:04:14');
+INSERT INTO `admin_log` VALUES ('1204', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:04:16');
+INSERT INTO `admin_log` VALUES ('1205', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:05:48');
+INSERT INTO `admin_log` VALUES ('1206', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:05:50');
+INSERT INTO `admin_log` VALUES ('1207', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:04');
+INSERT INTO `admin_log` VALUES ('1208', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:06');
+INSERT INTO `admin_log` VALUES ('1209', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:32');
+INSERT INTO `admin_log` VALUES ('1210', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:33');
+INSERT INTO `admin_log` VALUES ('1211', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:38');
+INSERT INTO `admin_log` VALUES ('1212', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:39');
+INSERT INTO `admin_log` VALUES ('1213', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:49');
+INSERT INTO `admin_log` VALUES ('1214', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:06:50');
+INSERT INTO `admin_log` VALUES ('1215', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:07:07');
+INSERT INTO `admin_log` VALUES ('1216', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:07:07');
+INSERT INTO `admin_log` VALUES ('1217', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:07:28');
+INSERT INTO `admin_log` VALUES ('1218', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 06:07:28');
+INSERT INTO `admin_log` VALUES ('1219', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:08:38');
+INSERT INTO `admin_log` VALUES ('1220', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:08:40');
+INSERT INTO `admin_log` VALUES ('1221', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 11:08:40');
+INSERT INTO `admin_log` VALUES ('1222', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:09:12');
+INSERT INTO `admin_log` VALUES ('1223', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:09:14');
+INSERT INTO `admin_log` VALUES ('1224', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 11:09:14');
+INSERT INTO `admin_log` VALUES ('1225', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:11:17');
+INSERT INTO `admin_log` VALUES ('1226', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:11:19');
+INSERT INTO `admin_log` VALUES ('1227', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 11:11:19');
+INSERT INTO `admin_log` VALUES ('1228', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:12:10');
+INSERT INTO `admin_log` VALUES ('1229', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:12:12');
+INSERT INTO `admin_log` VALUES ('1230', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-05-17 11:12:12');
+INSERT INTO `admin_log` VALUES ('1231', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:13:28');
+INSERT INTO `admin_log` VALUES ('1232', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:13:30');
+INSERT INTO `admin_log` VALUES ('1233', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:13:56');
+INSERT INTO `admin_log` VALUES ('1234', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:13:59');
+INSERT INTO `admin_log` VALUES ('1235', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:14:51');
+INSERT INTO `admin_log` VALUES ('1236', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:14:53');
+INSERT INTO `admin_log` VALUES ('1237', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:15:15');
+INSERT INTO `admin_log` VALUES ('1238', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:15:17');
+INSERT INTO `admin_log` VALUES ('1239', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:15:27');
+INSERT INTO `admin_log` VALUES ('1240', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:16:04');
+INSERT INTO `admin_log` VALUES ('1241', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:16:07');
+INSERT INTO `admin_log` VALUES ('1242', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:17:02');
+INSERT INTO `admin_log` VALUES ('1243', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:17:05');
+INSERT INTO `admin_log` VALUES ('1244', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:17:47');
+INSERT INTO `admin_log` VALUES ('1245', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:17:50');
+INSERT INTO `admin_log` VALUES ('1246', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:18:14');
+INSERT INTO `admin_log` VALUES ('1247', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:18:16');
+INSERT INTO `admin_log` VALUES ('1248', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:18:32');
+INSERT INTO `admin_log` VALUES ('1249', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:18:34');
+INSERT INTO `admin_log` VALUES ('1250', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:19:12');
+INSERT INTO `admin_log` VALUES ('1251', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:19:15');
+INSERT INTO `admin_log` VALUES ('1252', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:19:23');
+INSERT INTO `admin_log` VALUES ('1253', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:19:48');
+INSERT INTO `admin_log` VALUES ('1254', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:19:50');
+INSERT INTO `admin_log` VALUES ('1255', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 11:21:27');
+INSERT INTO `admin_log` VALUES ('1256', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:21:31');
+INSERT INTO `admin_log` VALUES ('1257', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:21:33');
+INSERT INTO `admin_log` VALUES ('1258', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:26:57');
+INSERT INTO `admin_log` VALUES ('1259', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:27:00');
+INSERT INTO `admin_log` VALUES ('1260', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:28:14');
+INSERT INTO `admin_log` VALUES ('1261', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:28:17');
+INSERT INTO `admin_log` VALUES ('1262', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:28:43');
+INSERT INTO `admin_log` VALUES ('1263', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:28:45');
+INSERT INTO `admin_log` VALUES ('1264', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:29:08');
+INSERT INTO `admin_log` VALUES ('1265', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:29:11');
+INSERT INTO `admin_log` VALUES ('1266', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:29:29');
+INSERT INTO `admin_log` VALUES ('1267', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:29:32');
+INSERT INTO `admin_log` VALUES ('1268', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:29:57');
+INSERT INTO `admin_log` VALUES ('1269', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:29:59');
+INSERT INTO `admin_log` VALUES ('1270', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:30:16');
+INSERT INTO `admin_log` VALUES ('1271', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:30:18');
+INSERT INTO `admin_log` VALUES ('1272', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:31:13');
+INSERT INTO `admin_log` VALUES ('1273', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:31:15');
+INSERT INTO `admin_log` VALUES ('1274', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:31:36');
+INSERT INTO `admin_log` VALUES ('1275', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:31:39');
+INSERT INTO `admin_log` VALUES ('1276', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:31:56');
+INSERT INTO `admin_log` VALUES ('1277', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:31:58');
+INSERT INTO `admin_log` VALUES ('1278', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:32:22');
+INSERT INTO `admin_log` VALUES ('1279', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:32:43');
+INSERT INTO `admin_log` VALUES ('1280', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:32:45');
+INSERT INTO `admin_log` VALUES ('1281', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:32:49');
+INSERT INTO `admin_log` VALUES ('1282', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:32:57');
+INSERT INTO `admin_log` VALUES ('1283', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:33:13');
+INSERT INTO `admin_log` VALUES ('1284', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:37:08');
+INSERT INTO `admin_log` VALUES ('1285', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:37:11');
+INSERT INTO `admin_log` VALUES ('1286', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:38:00');
+INSERT INTO `admin_log` VALUES ('1287', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:38:03');
+INSERT INTO `admin_log` VALUES ('1288', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:38:10');
+INSERT INTO `admin_log` VALUES ('1289', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:39:27');
+INSERT INTO `admin_log` VALUES ('1290', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:39:29');
+INSERT INTO `admin_log` VALUES ('1291', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:40:27');
+INSERT INTO `admin_log` VALUES ('1292', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:40:29');
+INSERT INTO `admin_log` VALUES ('1293', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:41:07');
+INSERT INTO `admin_log` VALUES ('1294', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:41:09');
+INSERT INTO `admin_log` VALUES ('1295', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:41:59');
+INSERT INTO `admin_log` VALUES ('1296', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:42:02');
+INSERT INTO `admin_log` VALUES ('1297', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:43:24');
+INSERT INTO `admin_log` VALUES ('1298', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:53:33');
+INSERT INTO `admin_log` VALUES ('1299', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:53:36');
+INSERT INTO `admin_log` VALUES ('1300', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:55:21');
+INSERT INTO `admin_log` VALUES ('1301', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:57:35');
+INSERT INTO `admin_log` VALUES ('1302', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:57:38');
+INSERT INTO `admin_log` VALUES ('1303', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:58:22');
+INSERT INTO `admin_log` VALUES ('1304', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:58:24');
+INSERT INTO `admin_log` VALUES ('1305', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:58:31');
+INSERT INTO `admin_log` VALUES ('1306', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 11:58:32');
+INSERT INTO `admin_log` VALUES ('1307', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 12:05:39');
+INSERT INTO `admin_log` VALUES ('1308', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:05:49');
+INSERT INTO `admin_log` VALUES ('1309', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:05:50');
+INSERT INTO `admin_log` VALUES ('1310', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:05:55');
+INSERT INTO `admin_log` VALUES ('1311', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:06:06');
+INSERT INTO `admin_log` VALUES ('1312', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:08:34');
+INSERT INTO `admin_log` VALUES ('1313', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:08:36');
+INSERT INTO `admin_log` VALUES ('1314', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 12:09:02');
+INSERT INTO `admin_log` VALUES ('1315', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:09:07');
+INSERT INTO `admin_log` VALUES ('1316', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:09:10');
+INSERT INTO `admin_log` VALUES ('1317', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:19:15');
+INSERT INTO `admin_log` VALUES ('1318', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:20:12');
+INSERT INTO `admin_log` VALUES ('1319', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:21:50');
+INSERT INTO `admin_log` VALUES ('1320', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:22:12');
+INSERT INTO `admin_log` VALUES ('1321', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:23:07');
+INSERT INTO `admin_log` VALUES ('1322', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:23:32');
+INSERT INTO `admin_log` VALUES ('1323', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:23:56');
+INSERT INTO `admin_log` VALUES ('1324', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:26:00');
+INSERT INTO `admin_log` VALUES ('1325', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:26:17');
+INSERT INTO `admin_log` VALUES ('1326', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:26:29');
+INSERT INTO `admin_log` VALUES ('1327', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:26:39');
+INSERT INTO `admin_log` VALUES ('1328', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:27:19');
+INSERT INTO `admin_log` VALUES ('1329', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:27:59');
+INSERT INTO `admin_log` VALUES ('1330', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:28:17');
+INSERT INTO `admin_log` VALUES ('1331', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:30:52');
+INSERT INTO `admin_log` VALUES ('1332', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:31:10');
+INSERT INTO `admin_log` VALUES ('1333', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:33:24');
+INSERT INTO `admin_log` VALUES ('1334', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:33:27');
+INSERT INTO `admin_log` VALUES ('1335', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:33:43');
+INSERT INTO `admin_log` VALUES ('1336', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:34:41');
+INSERT INTO `admin_log` VALUES ('1337', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:35:20');
+INSERT INTO `admin_log` VALUES ('1338', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:35:22');
+INSERT INTO `admin_log` VALUES ('1339', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:35:23');
+INSERT INTO `admin_log` VALUES ('1340', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:36:24');
+INSERT INTO `admin_log` VALUES ('1341', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:36:26');
+INSERT INTO `admin_log` VALUES ('1342', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:36:34');
+INSERT INTO `admin_log` VALUES ('1343', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:37:45');
+INSERT INTO `admin_log` VALUES ('1344', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:37:49');
+INSERT INTO `admin_log` VALUES ('1345', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:38:02');
+INSERT INTO `admin_log` VALUES ('1346', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:40:22');
+INSERT INTO `admin_log` VALUES ('1347', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 12:41:11');
+INSERT INTO `admin_log` VALUES ('1348', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 12:44:07');
+INSERT INTO `admin_log` VALUES ('1349', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:44:11');
+INSERT INTO `admin_log` VALUES ('1350', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:44:14');
+INSERT INTO `admin_log` VALUES ('1351', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 12:44:17');
+INSERT INTO `admin_log` VALUES ('1352', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 13:07:58');
+INSERT INTO `admin_log` VALUES ('1353', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 13:08:00');
+INSERT INTO `admin_log` VALUES ('1354', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:08:09');
+INSERT INTO `admin_log` VALUES ('1355', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:08:22');
+INSERT INTO `admin_log` VALUES ('1356', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 13:11:16');
+INSERT INTO `admin_log` VALUES ('1357', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 13:11:17');
+INSERT INTO `admin_log` VALUES ('1358', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 13:16:55');
+INSERT INTO `admin_log` VALUES ('1359', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 13:27:10');
+INSERT INTO `admin_log` VALUES ('1360', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-05-17 13:27:15');
+INSERT INTO `admin_log` VALUES ('1361', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 13:27:18');
+INSERT INTO `admin_log` VALUES ('1362', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 13:27:21');
+INSERT INTO `admin_log` VALUES ('1363', 'admin-right', 'update', 'admin-right/update', '菜单用户权限', '菜单管理', '路由添加', '无法获取ip', 'admin', '2018-05-17 13:27:25');
+INSERT INTO `admin_log` VALUES ('1364', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-05-17 13:27:26');
+INSERT INTO `admin_log` VALUES ('1365', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:27:37');
+INSERT INTO `admin_log` VALUES ('1366', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:28:06');
+INSERT INTO `admin_log` VALUES ('1367', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:29:55');
+INSERT INTO `admin_log` VALUES ('1368', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:29:58');
+INSERT INTO `admin_log` VALUES ('1369', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:30:43');
+INSERT INTO `admin_log` VALUES ('1370', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:30:45');
+INSERT INTO `admin_log` VALUES ('1371', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:30:57');
+INSERT INTO `admin_log` VALUES ('1372', 'web-nav', 'update', 'web-nav/update', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:31:30');
+INSERT INTO `admin_log` VALUES ('1373', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:31:30');
+INSERT INTO `admin_log` VALUES ('1374', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:31:33');
+INSERT INTO `admin_log` VALUES ('1375', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:31:42');
+INSERT INTO `admin_log` VALUES ('1376', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:32:57');
+INSERT INTO `admin_log` VALUES ('1377', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:33:00');
+INSERT INTO `admin_log` VALUES ('1378', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:33:03');
+INSERT INTO `admin_log` VALUES ('1379', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:33:48');
+INSERT INTO `admin_log` VALUES ('1380', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:33:50');
+INSERT INTO `admin_log` VALUES ('1381', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:34:16');
+INSERT INTO `admin_log` VALUES ('1382', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:34:19');
+INSERT INTO `admin_log` VALUES ('1383', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:35:07');
+INSERT INTO `admin_log` VALUES ('1384', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:35:10');
+INSERT INTO `admin_log` VALUES ('1385', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:37:05');
+INSERT INTO `admin_log` VALUES ('1386', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:37:08');
+INSERT INTO `admin_log` VALUES ('1387', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:37:31');
+INSERT INTO `admin_log` VALUES ('1388', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:37:33');
+INSERT INTO `admin_log` VALUES ('1389', 'web-nav', 'create', 'web-nav/create', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:37:47');
+INSERT INTO `admin_log` VALUES ('1390', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:37:48');
+INSERT INTO `admin_log` VALUES ('1391', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:37:51');
+INSERT INTO `admin_log` VALUES ('1392', 'web-nav', 'delete', 'web-nav/delete', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:38:02');
+INSERT INTO `admin_log` VALUES ('1393', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:38:18');
+INSERT INTO `admin_log` VALUES ('1394', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:38:21');
+INSERT INTO `admin_log` VALUES ('1395', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:50:06');
+INSERT INTO `admin_log` VALUES ('1396', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:50:09');
+INSERT INTO `admin_log` VALUES ('1397', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:57:13');
+INSERT INTO `admin_log` VALUES ('1398', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:57:15');
+INSERT INTO `admin_log` VALUES ('1399', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:57:50');
+INSERT INTO `admin_log` VALUES ('1400', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:57:53');
+INSERT INTO `admin_log` VALUES ('1401', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:59:21');
+INSERT INTO `admin_log` VALUES ('1402', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:59:24');
+INSERT INTO `admin_log` VALUES ('1403', 'web-nav', 'delete', 'web-nav/delete', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:59:29');
+INSERT INTO `admin_log` VALUES ('1404', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 13:59:30');
+INSERT INTO `admin_log` VALUES ('1405', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:00:07');
+INSERT INTO `admin_log` VALUES ('1406', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:12:45');
+INSERT INTO `admin_log` VALUES ('1407', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:12:47');
+INSERT INTO `admin_log` VALUES ('1408', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:16:26');
+INSERT INTO `admin_log` VALUES ('1409', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:16:28');
+INSERT INTO `admin_log` VALUES ('1410', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:16:30');
+INSERT INTO `admin_log` VALUES ('1411', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:16:50');
+INSERT INTO `admin_log` VALUES ('1412', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:16:51');
+INSERT INTO `admin_log` VALUES ('1413', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 14:17:03');
+INSERT INTO `admin_log` VALUES ('1414', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-05-17 14:17:04');
+INSERT INTO `admin_log` VALUES ('1415', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:17:12');
+INSERT INTO `admin_log` VALUES ('1416', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:17:13');
+INSERT INTO `admin_log` VALUES ('1417', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-05-17 14:18:55');
+INSERT INTO `admin_log` VALUES ('1418', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:23:05');
+INSERT INTO `admin_log` VALUES ('1419', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:23:06');
+INSERT INTO `admin_log` VALUES ('1420', 'web-nav', 'delete', 'web-nav/delete', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:23:24');
+INSERT INTO `admin_log` VALUES ('1421', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:23:24');
+INSERT INTO `admin_log` VALUES ('1422', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:26:38');
+INSERT INTO `admin_log` VALUES ('1423', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:26:41');
+INSERT INTO `admin_log` VALUES ('1424', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:26:46');
+INSERT INTO `admin_log` VALUES ('1425', 'web-nav', 'create', 'web-nav/create', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:26:57');
+INSERT INTO `admin_log` VALUES ('1426', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:26:58');
+INSERT INTO `admin_log` VALUES ('1427', 'web-nav', 'delete', 'web-nav/delete', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:27:06');
+INSERT INTO `admin_log` VALUES ('1428', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-05-17 14:27:07');
+INSERT INTO `admin_log` VALUES ('1429', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-05-17 14:29:09');
 
 -- ----------------------------
 -- Table structure for admin_menu
@@ -1197,7 +1583,7 @@ INSERT INTO `admin_right` VALUES ('4', '2', '角色操作', '角色操作', '角
 INSERT INTO `admin_right` VALUES ('5', '2', '分配用户', '分配用户', '分配用户', '2', 'n', 'admin', '2016-08-13 17:05:04', 'test', '2016-08-14 08:22:13');
 INSERT INTO `admin_right` VALUES ('6', '2', '分配权限', '分配权限', '分配权限', '3', 'n', 'admin', '2016-08-13 17:05:24', 'admin', '2016-08-13 17:05:24');
 INSERT INTO `admin_right` VALUES ('7', '3', '用户操作', '用户操作', '用户操作', '1', 'n', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
-INSERT INTO `admin_right` VALUES ('8', '4', '操作', '操作', '操作', '1', 'n', 'test', '2016-08-14 06:54:38', 'test', '2016-08-14 06:54:38');
+INSERT INTO `admin_right` VALUES ('8', '4', '操作', '操作', '操作', '1', 'n', 'test', '2016-08-14 06:54:38', 'admin', '2018-05-17 05:45:11');
 INSERT INTO `admin_right` VALUES ('13', '1', '一级菜单查看', '一级菜单查看', '一级菜单查看', '1', 'n', 'test', '2016-08-16 15:52:45', 'test', '2016-08-16 15:52:45');
 INSERT INTO `admin_right` VALUES ('14', '1', '一级菜单添加', '一级菜单添加', '一级菜单添加', '2', 'n', 'test', '2016-08-16 15:53:10', 'test', '2016-08-16 15:58:30');
 INSERT INTO `admin_right` VALUES ('15', '1', '一级菜单删除', '一级菜单删除', '一级菜单删除', '3', 'n', 'test', '2016-08-16 15:53:44', 'test', '2016-08-16 15:53:44');
@@ -1208,7 +1594,7 @@ INSERT INTO `admin_right` VALUES ('19', '1', '路由查看', '路由查看', '�
 INSERT INTO `admin_right` VALUES ('20', '1', '路由添加', '路由添加', '路由添加', '8', 'n', 'test', '2016-08-16 15:57:46', 'test', '2016-08-16 15:57:46');
 INSERT INTO `admin_right` VALUES ('21', '1', '路由删除', '路由删除', '路由删除', '9', 'n', 'test', '2016-08-16 15:58:05', 'test', '2016-08-16 15:58:05');
 INSERT INTO `admin_right` VALUES ('26', '8', '留言列表', '留言列表', '留言列表URL', '1', 'n', 'test', '2018-05-13 10:14:15', 'admin', '2018-05-15 09:54:37');
-INSERT INTO `admin_right` VALUES ('27', '9', '导航列表路由', '导航列表路由', '导航列表路由', '1', 'n', 'admin', '2018-05-14 03:50:10', 'admin', '2018-05-15 11:59:50');
+INSERT INTO `admin_right` VALUES ('27', '9', '导航列表路由', '导航列表路由', '导航列表路由', '1', 'n', 'admin', '2018-05-14 03:50:10', 'admin', '2018-05-17 13:27:25');
 
 -- ----------------------------
 -- Table structure for admin_right_url
@@ -1228,7 +1614,7 @@ CREATE TABLE `admin_right_url` (
   KEY `FK_admin_right_url` (`right_id`),
   KEY `index_right_id` (`right_id`),
   CONSTRAINT `FK_admin_right_url` FOREIGN KEY (`right_id`) REFERENCES `admin_right` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_right_url
@@ -1252,11 +1638,6 @@ INSERT INTO `admin_right_url` VALUES ('38', '7', 'admin-user/view', 'admin-user'
 INSERT INTO `admin_right_url` VALUES ('39', '7', 'admin-user/create', 'admin-user', 'create', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
 INSERT INTO `admin_right_url` VALUES ('40', '7', 'admin-user/update', 'admin-user', 'update', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
 INSERT INTO `admin_right_url` VALUES ('41', '7', 'admin-user/delete', 'admin-user', 'delete', 'admin', '2016-08-13 17:05:57', 'admin', '2016-08-13 17:05:57');
-INSERT INTO `admin_right_url` VALUES ('42', '8', 'admin-log/index', 'admin-log', 'index', 'test', '2016-08-14 06:54:38', 'test', '2016-08-14 06:54:38');
-INSERT INTO `admin_right_url` VALUES ('43', '8', 'admin-log/view', 'admin-log', 'view', 'test', '2016-08-14 06:54:38', 'test', '2016-08-14 06:54:38');
-INSERT INTO `admin_right_url` VALUES ('44', '8', 'admin-log/create', 'admin-log', 'create', 'test', '2016-08-14 06:54:38', 'test', '2016-08-14 06:54:38');
-INSERT INTO `admin_right_url` VALUES ('45', '8', 'admin-log/update', 'admin-log', 'update', 'test', '2016-08-14 06:54:38', 'test', '2016-08-14 06:54:38');
-INSERT INTO `admin_right_url` VALUES ('46', '8', 'admin-log/delete', 'admin-log', 'delete', 'test', '2016-08-14 06:54:38', 'test', '2016-08-14 06:54:38');
 INSERT INTO `admin_right_url` VALUES ('81', '5', 'admin-user-role/index', 'admin-user-role', 'index', 'test', '2016-08-14 08:22:13', 'test', '2016-08-14 08:22:13');
 INSERT INTO `admin_right_url` VALUES ('82', '5', 'admin-user-role/view', 'admin-user-role', 'view', 'test', '2016-08-14 08:22:13', 'test', '2016-08-14 08:22:13');
 INSERT INTO `admin_right_url` VALUES ('83', '5', 'admin-user-role/create', 'admin-user-role', 'create', 'test', '2016-08-14 08:22:13', 'test', '2016-08-14 08:22:13');
@@ -1281,11 +1662,18 @@ INSERT INTO `admin_right_url` VALUES ('134', '17', 'admin-menu/update', 'admin-m
 INSERT INTO `admin_right_url` VALUES ('152', '26', 'web-message/index', 'web-message', 'index', 'admin', '2018-05-15 09:54:37', 'admin', '2018-05-15 09:54:37');
 INSERT INTO `admin_right_url` VALUES ('153', '26', 'web-message/view', 'web-message', 'view', 'admin', '2018-05-15 09:54:37', 'admin', '2018-05-15 09:54:37');
 INSERT INTO `admin_right_url` VALUES ('154', '26', 'web-message/delete', 'web-message', 'delete', 'admin', '2018-05-15 09:54:37', 'admin', '2018-05-15 09:54:37');
-INSERT INTO `admin_right_url` VALUES ('155', '27', 'web-nav/index', 'web-nav', 'index', 'admin', '2018-05-15 11:59:50', 'admin', '2018-05-15 11:59:50');
-INSERT INTO `admin_right_url` VALUES ('156', '27', 'web-nav/view', 'web-nav', 'view', 'admin', '2018-05-15 11:59:50', 'admin', '2018-05-15 11:59:50');
-INSERT INTO `admin_right_url` VALUES ('157', '27', 'web-nav/create', 'web-nav', 'create', 'admin', '2018-05-15 11:59:50', 'admin', '2018-05-15 11:59:50');
-INSERT INTO `admin_right_url` VALUES ('158', '27', 'web-nav/update', 'web-nav', 'update', 'admin', '2018-05-15 11:59:50', 'admin', '2018-05-15 11:59:50');
-INSERT INTO `admin_right_url` VALUES ('159', '27', 'web-nav/delete', 'web-nav', 'delete', 'admin', '2018-05-15 11:59:50', 'admin', '2018-05-15 11:59:50');
+INSERT INTO `admin_right_url` VALUES ('160', '8', 'admin-log/index', 'admin-log', 'index', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
+INSERT INTO `admin_right_url` VALUES ('161', '8', 'admin-log/table', 'admin-log', 'table', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
+INSERT INTO `admin_right_url` VALUES ('162', '8', 'admin-log/view', 'admin-log', 'view', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
+INSERT INTO `admin_right_url` VALUES ('163', '8', 'admin-log/create', 'admin-log', 'create', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
+INSERT INTO `admin_right_url` VALUES ('164', '8', 'admin-log/update', 'admin-log', 'update', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
+INSERT INTO `admin_right_url` VALUES ('165', '8', 'admin-log/delete', 'admin-log', 'delete', 'admin', '2018-05-17 05:45:11', 'admin', '2018-05-17 05:45:11');
+INSERT INTO `admin_right_url` VALUES ('166', '27', 'web-nav/index', 'web-nav', 'index', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
+INSERT INTO `admin_right_url` VALUES ('167', '27', 'web-nav/table', 'web-nav', 'table', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
+INSERT INTO `admin_right_url` VALUES ('168', '27', 'web-nav/view', 'web-nav', 'view', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
+INSERT INTO `admin_right_url` VALUES ('169', '27', 'web-nav/create', 'web-nav', 'create', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
+INSERT INTO `admin_right_url` VALUES ('170', '27', 'web-nav/update', 'web-nav', 'update', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
+INSERT INTO `admin_right_url` VALUES ('171', '27', 'web-nav/delete', 'web-nav', 'delete', 'admin', '2018-05-17 13:27:25', 'admin', '2018-05-17 13:27:25');
 
 -- ----------------------------
 -- Table structure for admin_role
@@ -1455,7 +1843,7 @@ INSERT INTO `web_content` VALUES ('16', null, 'admin', '2018-05-14 20:41:45', nu
 INSERT INTO `web_content` VALUES ('17', null, 'admin', '2018-05-14 20:41:53', null, null);
 INSERT INTO `web_content` VALUES ('18', null, 'admin', '2018-05-14 20:42:01', null, null);
 INSERT INTO `web_content` VALUES ('19', null, 'admin', '2018-05-14 20:42:09', null, null);
-INSERT INTO `web_content` VALUES ('36', null, 'admin', '2018-05-16 13:42:54', null, null);
+INSERT INTO `web_content` VALUES ('37', null, 'admin', '2018-05-17 13:37:47', null, null);
 
 -- ----------------------------
 -- Table structure for web_message
@@ -1491,7 +1879,7 @@ CREATE TABLE `web_nav` (
   PRIMARY KEY (`web_nav_id`),
   KEY `web_navType_id` (`web_navType_id`),
   CONSTRAINT `web_nav_ibfk_1` FOREIGN KEY (`web_navType_id`) REFERENCES `web_nav_type` (`web_navType_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of web_nav
@@ -1515,7 +1903,7 @@ INSERT INTO `web_nav` VALUES ('16', '2', '沙发清洗', '', '');
 INSERT INTO `web_nav` VALUES ('17', '2', '管道疏通', '', '');
 INSERT INTO `web_nav` VALUES ('18', '2', '室内装潢', '', '');
 INSERT INTO `web_nav` VALUES ('19', '2', '耐磨地坪密封固化处理', '', '');
-INSERT INTO `web_nav` VALUES ('36', '1', '34242', 'web-content/feedback', 'frontend\\controllers\\WebContentController');
+INSERT INTO `web_nav` VALUES ('37', '1', '234234324', 'web-content/contact', 'frontend\\controllers\\WebContentController');
 
 -- ----------------------------
 -- Table structure for web_nav_type

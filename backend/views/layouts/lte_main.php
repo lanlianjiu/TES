@@ -86,6 +86,8 @@ if($otherMenu == false){
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/datatables/dataTables.bootstrap.css">
+  <!-- bootstrap-table -->
+  <link rel="stylesheet" href="<?=Url::base()?>/plugins/bootstrap-table/css/bootstrap-table.min.css">
   <!-- style.min -->
   <link rel="stylesheet" href="<?=Url::base()?>/css/style.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -464,6 +466,15 @@ if($otherMenu == false){
   <script src="<?=Url::base()?>/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="<?=Url::base()?>/plugins/datatables/dataTables.bootstrap.min.js"></script>
   <script src="<?=Url::base()?>/plugins/treeview/bootstrap-treeview.min.js"></script>
+
+  <!-- bootstrap-table -->
+  <script src="<?=Url::base()?>/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+  <script src="<?=Url::base()?>/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+  <!-- bootstrap-table-export -->
+  <script src="<?=Url::base()?>/plugins/bootstrap-extensions/tableExport.min.js"></script>
+  <script src="<?=Url::base()?>/plugins/bootstrap-extensions/bootstrap-table-export/bootstrap-table-export.js"></script>
+  <script src="<?=Url::base()?>/plugins/bootstrap-extensions/toolbar/bootstrap-table-toolbar.js"></script>
 
   <!-- AdminLTE App -->
   <script src="<?=Url::base()?>/dist/js/app.min.js"></script>
