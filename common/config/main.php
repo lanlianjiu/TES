@@ -20,7 +20,6 @@ return [
             'dsn' => 'mysql:host=localhost;dbname=tes',
             'username' => 'root',
             'password' => 'root',
-            //'password' => '',
             'charset' => 'utf8',
         ],
         'mailer' => [
