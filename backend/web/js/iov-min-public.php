@@ -1,8 +1,10 @@
 <?php
 use yii\helpers\Url;
+$severUrlparam = $_SERVER["QUERY_STRING"];
 ?>
 <script>
-  
+   var pa = <?php echo json_encode($severUrlparam); ?>;
+		console.log(pa);
 /*表格初始化*/
 $('[data-toggle="table"]').each(function () {
 
@@ -22,7 +24,6 @@ $('[data-toggle="table"]').each(function () {
 	//导出
 	function DoOnCellHtmlData(cell, row, col, data) {
 		var result = "";
-
 		if (typeof data != 'undefined' && data != "") {
 			var html = $.parseHTML(data);
 
