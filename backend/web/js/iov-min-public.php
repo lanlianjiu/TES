@@ -1,10 +1,29 @@
 <?php
 use yii\helpers\Url;
-$severUrlparam = $_SERVER["QUERY_STRING"];
+ $url = $_SERVER["REQUEST_URI"];
+ function getUrlparams($url) 
+	{ 
+		$refer_url = parse_url($url); 
+		
+		$params = $refer_url['query']; 
+		
+		$arr = array(); 
+		if(!empty($params)) 
+		{ 
+			$paramsArr = explode('&',$params); 
+		
+			foreach($paramsArr as $k=>$v) 
+			{ 
+				$a = explode('=',$v); 
+				$arr[$a[0]] = $a[1]; 
+			} 
+		} 
+		return $arr; 
+	};
+	$severUrlparam = getUrlparams($url);
 ?>
 <script>
-   var pa = <?php echo json_encode($severUrlparam); ?>;
-		console.log(pa);
+
 /*表格初始化*/
 $('[data-toggle="table"]').each(function () {
 
@@ -16,8 +35,22 @@ $('[data-toggle="table"]').each(function () {
 
 	var option = {
 		url: tableUrl,
-		height: autoHeight
+		height: autoHeight,
+		queryParamsType:'limit',
+		queryParams:getParams
 	};
+	var postParams = <?php echo json_encode($severUrlparam); ?>;
+
+	//获取参数
+	function getParams(params) {
+		var temp = { 
+			order : params.order, 
+			limit : params.limit,
+			offset : params.offset,
+			postParams: JSON.stringify(postParams)
+		};
+		return temp;
+	}
 
 	$.extend(tableId.bootstrapTable.defaults, option);
 

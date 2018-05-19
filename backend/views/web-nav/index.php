@@ -52,7 +52,7 @@ $modelLabel = new \backend\models\WebNavModel();
                     </div>
                     <table id="webnav-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="60" data-show-export="true"
                         data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                        data-id-field="orderId" data-unique-id="orderId" data-custom-url="index.php?r=web-nav/table" class="table table-border table-bordered table-bg table-hover table-sort table-responsive th-table">
+                        data-id-field="web_nav_id" data-unique-id="web_nav_id" data-custom-url="index.php?r=web-nav/table" class="table table-border table-bordered table-bg table-hover table-sort table-responsive th-table">
                         <thead>
                             <tr>
                                 <th data-checkbox="true" width="80"></th>

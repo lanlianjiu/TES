@@ -21,49 +21,27 @@ class AdminUserRoleController extends BaseController
      */
     public function actionIndex($roleId)
     {
-        $query = AdminUserRole::find()->with('user')->with('role')->andWhere(['role_id'=>$roleId]);
-         $querys = Yii::$app->request->get('query');
-        if(count($querys) > 0){
-            $condition = "";
-            $parame = array();
-            foreach($querys as $key=>$value){
-                $value = trim($value);
-                if(empty($value) == false){
-                    $parame[":{$key}"]=$value;
-                    if(empty($condition) == true){
-                        $condition = " {$key}=:{$key} ";
-                    }
-                    else{
-                        $condition = $condition . " AND {$key}=:{$key} ";
-                    }
-                }
-            }
-            if(count($parame) > 0){
-                $query = $query->where($condition, $parame);
-            }
-        }
-        //$models = $query->orderBy('display_order')
-        $pagination = new Pagination([
-            'totalCount' =>$query->count(), 
-            'pageSize' => '10', 
-            'pageParam'=>'page', 
-            'pageSizeParam'=>'per-page']
-        );
-        $models = $query
-        ->offset($pagination->offset)
-        ->limit($pagination->limit)
-        ->all();
+        
         return $this->render('index', [
-            'models'=>$models,
-            'pages'=>$pagination,
-            'query'=>$querys,
             'role_id'=>$roleId
         ]);
     }
 
-    public function actionTable($roleId)
+    public function actionTable($postParams)
     {
-        $query = AdminUserRole::find()->with('user')->with('role')->andWhere(['role_id'=>$roleId]);
+        $params = json_decode($postParams);
+        $roleId = $params->roleId;
+        $query = Yii::$app->db->createCommand('
+         SELECT 
+         ur.*,
+         u.uname user_name,
+         r.*
+           FROM admin_user_role ur,
+                admin_user u,
+                admin_role r 
+          WHERE ur.user_id = u.id
+            AND ur.role_id = r.id
+            AND ur.role_id='.$roleId.'')->queryAll();
         return json_encode($query);
     }
 

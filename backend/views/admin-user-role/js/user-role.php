@@ -9,23 +9,26 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		$('#admin-user-role-search-form').submit();
 	}
  function viewAction(id){
-		initModel(id, 'view', 'fun');
-	}
+	//initModel(id, 'view', 'fun');
+	var editData = $('#adminUserrole-table').bootstrapTable('getRowByUniqueId', id);
+	initEditSystemModule(editData, 'view');
+}
 
  function initEditSystemModule(data, type){
 	if(type == 'create'){
 		$("#id").val('');
 		$("#user_id").val('');
+		$("#user_name").val('');
 // 		$("#role_id").val('');
 		$("#create_user").val('');
 		$("#create_date").val('');
 		$("#update_user").val('');
 		$("#update_date").val('');
 		
-	}
-	else{
+	}else{
 		$("#id").val(data.id);
-    	$("#user_id").val(data.user_id);
+		$("#user_id").val(data.user_id);
+		$("#user_name").val(data.user_name);
     	$("#role_id").val(data.role_id);
     	$("#create_user").val(data.create_user);
     	$("#create_date").val(data.create_date);
@@ -34,7 +37,8 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
     	}
 	if(type == "view"){
       $("#id").attr({readonly:true,disabled:true});
-      $("#user_id").attr({readonly:true,disabled:true});
+	  $("#user_id").attr({readonly:true,disabled:true});
+	  $("#user_name").attr({readonly:true,disabled:true});
 //       $("#role_id").attr({readonly:true,disabled:true});
 //       $("#role_id").parent().parent().show();
       $("#create_user").attr({readonly:true,disabled:true});
@@ -45,11 +49,13 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
       $("#update_user").parent().parent().show();
       $("#update_date").attr({readonly:true,disabled:true});
       $("#update_date").parent().parent().show();
-	$('#edit_dialog_ok').addClass('hidden');
-	}
-	else{
-      $("#id").attr({readonly:false,disabled:false});
-      $("#user_id").attr({readonly:false,disabled:false});
+	  $('#edit_dialog_ok').addClass('hidden');
+
+	}else{
+
+	  $("#id").attr({readonly:false,disabled:false});
+	  $("#user_id").attr({readonly:false,disabled:false});
+	  $("#user_name").attr({readonly:false,disabled:false});
 //       $("#role_id").attr({readonly:false,disabled:false});
 //       $("#role_id").parent().parent().hide();
       $("#create_user").attr({readonly:false,disabled:false});
@@ -83,7 +89,10 @@ function initModel(id, type, fun){
 }
 	
 function editAction(id){
-	initModel(id, 'edit');
+	//initModel(id, 'edit');
+	
+	var editData = $('#adminUserrole-table').bootstrapTable('getRowByUniqueId', id);
+	initEditSystemModule(editData, 'edit');
 }
 
 function deleteAction(id){
@@ -119,7 +128,7 @@ function deleteAction(id){
 						   $('#rowid_' + ids[i]).remove();
 					   }
 					   admin_tool.alert('msg_info', '删除成功', 'success');
-					   window.location.reload();
+					  $('#adminUserrole-table').bootstrapTable('refresh');
 				   }
 				});
 		});
@@ -191,5 +200,12 @@ $('#admin-user-role-form').bind('submit', function(e) {
     });
 });
 
- 
+function  operateFormatter(value, row, index) {
+	  var h = "";
+	  console.log()
+      h +='<a id="view_btn" onclick="viewAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	  h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+      h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+	 return h;
+}
 </script>

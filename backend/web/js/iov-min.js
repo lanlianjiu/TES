@@ -245,6 +245,13 @@
         return uuid.join('');
     };
 
+    function getUrlParams(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
     function windowHeight() {
         var de = document.documentElement;
         return self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
@@ -252,6 +259,7 @@
     var utils = {
         md5: md5,
         uuid: uuid,
+        getUrlParams: getUrlParams,
         windowHeight: windowHeight,
         pad: function (tbl) {
             return function (num, n) {
