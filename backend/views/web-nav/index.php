@@ -40,7 +40,7 @@ $modelLabel = new \backend\models\WebNavModel();
                 </div>
             </div>
              <!-- row end search -->
-            <div class="box" data-adaptionHeight="40">  
+            <div class="box">  
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="input-group input-group-sm action-toolbar">
@@ -88,7 +88,7 @@ $modelLabel = new \backend\models\WebNavModel();
 				<h4>导航管理</h4>
 			</div>
 			<div class="modal-body">
-                <?php $form = ActiveForm::begin(["id" => "admin-module-form", "class"=>"form-horizontal", "action"=>Url::toRoute("web-nav/save")]); ?> 
+                <?php $form = ActiveForm::begin(["id" => "web-nav-form", "class"=>"form-horizontal", "action"=>Url::toRoute("web-nav/save")]); ?> 
                 <input type="hidden" class="form-control" id="web_nav_id" name="WebNavModel[web_nav_id]" />
                
                 <div id="web_navType_id_div" class="form-group">

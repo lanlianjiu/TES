@@ -5,47 +5,53 @@ use yii\helpers\Url;
 ?>
 
 <script>
-window.controllerData = <?php echo json_encode($controllerData); ?>;
+
 function searchAction(){
 		$('#web-nav-search-form').submit();
 }
 function viewAction(id){
-		initModel(id, 'view', 'fun');
+		//initModel(id, 'view', 'fun');
+    var editData = $('#webuser-table').bootstrapTable('getRowByUniqueId', id);
+    initEditSystemModule(editData, 'view');
 }
 
 function initEditSystemModule(data, type){
 	if(type == 'create'){
 
-		$("#web_nav_id").val('');
-		$("#web_navType_id").val('');
-		$("#web_nav_name").val('');
-		$("#controller_id").val('');
-		$("#actionUrl").val('');
+		$("#id").val('');
+		$("#username").val('');
+		$("#email").val('');
+		$("#vip_1v").val('');
+		$("#created_at").val('');
+        $("#updated_at").val('');
 		
 	}else{
 
-		$("#web_nav_id").val(data.web_nav_id);
-    	$("#web_navType_id").val(data.web_navType_id);
-    	$("#web_nav_name").val(data.web_nav_name);
-		$("#controller_id").val(data.controller);
-		$("#actionUrl").val(data.url);
+		$("#id").val(data.id);
+    	$("#username").val(data.username);
+    	$("#email").val(data.email);
+		$("#vip_1v").val(data.vip_1v);
+		$("#created_at").val(data.created_at);
+        $("#updated_at").val(data.updated_at);
     }
 
 	if(type == "view"){
 
-      $("#web_nav_id").attr({readonly:true,disabled:true});
-      $("#web_navType_id").attr({readonly:true,disabled:true});
-      $("#web_nav_name").attr({readonly:true,disabled:true});
-	  $("#controller_id").attr({readonly:true,disabled:true});
-	  $("#actionUrl").attr({readonly:true,disabled:true});
+      $("#id").attr({readonly:true,disabled:true});
+      $("#username").attr({readonly:true,disabled:true});
+      $("#email").attr({readonly:true,disabled:true});
+	  $("#vip_1v").attr({readonly:true,disabled:true});
+	  $("#created_at").attr({readonly:true,disabled:true});
+      $("#updated_at").attr({readonly:true,disabled:true});
 	  $('#edit_dialog_ok').addClass('hidden');
 	}else{
 
-      $("#web_nav_id").attr({readonly:false,disabled:false});
-      $("#web_navType_id").attr({readonly:false,disabled:false});
-      $("#web_nav_name").attr({readonly:false,disabled:false});
-	  $("#controller_id").attr({readonly:false,disabled:false});
-	  $("#actionUrl").attr({readonly:false,disabled:false});
+      $("#id").attr({readonly:false,disabled:false});
+      $("#username").attr({readonly:false,disabled:false});
+      $("#email").attr({readonly:false,disabled:false});
+	  $("#vip_1v").attr({readonly:false,disabled:false});
+	  $("#created_at").attr({readonly:false,disabled:false});
+      $("#updated_at").attr({readonly:false,disabled:false});
 	  $('#edit_dialog_ok').removeClass('hidden');
 	}
 		$('#edit_dialog').modal('show');
@@ -69,7 +75,9 @@ function initModel(id, type, fun){
 }
 	
 function editAction(id){
-	initModel(id, 'edit');
+	//initModel(id, 'edit');
+    var editData = $('#webuser-table').bootstrapTable('getRowByUniqueId', id);
+    initEditSystemModule(editData, 'edit');
 }
 
 //获取选中id
@@ -77,7 +85,7 @@ function getCheckId(data) {
 
 	var arrayId = [];
 	for (var i in data) {
-		arrayId.push(data[i].web_nav_id);
+		arrayId.push(data[i].id);
 	}
 	return arrayId;
 };
@@ -87,7 +95,7 @@ function deleteAction(id){
 	if(!!id == true){
 		ids[0] = id;
 	}else{
-		ids = getCheckId($('#webnav-table').bootstrapTable('getSelections'));
+		ids = getCheckId($('#webuser-table').bootstrapTable('getSelections'));
 	}
 	
 	if(ids.length > 0){
@@ -106,7 +114,7 @@ function deleteAction(id){
 						   $('#rowid_' + ids[i]).remove();
 					   }
 					   admin_tool.alert('msg_info', '删除成功', 'success');
-					  $('#webnav-table').bootstrapTable('refresh');
+					  $('#webuser-table').bootstrapTable('refresh');
 				   }
 				});
 		});
@@ -119,7 +127,7 @@ function deleteAction(id){
 
 $('#edit_dialog_ok').click(function (e) {
     e.preventDefault();
-	$('#web-nav-form').submit();
+	$('#web-user-form').submit();
 });
 
 $('#create_btn').click(function (e) {
@@ -132,21 +140,21 @@ $('#delete_btn').click(function (e) {
     deleteAction('');
 });
 
-$('#web-nav-form').bind('submit', function(e) {
+$('#web-user-form').bind('submit', function(e) {
 	e.preventDefault();
-	var id = $("#web_nav_id").val();
-	var action = id == "" ? "<?=Url::toRoute('web-nav/create')?>" : "<?=Url::toRoute('web-nav/update')?>";
+	var id = $("#id").val();
+	var action = id == "" ? "<?=Url::toRoute('web-user/create')?>" : "<?=Url::toRoute('web-user/update')?>";
     $(this).ajaxSubmit({
     	type: "post",
     	dataType:"json",
     	url: action,
-    	data:{web_nav_id:id},
+    	data:{id:id},
     	success: function(value) 
     	{
         	if(value.errno == 0){
         		$('#edit_dialog').modal('hide');
         		admin_tool.alert('msg_info', '添加成功', 'success');
-        		 $('#webnav-table').bootstrapTable('refresh');
+        		 $('#webuser-table').bootstrapTable('refresh');
         	}else{
             	var json = value.data;
         		for(var key in json){
@@ -159,32 +167,12 @@ $('#web-nav-form').bind('submit', function(e) {
     });
 });
 
-$("#controller_id").change(function(){
-    // 先清空第二个
-    var controller = $(this).val();
-    $("#actionUrl").empty();
-    var option = $("<option>").html("请选择");
-    $("#actionUrl").append(option);
-    var actions = window.controllerData[controller];
-	var nodes = actions.nodes;
-	
-	if(nodes !== undefined){
-		for(i = 0; i < nodes.length; i++){
-			var action = nodes[i];
-			var option = $("<option>").val(action.a).html(action.text);
-			$("#actionUrl").append(option);
-     	}
-	}else{
-		$("#actionUrl").append(option);
-	};
-    
-});
 
 function  operateFormatter(value, row, index) {
 	 var h = "";
-	    h +='<a id="view_btn" onclick="viewAction(' + row.web_nav_id + ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-	    h +='<a id="edit_btn" onclick="editAction(' +row.web_nav_id +')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-	    h +='<a id="delete_btn" onclick="deleteAction('+row.web_nav_id +')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+	    h +='<a id="view_btn" onclick="viewAction(' + row.id + ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	    h +='<a id="edit_btn" onclick="editAction(' +row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+	    h +='<a id="delete_btn" onclick="deleteAction('+row.id +')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
 	 return h;
 }
  

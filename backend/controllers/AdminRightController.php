@@ -45,8 +45,9 @@ class AdminRightController extends BaseController
     {
         //$id = Yii::$app->request->post('id');
         $model = $this->findModel($id);
-        $actions = $this->rightAction($model->id, $model->menu_id);
-        $result = ['model'=>$model->getAttributes(), 'actions'=>$actions];
+         //$model = json_decode($this->findModel($id));
+         $actions = $this->rightAction($model->id, $model->menu_id);
+         $result = ['model'=>$model->getAttributes(), 'actions'=>$actions];
         echo json_encode($result);
     }
 
@@ -160,19 +161,22 @@ class AdminRightController extends BaseController
      */
     protected function findModel($id)
     {
+       
+        //$model = AdminRight::find()->joinWith('menu')->where(['admin_right.id'=>$id])->asArray()->one();
+
         if (($model = AdminRight::findOne($id)) !== null) {
+
             return $model;
         } else {
+
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
     
-    
-
     public function actionRightAction($rightId, $menu_id){
+
         $data = $this->rightAction($rightId, $menu_id);
         echo json_encode($data);
-    
     }
     
     private function rightAction($rightId, $menu_id){

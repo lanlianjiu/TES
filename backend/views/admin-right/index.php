@@ -128,8 +128,7 @@ $modelLabel = new \backend\models\AdminRight();
 			<div id="actions_div" class="form-group">
     			<label for="actions" class="col-sm-2 control-label">路由地址</label>
     			<div class="col-sm-10">
-    				<div id="treeview"  >	
-    				</div>
+    				<div id="treeview"></div>
     			</div>
     			<div class="clearfix"><br/></div>
     		</div>  

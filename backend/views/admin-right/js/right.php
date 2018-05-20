@@ -14,11 +14,13 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 	}
 
  function initEditSystemModule(data, type){
+
 	if(type == 'create'){
 		$("#id").val('');
-// 		$("#menu_id").val('');
+        //$("#menu_id").val('');
 		$("#right_name").val('');
 		$("#display_label").val('');
+		$("#controller").val('');
 		$("#des").val('');
 		$("#display_order").val('');
 		$("#has_lef").val('');
@@ -27,11 +29,11 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		$("#update_user").val('');
 		$("#update_date").val('');
 		
-	}
-	else{
+	}else{
 		$("#id").val(data.id);
     	$("#menu_id").val(data.menu_id);
     	$("#right_name").val(data.right_name);
+		$("#controller").val((data.menu == undefined)?"":data.menu.controller);
     	$("#display_label").val(data.display_label);
     	$("#des").val(data.des);
     	$("#controller option").each(function(){
@@ -48,12 +50,14 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
     	$("#create_date").val(data.create_date);
     	$("#update_user").val(data.update_user);
     	$("#update_date").val(data.update_date);
-    	}
+    };
+
 	if(type == "view"){
       $("#id").attr({readonly:true,disabled:true});
-//       $("#menu_id").attr({readonly:true,disabled:true});
+	  //$("#menu_id").attr({readonly:true,disabled:true});
       $("#right_name").attr({readonly:true,disabled:true});
       $("#display_label").attr({readonly:true,disabled:true});
+	  $("#controller").attr({readonly:true,disabled:true});
       $("#display_label").parent().parent().show();
       $("#des").attr({readonly:true,disabled:true});
       $("#display_order").attr({readonly:true,disabled:true});
@@ -67,14 +71,15 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
       $("#update_user").parent().parent().show();
       $("#update_date").attr({readonly:true,disabled:true});
       $("#update_date").parent().parent().show();
-	$('#edit_dialog_ok').addClass('hidden');
-	}
-	else{
+	  $('#edit_dialog_ok').addClass('hidden');
+
+	}else{
       $("#id").attr({readonly:false,disabled:false});
-//       $("#menu_id").attr({readonly:false,disabled:false});
+	  //$("#menu_id").attr({readonly:false,disabled:false});
       $("#right_name").attr({readonly:false,disabled:false});
       $("#display_label").attr({readonly:false,disabled:false});
       $("#display_label").parent().parent().hide();
+	  $("#controller").attr({readonly:false,disabled:false});
       $("#des").attr({readonly:false,disabled:false});
       $("#display_order").attr({readonly:false,disabled:false});
       $("#has_lef").attr({readonly:false,disabled:false});
@@ -87,9 +92,9 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
       $("#update_user").parent().parent().hide();
       $("#update_date").attr({readonly:false,disabled:false});
       $("#update_date").parent().parent().hide();
-		$('#edit_dialog_ok').removeClass('hidden');
-		}
-		$('#edit_dialog').modal('show');
+	  $('#edit_dialog_ok').removeClass('hidden');
+    }
+	$('#edit_dialog').modal('show');
 }
 
 function initModel(id, type, fun){
@@ -105,6 +110,22 @@ function initModel(id, type, fun){
 			},
 		   success: function(data){
 			   initEditSystemModule(data.model, type);
+			  
+			   if(type == "view"){
+
+					for(var i in data.actions){
+						for(var j in data.actions[i]){
+
+							for(var m in data.actions[i][j]){
+								
+								if(data.actions[i][j][m].state){
+									data.actions[i][j][m].state.disabled = true;
+								}
+							}
+						}
+					}
+			   }
+			  
 			   $('#treeview').treeview({
 					data:data.actions,
 					showIcon: false,
@@ -158,24 +179,6 @@ function deleteAction(id){
 		admin_tool.alert('msg_info', '请先选择要删除的数据', 'warning');
 	}
     
-}
-
-function getSelectedIdValues(formId)
-{
-	var value="";
-	$( formId + " :checked").each(function(i)
-	{
-		if(!this.checked)
-		{
-			return true;
-		}
-		value += this.value;
-		if(i != $("input[name='id']").size()-1)
-		{
-			value += ",";
-		}
-	 });
-	return value;
 }
 
 $('#edit_dialog_ok').click(function (e) {

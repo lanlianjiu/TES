@@ -74,7 +74,7 @@ $modelLabel = new \backend\models\WebMessageModel();
 				<h3>留言信息</h3>
 			</div>
 			<div class="modal-body">
-                <?php $form = ActiveForm::begin(["id" => "admin-log-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>                      
+                <?php $form = ActiveForm::begin(["id" => "admin-message-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>                      
                         
                 <input type="hidden" class="form-control" id="id" name="WebMessage[id]" />
 

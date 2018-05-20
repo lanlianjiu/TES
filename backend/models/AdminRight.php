@@ -56,6 +56,7 @@ class AdminRight extends \backend\models\BaseModel
             'menu_id' => '功能主键',
             'right_name' => '名称',
             'display_label' => '显示名',
+            'controller' => '控制器',
             'des' => '描述',
             'display_order' => '显示顺序',
             'has_lef' => '是否有子',
