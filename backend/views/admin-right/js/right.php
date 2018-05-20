@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Url;
+define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
+include ROOT_PATH.'/web/js/iov-min-public.php';
 ?>
 
 <script>
@@ -129,16 +131,7 @@ function deleteAction(id){
 		ids[0] = id;
 	}
 	else{
-		var checkboxs = $('#data_table tbody :checked');
-	    if(checkboxs.size() > 0){
-	        var c = 0;
-	        for(i = 0; i < checkboxs.size(); i++){
-	            var id = checkboxs.eq(i).val();
-	            if(id != ""){
-	            	ids[c++] = id;
-	            }
-	        }
-	    }
+		ids = getCheckId($('#adminRight-table').bootstrapTable('getSelections'));
 	}
 	if(ids.length > 0){
 		admin_tool.confirm('请确认是否删除', function(){
@@ -156,7 +149,7 @@ function deleteAction(id){
 						   $('#rowid_' + ids[i]).remove();
 					   }
 					   admin_tool.alert('msg_info', '删除成功', 'success');
-					   window.location.reload();
+					   $('#adminRight-table').bootstrapTable('refresh');
 				   }
 				});
 		});
@@ -203,7 +196,7 @@ $('#create_btn').click(function (e) {
 			    alert("出错了，" + textStatus);
 			},
 		   success: function(data){
-			    console.log(data);
+			    
 				$('#treeview').treeview({
 					data:data,
 					showIcon: false,
@@ -216,7 +209,7 @@ $('#create_btn').click(function (e) {
 			        onNodeUnchecked: function (event, node) {
 			        	changeCheckState(node, false);
 			        }
-					});
+				});
 		   }
 		});
     initEditSystemModule({}, 'create');
@@ -255,7 +248,7 @@ $('#admin-right-form').bind('submit', function(e) {
         	if(value.errno == 0){
         		$('#edit_dialog').modal('hide');
         		admin_tool.alert('msg_info', '添加成功', 'success');
-        		window.location.reload();
+        		$('#adminRight-table').bootstrapTable('refresh');
         	}
         	else{
             	var json = value.data;
@@ -312,4 +305,12 @@ $("#controller").change(function(){
 	});
      
 });
+
+function  operateFormatter(value, row, index) {
+	  var h = "";
+      h +='<a id="view_btn" onclick="viewAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+      h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+	  h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+	 return h;
+}
 </script>

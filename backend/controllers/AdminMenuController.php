@@ -31,48 +31,9 @@ class AdminMenuController extends BaseController
         foreach($controllers as $c){
             $controllerData[$c['text']] = $c;
         
-        }
-        
-        $query = AdminMenu::find()->andWhere(['module_id'=>$mid]);
-        $querys = Yii::$app->request->get('query');
-        if(count($querys) > 0){
-            $condition = "";
-            $parame = array();
-            foreach($querys as $key=>$value){
-                $value = trim($value);
-                if(empty($value) == false){
-                    $parame[":{$key}"]=$value;
-                    if(empty($condition) == true){
-                        $condition = " {$key}=:{$key} ";
-                    }
-                    else{
-                        $condition = $condition . " AND {$key}=:{$key} ";
-                    }
-                }
-            }
-            if(count($parame) > 0){
-                $query = $query->where($condition, $parame);
-            }
-        }
-        
-        $pagination = new Pagination([
-            'totalCount' =>$query->count(), 
-            'pageSize' => '10', 
-            'pageParam'=>'page', 
-            'pageSizeParam'=>'per-page']
-        );
-        
-        $orderby = ['display_order'=>SORT_ASC];
-        $query = $query->orderBy($orderby);
-        
-        $models = $query
-        ->offset($pagination->offset)
-        ->limit($pagination->limit)
-        ->all();
+        };
+
         return $this->render('index', [
-            'models'=>$models,
-            'pages'=>$pagination,
-            'query'=>$querys,
             'module_id'=>$mid,
             'controllerData'=>$controllerData,
         ]);
@@ -90,6 +51,19 @@ class AdminMenuController extends BaseController
         echo json_encode($model->getAttributes());
 
     }
+
+    public function actionTable($postParams)
+    {
+        $params = json_decode($postParams);
+        $mid = $params->mid;
+        $query = Yii::$app->db->createCommand('
+         SELECT 
+         *
+           FROM admin_menu m
+          WHERE m.module_id='.$mid.'')->queryAll();
+        return json_encode($query);
+    }
+
 
     /**
      * Creates a new AdminMenu model.

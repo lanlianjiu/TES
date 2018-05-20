@@ -72,6 +72,26 @@ class AdminRightUrlController extends BaseController
 
     }
 
+
+    public function actionTable($postParams)
+    {
+        $params = json_decode($postParams);
+        $roleId = $params->roleId;
+        $query = Yii::$app->db->createCommand('
+         SELECT 
+         ur.*,
+         u.uname user_name,
+         r.*
+           FROM admin_user_role ur,
+                admin_user u,
+                admin_role r 
+          WHERE ur.user_id = u.id
+            AND ur.role_id = r.id
+            AND ur.role_id='.$roleId.'')->queryAll();
+        return json_encode($query);
+    }
+
+
     /**
      * Creates a new AdminRightUrl model.
      * If creation is successful, the browser will be redirected to the 'view' page.

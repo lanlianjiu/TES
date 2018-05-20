@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Url;
+define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
+include ROOT_PATH.'/web/js/iov-min-public.php';
 ?>
 
 <script>
@@ -96,9 +98,9 @@ use yii\helpers\Url;
       $("#update_user").parent().parent().hide();
       $("#update_date").attr({readonly:false,disabled:false});
       $("#update_date").parent().parent().hide();
-		$('#edit_dialog_ok').removeClass('hidden');
-		}
-		$('#edit_dialog').modal('show');
+	  $('#edit_dialog_ok').removeClass('hidden');
+	}
+	  $('#edit_dialog').modal('show');
 }
 
 function initModel(id, type, fun){
@@ -128,16 +130,7 @@ function deleteAction(id){
 		ids[0] = id;
 	}
 	else{
-		var checkboxs = $('#data_table :checked');
-	    if(checkboxs.size() > 0){
-	        var c = 0;
-	        for(i = 0; i < checkboxs.size(); i++){
-	            var id = checkboxs.eq(i).val();
-	            if(id != ""){
-	            	ids[c++] = id;
-	            }
-	        }
-	    }
+		ids = getCheckId($('#adminMenu-table').bootstrapTable('getSelections'));
 	}
 	if(ids.length > 0){
 		admin_tool.confirm('请确认是否删除', function(){
@@ -155,7 +148,7 @@ function deleteAction(id){
 						   $('#rowid_' + ids[i]).remove();
 					   }
 					   admin_tool.alert('msg_info', '删除成功', 'success');
-					   window.location.reload();
+					  $('#adminMenu-table').bootstrapTable('refresh');
 				   }
 				});
 		});
@@ -164,24 +157,6 @@ function deleteAction(id){
 		admin_tool.alert('msg_info', '请先选择要删除的数据', 'warning');
 	}
     
-}
-
-function getSelectedIdValues(formId)
-{
-	var value="";
-	$( formId + " :checked").each(function(i)
-	{
-		if(!this.checked)
-		{
-			return true;
-		}
-		value += this.value;
-		if(i != $("input[name='id']").size()-1)
-		{
-			value += ",";
-		}
-	 });
-	return value;
 }
 
 $('#edit_dialog_ok').click(function (e) {
@@ -213,7 +188,7 @@ $('#admin-menu-form').bind('submit', function(e) {
         	if(value.errno == 0){
         		$('#edit_dialog').modal('hide');
         		admin_tool.alert('msg_info', '添加成功', 'success');
-        		window.location.reload();
+        		$('#adminMenu-table').bootstrapTable('refresh');
         	}
         	else{
             	var json = value.data;
@@ -240,5 +215,15 @@ $("#controller").change(function(){
          $("#action").append(option);
      }
 });
+
+function  operateFormatter(value, row, index) {
+	  var h = "";
+	  var action = "<?=Url::toRoute('admin-right/index')?>"+'&id='+row.id;
+	  h +='<a id="view_btn" class="btn btn-primary btn-xs" href="'+action+'">路由管理</a>';
+      h +='<a id="view_btn" onclick="viewAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+      h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+	  h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+	 return h;
+}
  
 </script>

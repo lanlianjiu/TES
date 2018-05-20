@@ -21,127 +21,61 @@ $modelLabel = new \backend\models\AdminModule();
             <div class="box-header search-box">
                 <div class="row">
                     <div class="col-sm-12">
-                        <?php ActiveForm::begin(['id' => 'admin-module-search-form', 'method'=>'get', 'options' => ['class' => 'form-inline'], 'action'=>Url::toRoute('admin-module/index')]); ?>     
+                         <form bootstrap-table-form="adminModule-table" class="form-inline">
                         
-                        <div class="form-group" style="margin: 5px;">
-                            <label><?=$modelLabel->getAttributeLabel('id')?>:</label>
-                            <input type="text" class="form-control" id="query[id]" name="query[id]"  value="<?=isset($query["id"]) ? $query["id"] : "" ?>">
-                        </div>
+                            <div class="form-group" style="margin: 5px;">
+                                <label>ID</label>
+                                <input type="text" class="form-control"  name="id"  />
+                            </div>
 
-                        <div class="form-group" style="margin: 5px;">
-                            <label><?=$modelLabel->getAttributeLabel('code')?>:</label>
-                            <input type="text" class="form-control" id="query[code]" name="query[code]"  value="<?=isset($query["code"]) ? $query["code"] : "" ?>">
-                        </div>
+                            <div class="form-group" style="margin: 5px;">
+                                <label>code</label>
+                                <input type="text" class="form-control"  name="code"  />
+                            </div>
 
-                        <div class="form-group" style="margin: 5px;">
-                            <label><?=$modelLabel->getAttributeLabel('display_label')?>:</label>
-                            <input type="text" class="form-control" id="query[display_label]" name="query[display_label]"  value="<?=isset($query["display_label"]) ? $query["display_label"] : "" ?>">
-                        </div>
-                        <div class="form-group">
-                            <a onclick="searchAction()" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
-                        </div>
-                    <?php ActiveForm::end(); ?> 
+                            <div class="form-group" style="margin: 5px;">
+                                <label>显示名称</label>
+                                <input type="text" class="form-control"  name="display_label"  />
+                            </div>
+                            <div class="form-group">
+                                <a bootstrap-table-search="adminModule-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
              <!-- row end search -->
-            <div class="box" data-adaptionHeight="40">  
-                <!-- /.box-header -->
+            <div class="box">  
                 <div class="box-body">
-                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                        <div class="input-group input-group-sm">
-                            <div class="from-gruop">
-                                <label>一级菜单列表</label>
-                                <button id="create_btn" type="button" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
-                                <button id="delete_btn" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
-                            </div>
-                        </div>
-                        <!-- row start -->
-                        <div class="row">
-                            <div class="col-sm-12 no-padding" data-table-th-scroll="true" data-adaptionHeight="100">
-                                <table id="data_table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="data_table_info">
-                                    <thead>
-                                        <tr role="row">
-                                            <?php 
-                                            echo '<th><input id="data_table_check" type="checkbox"></th>';
-                                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('id').'</th>';
-                                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('code').'</th>';
-                                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('display_label').'</th>';
-                                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('has_lef').'</th>';
-                                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('display_order').'</th>';
-                                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('update_user').'</th>';
-                                            echo '<th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >'.$modelLabel->getAttributeLabel('update_date').'</th>';
-                                            ?>
-                                            <th tabindex="0" aria-controls="data_table" rowspan="1" colspan="1" aria-sort="ascending" >操作</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                        $row = 0;
-                                        foreach ($models as $model) {
-                                            echo '<tr id="rowid_' . $model->id . '">';
-                                            echo '  <td><label><input type="checkbox" value="' . $model->id . '"></label></td>';
-                                            echo '  <td>' . $model->id . '</td>';
-                                            echo '  <td>' . $model->code . '</td>';
-                                            echo '  <td>' . $model->display_label . '</td>';
-                                            echo '  <td>' . $model->has_lef . '</td>';
-                                            //echo '  <td>' . $model->des . '</td>';
-                                            //echo '  <td>' . $model->entry_url . '</td>';
-                                            echo '  <td>' . $model->display_order . '</td>';
-                                            //echo '  <td>' . $model->create_user . '</td>';
-                                            //echo '  <td>' . $model->create_date . '</td>';
-                                            echo '  <td>' . $model->update_user . '</td>';
-                                            echo '  <td>' . $model->update_date . '</td>';
-                                            echo '  <td class="center">';
-                                            echo '      <a id="view_btn" class="btn btn-primary btn-xs" href="'.Url::toRoute(['admin-menu/index', 'mid'=>$model->id]) .'">二级菜单</a>';
-                                            //                 echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>菜单管理</a>';
-                                            echo '      <a id="view_btn" onclick="viewAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-                                            echo '      <a id="edit_btn" onclick="editAction(' . $model->id . ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-                                            echo '      <a id="delete_btn" onclick="deleteAction(' . $model->id . ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
-                                            echo '  </td>';
-                                            echo '<tr/>';
-                                        }
-                                    ?>
-                                    </tbody>
-                                <!-- <tfoot></tfoot> -->
-                                </table>
-                            </div>
-                        </div>
-                    <div>
-                </div>
-                <!-- row end -->
-                <!-- row start -->
-                <div class="row">
-                <div class="col-sm-5">
-                    <div class="dataTables_info" id="data_table_info" role="status" aria-live="polite">
-                        <div class="infos">
-                        从 <?= $pages->getPage() * $pages->getPageSize() + 1 ?>            		
-                        到 <?= ($pageCount = ($pages->getPage() + 1) * $pages->getPageSize()) < $pages->totalCount ?  $pageCount : $pages->totalCount?>            		 共 <?= $pages->totalCount?> 条记录</div>
+                    <div class="input-group input-group-sm action-toolbar">
+                        <label>一级菜单列表&nbsp;</label>
+                        <button id="create_btn" type="button" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
+                        <button id="delete_btn" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
                     </div>
+                    <table id="adminModule-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="60" data-show-export="true"
+                        data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
+                        data-id-field="id" data-unique-id="id" data-custom-url="index.php?r=admin-module/table" class="table table-border table-bordered table-bg table-hover table-sort table-responsive th-table">
+                        <thead>
+                            <tr>
+                                <th data-checkbox="true" width="80"></th>
+                                <th data-sortable="true" data-field="id" width="80">ID</th>
+                                <th data-sortable="true" data-field="code" width="80">code</th>
+                                <th data-sortable="true" data-field="display_label" width="80">显示名称</th>
+                                <th data-sortable="true" data-field="meun_icon" width="80">菜单图标</th>
+                                <th data-sortable="true" data-field="has_lef" width="120">是否有子</th>
+                                <th data-sortable="true" data-field="des" width="120">描述</th>
+                                <th data-sortable="true" data-field="entry_url" width="120">入口地址</th>
+                                <th data-sortable="true" data-field="display_order" width="120">顺序</th>
+                                <th data-sortable="true" data-field="update_user" width="120">修改人</th>
+                                <th data-sortable="true" data-field="update_date" width="120">修改时间</th>
+                                <th data-formatter="operateFormatter" width="120">操作</th>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
-                <div class="col-sm-7">
-                    <div class="dataTables_paginate paging_simple_numbers" id="data_table_paginate">
-                    <?= LinkPager::widget([
-                        'pagination' => $pages,
-                        'nextPageLabel' => '下一页',
-                        'prevPageLabel' => '上一页',
-                        'firstPageLabel' => '首页',
-                        'lastPageLabel' => '尾页',
-                    ]); ?>	
-                    
-                    </div>
-                </div>
-                </div>
-                <!-- row end -->
-                </div>
-                </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
-        <!-- /.col -->
     </div>
-    <!-- /.row -->
 </section>
 <!-- /.content -->
 

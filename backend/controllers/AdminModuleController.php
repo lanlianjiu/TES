@@ -68,6 +68,19 @@ class AdminModuleController extends BaseController
      * @param integer $id
      * @return mixed
      */
+    public function actionTable()
+    {
+        $query = Yii::$app->db->createCommand('
+         SELECT *
+           FROM admin_module')->queryAll();
+        return json_encode($query);
+    }
+
+    /**
+     * Displays a single AdminModule model.
+     * @param integer $id
+     * @return mixed
+     */
     public function actionView($id)
     {
         //$id = Yii::$app->request->post('id');
