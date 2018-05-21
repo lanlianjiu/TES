@@ -42,7 +42,7 @@ class AdminUser extends BackendUser
             [['status'], 'integer'],
             [['create_date', 'update_date'], 'safe'],
             [['uname', 'domain_account', 'create_user'], 'string', 'max' => 100],
-            [['password'], 'string', 'max' => 200],
+            [['password','head_img_url'], 'string', 'max' => 200],
             [['auth_key', 'last_ip'], 'string', 'max' => 50],
             [['is_online'], 'string', 'max' => 1],
             [['update_user'], 'string', 'max' => 101]
@@ -67,6 +67,7 @@ class AdminUser extends BackendUser
             'create_date' => '创建时间',
             'update_user' => '更新人',
             'update_date' => '更新时间',
+             'head_img_url' => '头像',
         ];
     }
 

@@ -5,6 +5,8 @@ namespace backend\controllers;
 use Yii;
 use yii\data\Pagination;
 use backend\models\AdminUser;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -12,7 +14,24 @@ use yii\web\NotFoundHttpException;
  */
 class AdminUserController extends BaseController
 {
-	public $layout = "lte_main";
+    public $layout = "lte_main";
+    
+    public function actions(){
+        return [
+            'upload'=>[
+                    'class'=>'common\widgets\file_upload\UploadAction',
+                    'config'=>[
+                        'imagePathFormat' => "/uploadimg/{yyyy}{mm}{dd}/{time}{rand:6}",
+                            ]
+                    ],
+            // 'ueditor'=>[
+            //         'class'=>'common\widgets\file_upload\UeditorAction',
+            //         'config'=>[
+            //             'imagePathFormat' => "/uploadimg/{yyyy}{mm}{dd}/{time}{rand:6}",
+            //                 ]
+            //         ]
+        ];
+    }
 
     /**
      * Lists all AdminUser models.

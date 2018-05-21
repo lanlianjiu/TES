@@ -168,7 +168,7 @@ $modelLabel = new \backend\models\AdminUser();
                     </div>
                     <div class="clearfix"></div>
                 </div>
-
+                <?= $form->field($modelLabel,'head_img_url')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
                 <div id="update_date_div" class="form-group">
                     <label for="update_date" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("update_date")?></label>
                     <div class="col-sm-10">
