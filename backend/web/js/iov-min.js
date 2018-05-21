@@ -325,9 +325,9 @@ function ($) {
         });
         // $(this).css("overflow-y", "hidden"); // 防止出现滚动条
         //模态框垂直居中
-        $(this).css('display', 'block'); // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零  
+        $(this).css('display', 'block'); // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
         var modalHeight = ($(window).height() / 2) - ($('.modal-dialog').height() / 2);
-        console.log($(window).height());
+        console.log($(this));
         console.log($('.modal-dialog').height());
         // $(this).find('.modal-dialog').css({
         //     'margin-top': modalHeight
@@ -356,33 +356,6 @@ function ($) {
     $(document).ready(function () {
         initLoad();
     })
-})(jQuery);
-/**
- * adaptionHeight end
- */
-+
-/**
- * table-th-scroll 表格表头固定
- */
-(function ($) {
-    function initLoad() {
-        $('[data-table-th-scroll="true"]').each(function () {
-
-            $this = this;
-            var tablescrollId = document.querySelector('[data-table-th-scroll="true"]');
-
-            function scrollHandle(e) {
-
-                var scrollTop = this.scrollTop;
-                this.querySelector('thead').style.transform = 'translateY(' + scrollTop + 'px)';
-            };
-            tablescrollId.addEventListener('scroll', scrollHandle);
-        })
-    };
-
-    $(document).ready(function () {
-        initLoad();
-    });
 })(jQuery);
 /**
  * adaptionHeight end

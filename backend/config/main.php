@@ -15,12 +15,10 @@ $config = [
         'request' => [
             'cookieValidationKey' => 'w3BnewAWmCrjijzkiLucYD5Ty1Ym_V9F',
         ],
-        
-//         'urlManager' => [
-//             'enablePrettyUrl' => true,
-//             'showScriptName' => false,
-//         ],
-        
+        //'urlManager' => [
+        //'enablePrettyUrl' => true,
+        //'showScriptName' => false,
+        //         ],
         'user'=>[
             'class'=>'yii\web\User',
             'identityClass' => 'backend\models\AdminUser',
@@ -57,14 +55,14 @@ if (YII_ENV_DEV) {
             'model' => [
                 'class' => 'yii\gii\generators\model\GeneratorCommon',
                 'templates' => [
-//                     'adminlte' => '..\..\vendor\yiisoft\yii2-gii\generators\model\adminlte',
+                    //'adminlte' => '..\..\vendor\yiisoft\yii2-gii\generators\model\adminlte',
                     'adminlte' => '../../vendor/yiisoft/yii2-gii/generators/model/adminlte',
                 ]
             ],
             'crud' => [
                 'class' => 'yii\gii\generators\crud\Generator',
                 'templates' => [
-//                     'adminlte' => '..\..\vendor\yiisoft\yii2-gii\generators\crud\adminlte',
+                    //'adminlte' => '..\..\vendor\yiisoft\yii2-gii\generators\crud\adminlte',
                     'adminlte' => '../../vendor/yiisoft/yii2-gii/generators/crud/adminlte',
                 ]
             ],

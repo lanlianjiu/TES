@@ -64,7 +64,7 @@ $modelLabel = new \backend\models\AdminRight();
 </section>
 <!-- /.content -->
 
-<div class="modal fade" id="edit_dialog">
+<div class="modal bootstrap-dialog type-primary modal-box fade" id="edit_dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
