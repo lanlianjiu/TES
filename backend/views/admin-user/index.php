@@ -176,10 +176,8 @@ $modelLabel = new \backend\models\AdminUser();
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                            
-
-			<?php ActiveForm::end(); ?>          
-                </div>
+			    <?php ActiveForm::end(); ?>          
+            </div>
 			<div class="modal-footer text-c">
 				<a href="#" class="btn btn-default" data-dismiss="modal">关闭</a> <a
 					id="edit_dialog_ok" href="#" class="btn btn-primary">确定</a>
