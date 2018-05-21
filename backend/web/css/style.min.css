@@ -6,6 +6,19 @@ thead {
     background-color: #FFF;
 }
 
+.table-loading {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: auto;
+    z-index: 101;
+    padding: 6px;
+    margin: 5px;
+    width: 64px;
+    height: 64px;
+    background: url(../images/loading.gif) no-repeat;
+}
+
 .no-margin {
     margin: 0px !important;
 }
@@ -18,7 +31,8 @@ thead {
     text-align: center !important;
 }
 
-.dataTable>thead>tr>th:first-child, .dataTable>tbody>tr>td:first-child {
+.dataTable>thead>tr>th:first-child,
+.dataTable>tbody>tr>td:first-child {
     text-align: center;
 }
 
@@ -26,7 +40,8 @@ thead {
     padding-right: 10px;
 }
 
-.dataTable>thead>tr>th:last-child, .dataTable>tbody>tr>td:last-child {
+.dataTable>thead>tr>th:last-child,
+.dataTable>tbody>tr>td:last-child {
     text-align: center;
 }
 

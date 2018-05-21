@@ -438,6 +438,9 @@ if($otherMenu == false){
   <script src="<?=Url::base()?>/plugins/form/jquery.form.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
   <script src="<?=Url::base()?>/bootstrap/js/bootstrap.min.js"></script>
+  <!--charts.js -->
+  <script src="<?=Url::base()?>/plugins/chartjs/Chart.min.js"></script>
+
   <!-- Morris.js charts -->
   <script src="<?=Url::base()?>/libs/raphael-min.js"></script>
   <script src="<?=Url::base()?>/plugins/morris/morris.min.js"></script>
