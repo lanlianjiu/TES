@@ -274,11 +274,11 @@ $('#admin-role-form').bind('submit', function(e) {
 function  operateFormatter(value, row, index) {
 	  var h = "";
 	  var action = "<?=Url::toRoute('admin-user-role/index')?>"+'&roleId='+row.id;
-	  h +='<a id="view_btn" class="btn btn-primary btn-xs" href="'+action+'">分配用户</a>';
-      h +='<a id="view_btn" onclick="rightAction('+row.id+')" class="btn btn-primary btn-xs" href="#">分配权限</a>';
-      h +='<a id="view_btn" onclick="viewAction(' + row.id + ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-	  h +='<a id="edit_btn" onclick="editAction(' + row.id + ')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-      h +='<a id="delete_btn" onclick="deleteAction(' + row.id + ')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+	  h +='<a id="view_btn" class="action-a-btn" href="'+action+'">分配用户</a>';
+      h +='<a id="view_btn" onclick="rightAction('+row.id+')" class="action-a-btn" href="#">分配权限</a>';
+      h +='<a id="view_btn" onclick="viewAction(' + row.id + ')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	  h +='<a id="edit_btn" onclick="editAction(' + row.id + ')" class="action-a-btn" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+      h +='<a id="delete_btn" onclick="deleteAction(' + row.id + ')" class="action-a-btn" href="#"> <i class="fa fa-trash icon-white"></i></a>';
 	 return h;
 }
 

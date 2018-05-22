@@ -2,6 +2,23 @@ html {
     overflow: hidden;
 }
 
+.action-a-btn {
+    margin-right: 10px;
+}
+
+.th-table {
+    border-bottom: 0px !important;
+}
+
+.th-table>thead>tr>th {
+    border: 0px;
+    border-bottom: 0px !important;
+}
+
+.table>tbody>tr>td {
+    border: 0px;
+}
+
 .no-padding {
     padding: 0px !important;
 }

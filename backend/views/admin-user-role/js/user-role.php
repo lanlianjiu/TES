@@ -101,16 +101,7 @@ function deleteAction(id){
 		ids[0] = id;
 	}
 	else{
-		var checkboxs = $('#data_table :checked');
-	    if(checkboxs.size() > 0){
-	        var c = 0;
-	        for(i = 0; i < checkboxs.size(); i++){
-	            var id = checkboxs.eq(i).val();
-	            if(id != ""){
-	            	ids[c++] = id;
-	            }
-	        }
-	    }
+	ids = getCheckId($('#adminUserrole-table').bootstrapTable('getSelections'));
 	}
 	if(ids.length > 0){
 		admin_tool.confirm('请确认是否删除', function(){
@@ -203,9 +194,9 @@ $('#admin-user-role-form').bind('submit', function(e) {
 function  operateFormatter(value, row, index) {
 	  var h = "";
 	  console.log()
-      h +='<a id="view_btn" onclick="viewAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-	  h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="btn btn-primary btn-xs" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-      h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="btn btn-danger btn-xs" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+      h +='<a id="view_btn" onclick="viewAction('+ row.id +')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	  h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="action-a-btn" href="#"> <i class="fa fa-edit icon-white"></i></a>';
+      h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="action-a-btn" href="#"> <i class="fa fa-trash icon-white"></i></a>';
 	 return h;
 }
 </script>

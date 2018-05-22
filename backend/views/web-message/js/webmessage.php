@@ -152,9 +152,9 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
     function  operateFormatter(value, row, index) {
 	 var h = "";
-	 h +='<a id="view_btn" onclick="viewAction('+row.message_id+')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	 h +='<a id="view_btn" onclick="viewAction('+row.message_id+')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
       //h +='<a id="edit_btn" onclick="editAction('+row.message_id+')" class="btn btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-edit icon-white"></i>修改</a>';
-       h +='<a id="delete_btn" onclick="deleteAction('+row.message_id+')" class="btn btn-danger btn-xs" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i></a>';
+       h +='<a id="delete_btn" onclick="deleteAction('+row.message_id+')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-trash icon-white"></i></a>';
 	 return h;
     }
 

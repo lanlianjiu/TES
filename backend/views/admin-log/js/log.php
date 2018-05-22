@@ -199,7 +199,7 @@ $('#admin-log-form').bind('submit', function(e) {
   
 function  operateFormatter(value, row, index) {
 	 var h = "";
-	 h +='<a id="view_btn" onclick="viewAction(' +row.id+ ')" class="btn btn-primary btn-xs" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+	 h +='<a id="view_btn" onclick="viewAction(' +row.id+ ')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
 	 return h;
 }
 

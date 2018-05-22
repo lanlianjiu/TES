@@ -15,8 +15,36 @@ use yii\web\NotFoundHttpException;
 class AdminUserController extends BaseController
 {
     public $layout = "lte_main";
-    
-    public function actions(){
+
+     public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'create','upload','ueditor'],
+                'rules' => [
+                    [
+                        'actions' => ['index'],
+                        'allow' => true
+                    ],
+                    [
+                        'actions' => ['create','upload','ueditor'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    '*' => ['get','post'],
+                ],
+            ],
+        ];
+    }
+
+
+    public function actionsUpload(){
         return [
             'upload'=>[
                     'class'=>'common\widgets\file_upload\UploadAction',
