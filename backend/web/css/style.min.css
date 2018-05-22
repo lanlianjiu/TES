@@ -2,6 +2,10 @@ html {
     overflow: hidden;
 }
 
+.modal {
+    background: rgba(0, 0, 0, 0) !important;
+}
+
 .action-a-btn {
     margin-right: 10px;
 }
