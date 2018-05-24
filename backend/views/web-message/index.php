@@ -35,7 +35,7 @@ $modelLabel = new \backend\models\WebMessageModel();
         <!-- /.box-header -->
         <div class="box">
             <div class="box-body">
-                <table id="webmessage-table" data-toggle="table" data-show-columns="true" data-autoheight="60" data-show-export="true"
+                <table id="webmessage-table" data-toggle="table" data-show-columns="true" data-autoheight="40" data-show-export="true"
                     data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
                     data-id-field="message_id" data-unique-id="message_id" data-custom-url="index.php?r=web-message/table" class="table  table-hover th-table">
                     <thead>
