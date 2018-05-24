@@ -44,7 +44,7 @@ $this->title = '首页';
                        <marquee scrollamount="3"><b>广州拓新保洁服务热线：0571-888888</b></marquee>
                     </div>
                     <div class="col-lg-3 inline">
-                       <p class="title-nav"><a href="Default.aspx">公司首页</a> <a href="#"> &nbsp; </a> <a href="Single.aspx?id=21">联系我们</a></p>
+                       <p class="title-nav"><a href="Default.aspx">公司首页</a> <a href="#"> &nbsp; </a> <a href="Single.aspx?id=21">联系我们</a> <?php echo '<a href="'.Url::toRoute('site/signup').'">注册</a>'; ?></p>
                     </div>
                 </div>
                 <div class="row no-margin">
