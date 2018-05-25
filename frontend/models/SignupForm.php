@@ -1,33 +1,55 @@
 <?php
 namespace frontend\models;
+
+use Yii;
+use yii\base\Model;
 use frontend\models\userModel;
+
 /**
  * Signup form
  */
-class SignupForm extends userModel
+class SignupForm extends Model
 {
     public $username;
     public $email;
     public $password;
+    public $rePassword;
+    public $verifyCode;
+
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
         return [
             ['username', 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\frontend\models\userModel', 'message' => 'This username has already been taken.'],
+            ['username', 'unique', 'targetClass' => '\frontend\models\userModel', 'message' => Yii::t('frontend','This username has already been taken.')],
             ['username', 'string', 'min' => 2, 'max' => 255],
+
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\frontend\models\userModel', 'message' => 'This email address has already been taken.'],
-            ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            ['email', 'unique', 'targetClass' => '\frontend\models\userModel', 'message' => Yii::t('frontend','This email address has already been taken.')],
+
+            [['password','rePassword'], 'required'],
+            [['password','rePassword'], 'string', 'min' => 6],
+            ['rePassword','compare','compareAttribute' => 'password','message' => Yii::t('frontend','Two times the password is not consitent.')],
+            ['verifyCode','captcha']
         ];
     }
+
+    public function attributeLabels(){
+        return [
+            'username' => '用户名',
+            'email' => '邮箱',
+            'password' => '密码',
+            'rePassword' => '重复密码',
+            'verifyCode' => '验证码',
+        ];
+    }
+
     /**
      * Signs user up.
      *
