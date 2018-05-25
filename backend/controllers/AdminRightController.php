@@ -11,7 +11,7 @@ use yii\helpers\StringHelper;
 use yii\helpers\Inflector;
 use backend\services\AdminRightUrlService;
 /**
-/**
+*
  * AdminRightController implements the CRUD actions for AdminRight model.
  */
 class AdminRightController extends BaseController

@@ -53,6 +53,10 @@ $('[data-toggle="table"]').each(function () {
 	}
 
 	$.extend(tableId.bootstrapTable.defaults, option);
+	
+	// $(window).resize(function () {
+	// 	tableId.bootstrapTable('resetView');
+	// });
 
 	//导出
 	function DoOnCellHtmlData(cell, row, col, data) {

@@ -15,6 +15,7 @@ class SignupForm extends Model
     public $password;
     public $rePassword;
     public $verifyCode;
+    public $head_img;
 
     /**
      * @inheritdoc
@@ -36,6 +37,7 @@ class SignupForm extends Model
             [['password','rePassword'], 'required'],
             [['password','rePassword'], 'string', 'min' => 6],
             ['rePassword','compare','compareAttribute' => 'password','message' => Yii::t('frontend','Two times the password is not consitent.')],
+            ['head_img', 'string', 'max' => 255],
             ['verifyCode','captcha']
         ];
     }
@@ -47,6 +49,7 @@ class SignupForm extends Model
             'password' => '密码',
             'rePassword' => '重复密码',
             'verifyCode' => '验证码',
+            'head_img' => '头像',
         ];
     }
 
@@ -64,6 +67,7 @@ class SignupForm extends Model
         $user = new userModel();
         $user->username = $this->username;
         $user->email = $this->email;
+         $user->head_img = $this->head_img;
         $user->setPassword($this->password);
         $user->generateAuthKey();
         

@@ -24,6 +24,7 @@ class WebMessageModel extends \yii\db\ActiveRecord
     public $verifyCode;
     public $email;
     public $address;
+    public $feedback_img_url;
     /**
      * @inheritdoc
      */
@@ -41,7 +42,7 @@ class WebMessageModel extends \yii\db\ActiveRecord
             [['connet_name', 'connet_phone', 'email', 'address', 'message_content'], 'required'],
             [['connet_name', 'email'], 'string', 'max' => 32],
             [['connet_phone'], 'string', 'max' => 11],
-            [['address', 'message_content'], 'string', 'max' => 255],
+            [['address', 'message_content','feedback_img_url'], 'string', 'max' => 255],
              ['verifyCode','captcha']
         ];
     }
@@ -61,6 +62,7 @@ class WebMessageModel extends \yii\db\ActiveRecord
             'create_date' => '创建时间',
             'is_look' => '是否查看',
             'verifyCode' => '验证码',
+            'feedback_img_url' => '图片'
         ];
     }
     
