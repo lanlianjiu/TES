@@ -44,12 +44,12 @@ class SignupForm extends Model
 
     public function attributeLabels(){
         return [
-            'username' => '用户名',
-            'email' => '邮箱',
-            'password' => '密码',
-            'rePassword' => '重复密码',
-            'verifyCode' => '验证码',
-            'head_img' => '头像',
+            'username' => '',
+            'email' => '',
+            'password' => '',
+            'rePassword' => '',
+            'verifyCode' => '',
+            'head_img' => '',
         ];
     }
 

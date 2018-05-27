@@ -6,59 +6,60 @@
 ?>
 
     <div class="login-box-body">
-    <?php $form = ActiveForm::begin(['id' => 'feedback-form', 'action'=>'index.php?r=web-content/createfeedback']); ?>
-    <table class="table feedback-table">
+    <?php $form = ActiveForm::begin(['id' => 'feedback-form','options'=>[
+                    'name'=>'feedback_form'
+                ], 'action'=>'index.php?r=web-content/createfeedback']); ?>
+    <table class="table">
         <tr>
+            <td algin="right" width="100">联系人</td>
             <td>
                 <div class="form-inline feedback">
-                    <?= $form->field($model, 'connet_name')->textinput(['name'=>'connet_name']) ?>
+                    <?= $form->field($model, 'connet_name')->textinput() ?>
                 </div>
             </td>
         </tr>
-        <tr>
+         <tr>
+            <td algin="right" width="100">联系电话</td>
             <td>
                 <div class="form-inline feedback">
-                     <?= $form->field($model, 'connet_phone')->textinput(['name'=>'connet_phone']) ?>
+                     <?= $form->field($model, 'connet_phone')->textinput() ?>
                 </div>
             </td>
         </tr>
         <tr>
+            <td algin="right">邮箱</td>
             <td>
                 <div class="form-inline feedback">
-                     <?= $form->field($model, 'email')->textinput(['name'=>'email']) ?>
+                     <?= $form->field($model, 'email')->textinput() ?>
                 </div>
             </td>
         </tr>
+         <tr>
+            <td algin="right">地址</td>
+             <td>
+                 <div class="form-inline feedback">
+                 <?= $form->field($model, 'address')->textinput() ?>
+                  </div>
+            </td>
+        </tr>
         <tr>
+            <td>内容</td>
             <td>
-                <div class="form-inline feedback">
-                     <?= $form->field($model, 'address')->textinput(['name'=>'address']) ?>
-                </div>
-            </td>
-        </tr>
-         
-        <tr>
-            <td>
-                <div class="form-inline has-feedback">
-                     <?= $form->field($model, 'message_content')->textarea(['name'=>'message_content']) ?>
-                </div>
+                <?= $form->field($model, 'message_content')->textarea() ?>
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                <div class="form-inline has-feedback">
-                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(),['options'=>['name'=>'verifyCode','class'=>'form-control']])?>
-                </div>
+            <td>验证码</td>
+            <td class="form-inline">
+                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(),['options'=>['class'=>'form-control']])?>
+            </td>
+        </tr>
+         <tr>
+            <td colspan="2" class="form-inline">
+               <?= Html::submitButton('提交', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'feedback-button']) ?>
             </td>
         </tr>
     </table>
-    <div class="row">
-        <div class="col-xs-4"></div>
-        <div class="col-xs-4">
-           <?= Html::submitButton('提交', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'feedback-button']) ?>
-        </div>
-        <div class="col-xs-4"></div>
-      </div>
     <?php ActiveForm::end(); ?>
 
   </div>

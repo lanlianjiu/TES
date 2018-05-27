@@ -170,12 +170,18 @@ if($otherMenu == false){
 
 <div class="wrapper">
   <header class="main-header left-header">
-    <!-- 菜单栏显、隐 -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>T</b>ES</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>后台管理系统</b></span>
+    </a>
+   <!-- 右边顶部菜单栏 -->
+    <nav class="navbar navbar-static-top">
+      <!-- 菜单栏显、隐 -->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only"></span>
       </a>
-   <!-- 右边顶部菜单栏 -->
-    <nav class="navbar navbar-static-top">
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav" >
           <!-- 个人信息 -->

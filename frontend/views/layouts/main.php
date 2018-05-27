@@ -48,8 +48,8 @@ $this->title = '首页';
                     </div>
                 </div>
                 <div class="row no-margin">
-                    <div class="col-lg-12 no-padding" style="height:195px;">
-                        <embed src="img/flash.swf" width="100%" height="195" type="application/x-shockwave-flash" wmode="transparent" quality="high" align="absmiddle">
+                    <div class="col-lg-12 no-padding" style="height:195px;background-color: #A2D410;">
+                        <embed src="img/flash5985.swf" width="100%" height="195" type="application/x-shockwave-flash" wmode="transparent" quality="high" align="absmiddle">
                     </div>
                 </div>
                 <div class="row no-margin ">

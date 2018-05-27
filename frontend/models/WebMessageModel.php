@@ -3,7 +3,6 @@
 namespace frontend\models;
 
 use Yii;
-
 /**
  * This is the model class for table "web_message".
  *
@@ -24,7 +23,9 @@ class WebMessageModel extends \yii\db\ActiveRecord
     public $verifyCode;
     public $email;
     public $address;
+    public $is_look;
     public $feedback_img_url;
+    public $create_date;
     /**
      * @inheritdoc
      */
@@ -53,16 +54,16 @@ class WebMessageModel extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'message_id' => '主键',
-            'connet_name' => '联系人',
-            'connet_phone' => '联系电话',
-            'email' => '电子邮件',
-            'address' => '地址',
-            'message_content' => '内容',
-            'create_date' => '创建时间',
-            'is_look' => '是否查看',
-            'verifyCode' => '验证码',
-            'feedback_img_url' => '图片'
+            'message_id' => '',
+            'connet_name' => '',
+            'connet_phone' =>'',
+            'email' => '',
+            'address' => '',
+            'message_content' => '',
+            'create_date' => '',
+            'is_look' => '',
+            'verifyCode' => '',
+            'feedback_img_url' => ''
         ];
     }
     
