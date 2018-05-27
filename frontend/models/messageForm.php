@@ -54,7 +54,7 @@ class messageForm extends Model
     public function savemessge()
     {
         if (!$this->validate()) {
-            return null;
+            return false;
         }
         
         $saveinfo = new WebMessageModel();
@@ -67,6 +67,6 @@ class messageForm extends Model
         $saveinfo->message_content = $this->message_content;
         $saveinfo->feedback_img_url = $this->feedback_img_url;
         
-        return $saveinfo->save() ? true : false;
+        return $saveinfo->save();
     }
 }
