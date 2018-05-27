@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 use Yii;
-use frontend\models\WebMessageModel;
+use frontend\models\messageForm;
 use frontend\models\WebContentModel;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -96,7 +96,7 @@ class WebContentController extends \yii\web\Controller
     //客户留言
     public function actionFeedback()
     {
-        $model = new WebMessageModel();
+        $model = new messageForm();
         return $this->render('feedback', [
             'model' => $model,
         ]);
@@ -104,13 +104,10 @@ class WebContentController extends \yii\web\Controller
 
     public function actionCreatefeedback()
     {
-         $model = new WebMessageModel();
-         //return json_encode($model->load(Yii::$app->request->post()));
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-
-            $model->is_look = 0;
-            $model->create_date = time();
-            $model->save();
+         $model = new messageForm();
+       
+        if ($model->load(Yii::$app->request->post()) && ($model->validate())&&($model->savemessge())) {
+           
            return $this->render('feedback', ['model' => $model]);
         } else {
            

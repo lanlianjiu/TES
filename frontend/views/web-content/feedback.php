@@ -14,7 +14,7 @@
             <td algin="right" width="100">联系人</td>
             <td>
                 <div class="form-inline feedback">
-                    <?= $form->field($model, 'connet_name')->textinput() ?>
+                    <input type="text" class="form-control" name="WebMessageModel[connet_name]" />
                 </div>
             </td>
         </tr>
@@ -22,7 +22,7 @@
             <td algin="right" width="100">联系电话</td>
             <td>
                 <div class="form-inline feedback">
-                     <?= $form->field($model, 'connet_phone')->textinput() ?>
+                    <input type="text" class="form-control" name="WebMessageModel[connet_phone]" />
                 </div>
             </td>
         </tr>
@@ -30,22 +30,22 @@
             <td algin="right">邮箱</td>
             <td>
                 <div class="form-inline feedback">
-                     <?= $form->field($model, 'email')->textinput() ?>
+                    <input type="text" class="form-control" name="WebMessageModel[email]" />
                 </div>
             </td>
         </tr>
          <tr>
             <td algin="right">地址</td>
              <td>
-                 <div class="form-inline feedback">
-                 <?= $form->field($model, 'address')->textinput() ?>
-                  </div>
+                <div class="form-inline feedback">
+                 <input type="text" class="form-control" name="WebMessageModel[address]" />
+                </div>
             </td>
         </tr>
         <tr>
             <td>内容</td>
             <td>
-                <?= $form->field($model, 'message_content')->textarea() ?>
+                <textarea  class="form-control" name="WebMessageModel[message_content]"></textarea>
             </td>
         </tr>
         <tr>
@@ -56,7 +56,7 @@
         </tr>
          <tr>
             <td colspan="2" class="form-inline">
-               <?= Html::submitButton('提交', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'feedback-button']) ?>
+              <button type="submit" class="btn btn-primary btn-block btn-flat" name="feedback-button">提交</button>
             </td>
         </tr>
     </table>

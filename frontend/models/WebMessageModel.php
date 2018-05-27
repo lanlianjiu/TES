@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+
 /**
  * This is the model class for table "web_message".
  *
@@ -17,15 +18,13 @@ use Yii;
  */
 class WebMessageModel extends \yii\db\ActiveRecord
 {
-    public $connet_name;
-    public $connet_phone;
-    public $message_content;
-    public $verifyCode;
-    public $email;
-    public $address;
-    public $is_look;
-    public $feedback_img_url;
-    public $create_date;
+    // public $connet_name;
+    // public $connet_phone;
+    // public $message_content;
+    // public $verifyCode;
+    // public $email;
+    // public $address;
+    // public $feedback_img_url;
     /**
      * @inheritdoc
      */
@@ -44,7 +43,6 @@ class WebMessageModel extends \yii\db\ActiveRecord
             [['connet_name', 'email'], 'string', 'max' => 32],
             [['connet_phone'], 'string', 'max' => 11],
             [['address', 'message_content','feedback_img_url'], 'string', 'max' => 255],
-             ['verifyCode','captcha']
         ];
     }
 
@@ -54,17 +52,16 @@ class WebMessageModel extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'message_id' => '',
-            'connet_name' => '',
-            'connet_phone' =>'',
-            'email' => '',
-            'address' => '',
-            'message_content' => '',
-            'create_date' => '',
-            'is_look' => '',
-            'verifyCode' => '',
-            'feedback_img_url' => ''
+            'message_id' => '主键',
+            'connet_name' => '联系人',
+            'connet_phone' => '联系电话',
+            'email' => '电子邮件',
+            'address' => '地址',
+            'message_content' => '内容',
+            'create_date' => '创建时间',
+            'is_look' => '是否查看',
+            'feedback_img_url' => '图片'
         ];
     }
-    
+
 }
