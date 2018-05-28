@@ -208,5 +208,8 @@ class WebContentController extends \yii\web\Controller
         ]);
     }
 
+    public function actionSendsms(){
+
+    }
 
 }

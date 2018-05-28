@@ -38,6 +38,13 @@ $this->title = '注册';
                        <td>邮箱</td>
                        <td>  <div class="form-inline feedback"><?= $form->field($model, 'email') ?></div></td>
                     </tr>
+                     <tr>
+                        <td>短信验证码</td>
+                        <td class="form-inline">
+                            <input type="text" class="form-control" name="WebMessageModel[massage]" />
+                            <span onclick="sendMassage()">发送验证码</span>
+                        </td>
+                    </tr>
                     <tr>
                         <td>验证码</td>
                        <td> <div class="form-inline feedback"><?= $form->field($model, 'verifyCode')->widget(Captcha::className())?></div></td>
@@ -55,3 +62,4 @@ $this->title = '注册';
         </div>
     </div>
 </div>
+<?php include '/js/signup.php';?>
