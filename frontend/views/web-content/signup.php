@@ -41,7 +41,7 @@ $this->title = '注册';
                      <tr>
                         <td>短信验证码</td>
                         <td class="form-inline">
-                            <input type="text" class="form-control" name="WebMessageModel[massage]" />
+                            <input id="smsCode" type="text" class="form-control" name="WebMessageModel[massage]" />
                             <span onclick="sendMassage()">发送验证码</span>
                         </td>
                     </tr>

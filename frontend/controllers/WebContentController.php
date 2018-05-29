@@ -263,12 +263,13 @@ class WebContentController extends \yii\web\Controller
     public function actionSendsms(){
          // 初始化SendSmsRequest实例用于设置发送短信的参数
         $request = new SendSmsRequest();
-
+        	
+        $phone = Yii::$app->request->post('phone');
         //可选-启用https协议
         $request->setProtocol("https");
 
         // 必填，设置短信接收号码
-        $request->setPhoneNumbers("18376469479");
+        $request->setPhoneNumbers($phone);
 
         // 必填，设置签名名称，应严格按"签名名称"填写，请参考: https://dysms.console.aliyun.com/dysms.htm#/develop/sign
         $request->setSignName("兰连久");
