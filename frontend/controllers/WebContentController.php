@@ -164,20 +164,18 @@ class WebContentController extends \yii\web\Controller
      */
     public function actionSignup()
     {
-        $key = 'sms_send_cache_no';
-        $a =  Yii::$app->cache->get($key);  
-        return json_encode($a);
-        // $model = new SignupForm();
-        // if ($model->load(Yii::$app->request->post())) {
-        //     if ($user = $model->signup()) {
-        //         if (Yii::$app->getUser()->login($user)) {
-        //             return $this->goHome();
-        //         }
-        //     }
-        // }
-        // return $this->render('signup', [
-        //     'model' => $model,
-        // ]);
+        
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
+        }
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
     /**
      * Requests password reset.
@@ -298,7 +296,7 @@ class WebContentController extends \yii\web\Controller
 
         $key = 'sms_send_cache_no';   
         $value = json_encode($acsResponse);   
-        $expire = 10;   
+        $expire = 1000;   
         yii::$app->cache->set($key, $value, $expire);   
        
         return json_encode($acsResponse);
