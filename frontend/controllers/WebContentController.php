@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\messageForm;
 use frontend\models\WebContentModel;
+use yii\caching\Cache;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use frontend\models\SignupForm;
@@ -163,17 +164,20 @@ class WebContentController extends \yii\web\Controller
      */
     public function actionSignup()
     {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
-                }
-            }
-        }
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
+        $key = 'sms_send_cache_no';
+        $a =  Yii::$app->cache->get($key);  
+        return json_encode($a);
+        // $model = new SignupForm();
+        // if ($model->load(Yii::$app->request->post())) {
+        //     if ($user = $model->signup()) {
+        //         if (Yii::$app->getUser()->login($user)) {
+        //             return $this->goHome();
+        //         }
+        //     }
+        // }
+        // return $this->render('signup', [
+        //     'model' => $model,
+        // ]);
     }
     /**
      * Requests password reset.
@@ -292,7 +296,13 @@ class WebContentController extends \yii\web\Controller
         // 发起访问请求
         $acsResponse = static::getAcsClient()->getAcsResponse($request);
 
+        $key = 'sms_send_cache_no';   
+        $value = json_encode($acsResponse);   
+        $expire = 10;   
+        yii::$app->cache->set($key, $value, $expire);   
+       
         return json_encode($acsResponse);
+
     }
 
 }
