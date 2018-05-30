@@ -296,7 +296,7 @@ class WebContentController extends \yii\web\Controller
 
         $key = 'sms_send_cache_no';   
         $value = json_encode($acsResponse);   
-        $expire = 1000;   
+        $expire = 100;   
         yii::$app->cache->set($key, $value, $expire);   
        
         return json_encode($acsResponse);
