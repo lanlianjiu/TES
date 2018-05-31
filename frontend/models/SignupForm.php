@@ -4,7 +4,7 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use frontend\models\userModel;
-
+use yii\caching\Cache;
 /**
  * Signup form
  */
@@ -38,7 +38,8 @@ class SignupForm extends Model
             [['password','rePassword'], 'string', 'min' => 6],
             ['rePassword','compare','compareAttribute' => 'password','message' => Yii::t('frontend','Two times the password is not consitent.')],
             ['head_img', 'string', 'max' => 255],
-            ['verifyCode','captcha']
+            ['verifyCode','captcha'],
+            ['smsCode', 'required','requiredValue'=>$this->getSmsCode(),'on' => ['default','sms_send_cache_no'],'message'=>'手机验证码输入错误'],
         ];
     }
 
@@ -73,4 +74,17 @@ class SignupForm extends Model
         
         return $user->save() ? $user : null;
     }
+
+    public function getSmsCode()
+    {
+        $key = 'sms_send_cache_no';  
+        $smsCode = yii::$app->cache->get($key);
+        
+        if($smsCode){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }
